@@ -1,0 +1,104 @@
+/* Couleurs ************************************************************/
+/* Pages non-connecté ************************************************************/
+.deconnecte {
+  background-color: #1B2E59;
+  text-align: center;
+}
+.deconnecte hr {
+  margin: 0 auto 0 auto;
+}
+/* INDEX ************************************************************/
+.triangle {
+  display: none;
+}
+.index h1 {
+  font-size: 50px;
+  padding-top: 50px;
+}
+.index .filtre {
+  height: 100vh;
+}
+.index .rond {
+  top: 40%;
+}
+.index p {
+  margin: 40vh 10% 20px 10%;
+  line-height: 30px;
+}
+#actus .filtre {
+  background-color: rgba(182, 222, 222, 0.8);
+}
+#actus .rond {
+  border: solid 5px #1B2E59;
+}
+#actus p {
+  margin-left: 10%;
+  color: black;
+  border: solid 5px #E62651;
+}
+#events .filtre {
+  background-color: rgba(230, 38, 81, 0.8);
+}
+#events .rond {
+  border: solid 5px #B6DEDE;
+}
+#events p {
+  margin-right: 10%;
+}
+#edt .filtre {
+  background-color: rgba(27, 46, 89, 0.8);
+}
+#edt .rond {
+  border: solid 5px #F2EEE9;
+}
+#edt p {
+  margin-left: 10%;
+}
+#absences .filtre {
+  background-color: rgba(239, 232, 223, 0.8);
+}
+#absences .rond {
+  border: solid 5px #E62651;
+}
+#absences p {
+  margin-right: 10%;
+}
+#contact .filtre {
+  background-color: rgba(182, 222, 222, 0.8);
+}
+#contact .rond {
+  border: solid 5px #1B2E59;
+}
+#contact p {
+  margin-left: 10%;
+}
+#objets .filtre {
+  background-color: rgba(230, 38, 81, 0.8);
+}
+#objets .rond {
+  border: solid 5px #B6DEDE;
+}
+#objets p {
+  margin-right: 10%;
+}
+/* CHOIX INSCRIPTIONS ************************************************************/
+#inscriptions i {
+  display: none;
+}
+#inscriptions .choix > div {
+  display: flex;
+  flex-direction: column;
+}
+#inscriptions .bouton {
+  width: 100%;
+  white-space: normal;
+}
+/* FORMULAIRE INSCRIPTION ************************************************************/
+#formulaire-inscription form {
+  min-width: 200px;
+  width: 70%;
+  flex-direction: column;
+}
+#formulaire-inscription input {
+  width: 100%;
+}

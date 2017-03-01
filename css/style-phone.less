@@ -1,0 +1,196 @@
+/* Couleurs ************************************************************/
+@rose : #E62651;
+@violet : #AC1738;
+@bleu : #B6DEDE;
+@marine : #1B2E59;
+@blanc : #F2EEE9;
+@beige : #EFE8DF;
+@jaune : #E6DACB;
+@gris : #9E9E9E;
+
+
+/* Pages non-connecté ************************************************************/
+
+.deconnecte{
+  & hr{
+    width: 70%;
+    min-width: 200px;
+  }
+}
+
+/* INDEX ************************************************************/
+
+.formulaire-index{
+
+  & form{
+    width: 70%;
+    min-width: 200px;
+  }
+}
+
+.logo-home{
+  width: 70%;
+  min-width: 200px;
+  margin: 25px auto 20px auto;
+}
+
+// TRIANGLES //
+.triangle{
+  display: none;
+}
+
+// FONCTIONNALITES //
+
+.index {
+  & h1 {
+    font-size: 10vw;
+    padding-top: 30px;
+  }
+
+  & .filtre{
+    height: 100vh;
+  }
+
+  & .rond{
+    width: 100px;
+    height: 100px;
+    top: 30%;
+  }
+
+  & p{
+    margin: 220px 20px 20px 20px;
+    line-height: 25px;
+  }
+}
+
+
+// 1 - ACTUALITES //
+#actus{
+  & .filtre{
+    background-color: fade(@bleu, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @marine;
+  }
+
+  & p{
+    margin-left: 20px;
+    color: black;
+    border: solid 5px @rose;
+  }
+}
+
+// 2 - ÉVÉNEMENT //
+#events{
+  & .filtre{
+    background-color: fade(@rose, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @bleu;
+  }
+
+  & p{
+    margin-right: 20px;
+  }
+}
+
+// 3 - EDT //
+#edt{
+  & .filtre{
+    background-color: fade(@marine, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @blanc;
+  }
+
+  & p{
+    margin-left: 20px;
+  }
+}
+
+// 4 - ABSENCES //
+#absences{
+  & .filtre{
+    background-color: fade(@beige, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @rose;
+  }
+
+  & p{
+    margin-right: 20px;
+  }
+}
+
+// 5 - CONTACT //
+#contact{
+  & .filtre{
+    background-color: fade(@bleu, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @marine;
+  }
+
+  & p{
+    margin-left: 20px;
+  }
+}
+
+// 6 - OBJETS PERDUS //
+#objets{
+  & .filtre{
+    background-color: fade(@rose, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @bleu;
+  }
+
+  & p{
+    margin-right: 20px;
+  }
+}
+
+
+/* CHOIX INSCRIPTIONS ************************************************************/
+#inscriptions{
+
+  & i{
+    display: none;
+  }
+
+  & .choix{
+    margin: 0 auto 10px auto;
+  }
+
+  & .choix > div{
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .bouton{
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+
+/* FORMULAIRE INSCRIPTION ************************************************************/
+
+#formulaire-inscription{
+
+  & form{
+    min-width: 200px;
+    width: 70%;
+    flex-direction: column;
+  }
+
+  & input{
+    width: 100%;
+  }
+}
