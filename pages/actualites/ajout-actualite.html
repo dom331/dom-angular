@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../../css/style-desktop.css" media="all">
     <link rel="stylesheet" href="../../css/style-tablet.css" media="all and (min-width: 420px) and (max-width: 980px)">
     <link rel="stylesheet" href="../../css/style-phone.css" media="all and (max-width: 420px)">
+
+    <script src="../../js/jquery-1.11.3.js"></script>
+    <script src="../../js/radio.js"></script>
 </head>
 
 <body class="connecte">
@@ -86,11 +89,17 @@
            <div>
                <input class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
                <input class="ajout" title="image" type="text" placeholder="Image : choisissez un fichier"/>
+
                <h3>Appliquer la mention "urgent"?</h3>
-               <input title="urgent" type="radio" value="oui"/>Oui
-               <input title="urgent" type="radio" value="non"/>Non
-            <br/>
-               <a class="bouton" href="../../index.html">Soumettre</a>
+
+               <div class="boutons-radio">
+                  <input type="radio" name="group1" value="Milk" id="rad1">
+                  <label class="label" for="rad1">Oui</label>
+                  <input type="radio" name="group1" value="Milk" id="rad2">
+                  <label class="label" for="rad2">Non</label>
+               </div>
+
+               <input type="submit" class="bouton" title="submit" value="Soumettre" href="../../index.html">
            </div>
         </form>
 

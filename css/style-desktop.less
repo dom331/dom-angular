@@ -784,14 +784,40 @@ main{
   }
 
   & .ajout{
+    font-size: 18px;
+    font-family: "Open Sans Semibold", sans-serif;
     border-radius: 5px;
     border: 2px solid @gris;
     width: 100%;
     padding: 5px 0 5px 10px;
   }
 
-  .bouton{
-    width: 500px;
+  .boutons-radio{
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
   }
+
+  & input[type="radio"]{
+    display: none;
+  }
+
+  & .label{
+    text-transform: uppercase;
+    color: @rose;
+    font-size: 18px;
+    padding-top: 12px;
+    text-align: center;
+    border: 2px solid @rose;
+    border-radius: 5px;
+    width: 140px;
+    height: 45px;
+  }
+
+  .bouton{
+    height: 45px;
+    padding: 0;
+  }
+
 }
 
