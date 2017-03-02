@@ -612,11 +612,33 @@ main hr {
   height: 45px;
 }
 #ajout-actualite .ajout {
+  font-size: 18px;
+  font-family: "Open Sans Semibold", sans-serif;
   border-radius: 5px;
   border: 2px solid #9E9E9E;
   width: 100%;
   padding: 5px 0 5px 10px;
 }
+#ajout-actualite .boutons-radio {
+  width: 100%;
+  margin: 0 10px;
+  display: flex;
+}
+#ajout-actualite input[type="radio"] {
+  display: none;
+}
+#ajout-actualite .label {
+  text-transform: uppercase;
+  color: #E62651;
+  font-size: 18px;
+  padding-top: 12px;
+  text-align: center;
+  border: 2px solid #E62651;
+  border-radius: 5px;
+  width: 140px;
+  height: 45px;
+}
 #ajout-actualite .bouton {
-  width: 500px;
+  height: 45px;
+  padding: 0;
 }
