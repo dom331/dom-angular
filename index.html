@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>DOM</title>
@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="css/style-desktop.css" media="all">
     <link rel="stylesheet" href="css/style-tablet.css" media="all and (min-width: 420px) and (max-width: 980px)">
     <link rel="stylesheet" href="css/style-phone.css" media="all and (max-width: 420px)">
+
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-locale_fr.js"></script>
+    <script src="js/angular-messages.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>
 </head>
 
 <body class="index deconnecte">
@@ -21,8 +29,8 @@
         <form action="#">
             <input title="id" type="text" placeholder="Identifiant" />
             <input title="psw" type="password" placeholder="Mot de passe" />
-            <a class="bouton btn-deco" href="actualites.html">Connexion</a>
-            <a class="bouton btn-deco" href="inscriptions.html">Inscription</a>
+            <a class="bouton btn-deco" href="pages/actualites.html">Connexion</a>
+            <a class="bouton btn-deco" href="pages/inscriptions.html">Inscription</a>
         </form>
         <hr>
         <a href="http://mmimontbeliard.com"><img class="logo-mmi" src="medias/interface/logos/mmi.png" alt="Logo MMI Montbéliard"></a>
