@@ -385,7 +385,7 @@ input {
   font-size: 18px;
 }
 #menu i:hover {
-  color: #AC1738;
+  color: #B6DEDE;
   transition: 0.3s ease;
 }
 #menu .photo {
@@ -416,11 +416,6 @@ input {
 }
 .fa-bell {
   position: relative;
-}
-.fa-bell:hover #notification {
-  background-color: #AC1738;
-  color: white;
-  transition: 0.3s ease;
 }
 #notification {
   font-size: 14px;
@@ -506,7 +501,7 @@ a[href="https://sedna.univ-fcomte.fr/direct/myplanning.jsp"] {
   margin-left: 320px;
 }
 main {
-  padding: 20px 60px;
+  padding: 20px 35px;
 }
 main h1 {
   margin-left: 20px;
@@ -527,7 +522,7 @@ main hr {
   color: #AC1738;
 }
 /* ACTUALITES ************************************************************/
-a[href="ajout-actualite.html"] {
+.button-plus {
   position: absolute;
   right: 80px;
   top: 170px;
@@ -536,7 +531,6 @@ a[href="ajout-actualite.html"] {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .actu {
   position: relative;
