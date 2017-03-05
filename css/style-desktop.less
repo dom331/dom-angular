@@ -821,3 +821,41 @@ main{
 
 }
 
+
+/* ADMINISTRATION ************************************************************/
+.mainAdmin{
+  padding:10px 60px;
+}
+
+.administration{
+  & p{
+    border: 2px solid @bleu;
+  }
+
+  & .liste{
+    width:100%;
+    overflow: hidden;
+  }
+
+  & .liste .inside{
+    display: flex;
+    width:100%;
+  }
+
+  & .boutonav{
+    background-image: url("../medias/interface/icones/plus.png");
+    width: 35px;
+    height: 35px;
+  }
+
+  & .liste .inside img{
+    margin: 30px;
+    border: 4px solid @rose;
+    border-radius: 50%;
+    width:150px;
+    height: 150px;
+  }
+  & .membres, .evenements{
+    background-color: @jaune;
+  }
+}
