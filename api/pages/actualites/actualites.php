@@ -42,8 +42,9 @@ $param = array(
     "liste" => $liste,
     "notifs" => $notifs,
     "session" => $_SESSION);
-json_encode($param);
-print_r( $param);
-//var_dump($param) or die();
+
+$infos = json_encode($param);
+print_r($infos);
+//var_dump($param);
 
 ?>

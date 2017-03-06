@@ -13,7 +13,7 @@ app.controller('IndexController', function($scope, $http) {
         // On fait un petit pack des infos pour que ce soit plus propre
         var info = {
             method: 'POST',
-            url: 'http://localhost/dom-angular/api/pages/divers/index.php',
+            url: 'http://localhost/dom-angular/visiteur/api/pages/divers/index.php',
             data: {
                 user: user.log,
                 psw: user.lepsw
@@ -47,10 +47,10 @@ app.controller('ActuController', function($scope, $http) {
 
     $http.get("http://localhost/dom-angular/api/pages/actualites/actualites.php")
         .then(function success(response) {
-            $scope.infoUsers = response.data;
-            console.log(response.data);
+            $scope.donnees = response.data;
+            console.log($scope.donnees);
         }, function myError(response) {
-            $scope.infoUsers = response.statusText;
+            $scope.donnees = response.statusText;
             console.log(response.data);
         });
 
