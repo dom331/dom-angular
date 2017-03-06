@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html ng-app="app" ng-controller="ActuController" lang="en" class="connecte">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>DOM</title>
@@ -18,103 +18,68 @@
     <script src="js/angular-messages.js"></script>
     <script src="js/jquery-1.11.3.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
     <script src="app/controllers.js"></script>
+
 </head>
 
-<body class="index deconnecte">
+<body class="connecte">
 
-    <div class="formulaire-index">
-        <a href="index.html"><img class="logo-home" src="medias/interface/logos/logo_dom_home.png" alt="Logo DOM MMI"></a>
-        <hr>
-        <form action="#">
-            <input title="id" type="text" placeholder="Identifiant" />
-            <input title="psw" type="password" placeholder="Mot de passe" />
-            <a class="bouton btn-deco" href="pages/actualites.html">Connexion</a>
-            <a class="bouton btn-deco" href="pages/inscriptions.html">Inscription</a>
-        </form>
-        <hr>
-        <a href="http://mmimontbeliard.com"><img class="logo-mmi" src="medias/interface/logos/mmi.png" alt="Logo MMI Montbéliard"></a>
-        <div class="triangle bas"></div>
+<div id="menu">
+    <div class="icones">
+        <a href="administration.html"><i class="fa fa-bell" aria-hidden="true"><span id="notification">8</span></i></a>
+        <a href="visiteur/"><i class="fa fa-power-off" aria-hidden="true"></i></a>
     </div>
 
-    <div id="actus">
-        <div class="filtre">
-            <h1>Actualités</h1>
-            <div class="rond">
-                <i class="fa fa-newspaper-o fa-3x" aria-hidden="true"></i>
-            </div>
-            <p class="actu-home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur culpa
-                cupiditate, deleniti dignissimos ea eos explicabo illum nisi nobis nostrum officia officiis omnis, porro
-                quasi sequi suscipit tempora veniam?</p>
+    <a href="profil/profil.html"><img src="medias/interface/photo.jpg" alt="Photo" class="photo"></a>
+
+    <h2>KEVIN</h2>
+
+    <hr>
+
+    <ul>
+        <li><a class="pages-menu" href="#/">Actualités</a></li>
+        <li><a class="pages-menu" href="#/evenements">Événements</a></li>
+        <li><a class="pages-menu" href="#/vie-scolaire">Vie scolaire</a></li>
+        <li><a class="pages-menu" href="#/membres">Membres</a></li>
+    </ul>
+
+    <hr>
+
+    <a class="pages-menu" href="#/administration">Administration</a>
+
+    <hr>
+
+    <ul class="contact">
+        <li><a href="https://www.facebook.com/mmimontbeliard/?fref=ts"></a><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></li>
+        <li><a href="https://twitter.com/mmimontbeliard"></a><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></li>
+        <li><a href="https://fr.linkedin.com/company/src-media"></a><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></li>
+    </ul>
+
+    <a href="http://mmimontbeliard.com"><img class="logo-mmi" src="medias/interface/logos/mmi.png" alt="Logo MMI Montbéliard"></a>
+
+
+    <p>Site réalisé dans le cadre d’un projet au <a href="http://mmimontbeliard.com"><b>département MMI</b></a> de Montbéliard.
+    <p>Tous droits réservés - 2016/2017</p>
+    </p>
+</div>
+
+<div id="contenu" >
+    <header>
+        <img id="hamburger" src="medias/interface/icones/menu.png" alt="Menu Hamburger">
+        <a href="#/"><img class="logo-dom" src="medias/interface/logos/logo_dom.png" alt="Logo DOM MMI"></a>
+        <div id="liens-externes">
+            <a class="externe" href="https://mail-edu.univ-fcomte.fr"></a>
+            <a class="externe" href="https://absences.pu-pm.univ-fcomte.fr"></a>
+            <a class="externe" href="http://moodle.univ-fcomte.fr"></a>
+            <a class="externe" href="https://sedna.univ-fcomte.fr/direct/myplanning.jsp"></a>
         </div>
-        <div class="triangle droite"></div>
-    </div>
+    </header>
 
-    <div id="events">
-        <div class="filtre">
-            <h1>Événements</h1>
-            <div class="rond">
-                <i class="fa fa-star fa-3x" aria-hidden="true"></i>
-            </div>
-            <p class="actu-home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur culpa
-                cupiditate, deleniti dignissimos ea eos explicabo illum nisi nobis nostrum officia officiis omnis, porro
-                quasi sequi suscipit tempora veniam?</p>
-        </div>
-        <div class="triangle gauche"></div>
-    </div>
 
-    <div id="edt">
-        <div class="filtre">
-            <h1>Emploi
-du temps</h1>
-            <div class="rond">
-                <i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
-            </div>
-            <p class="actu-home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur culpa
-                cupiditate, deleniti dignissimos ea eos explicabo illum nisi nobis nostrum officia officiis omnis, porro
-                quasi sequi suscipit tempora veniam?</p>
-        </div>
-        <div class="triangle droite"></div>
-    </div>
+    <main ng-view>
 
-    <div id="absences">
-        <div class="filtre">
-            <h1>Absences</h1>
-            <div class="rond">
-                <i class="fa fa-user-times fa-3x" aria-hidden="true"></i>
-            </div>
-            <p class="actu-home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur culpa
-                cupiditate, deleniti dignissimos ea eos explicabo illum nisi nobis nostrum officia officiis omnis, porro
-                quasi sequi suscipit tempora veniam?</p>
-        </div>
-        <div class="triangle gauche"></div>
-    </div>
-
-    <div id="contact">
-        <div class="filtre">
-            <h1>Contact</h1>
-            <div class="rond">
-                <i class="fa fa-paper-plane fa-3x" aria-hidden="true"></i>
-            </div>
-            <p class="actu-home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur culpa
-                cupiditate, deleniti dignissimos ea eos explicabo illum nisi nobis nostrum officia officiis omnis, porro
-                quasi sequi suscipit tempora veniam?</p>
-        </div>
-        <div class="triangle droite"></div>
-    </div>
-
-    <div id="objets">
-        <div class="filtre">
-            <h1>Objets
-perdus</h1>
-            <div class="rond">
-                <i class="fa fa-unlink fa-3x" aria-hidden="true"></i>
-            </div>
-            <p class="actu-home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur culpa
-                cupiditate, deleniti dignissimos ea eos explicabo illum nisi nobis nostrum officia officiis omnis, porro
-                quasi sequi suscipit tempora veniam?</p>
-        </div>
-        <div class="triangle gauche"></div>
-    </div>
+    </main>
+</div>
 </body>
 </html>

@@ -2,22 +2,19 @@ app.config(function($routeProvider) {
     $routeProvider
         .when
         ("/", {
-            templateUrl: "pages/actualite.html"
+            templateUrl: "pages/actualites.html",
+            controller: "ActuController"
         })
-        // .when
-        // ("/presentation", {
-        //     templateUrl: "pages/presentation.html"
-        // })
-        // .when
-        // ("/competences", {
-        //     templateUrl: "pages/competences.html"
-        //
-        // })
-        // .when
-        // ("/creations", {
-        //     templateUrl: "pages/creations.html"
-        //
-        // })
+        .when
+        ("/evenements", {
+            templateUrl: "pages/evenements.html",
+            controller: "EventController"
+        })
+        .when
+        ("/administration", {
+            templateUrl: "pages/administration.html",
+            controller: "AdminController"
+        })
         .otherwise
         ({
             redirectTo: "/"
