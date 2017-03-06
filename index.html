@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html ng-app="app" ng-controller="MainController" lang="fr">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>DOM</title>
@@ -18,6 +18,7 @@
     <script src="js/angular-messages.js"></script>
     <script src="js/jquery-1.11.3.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
     <script src="app/controllers.js"></script>
 </head>
 
@@ -26,11 +27,12 @@
     <div class="formulaire-index">
         <a href="index.html"><img class="logo-home" src="medias/interface/logos/logo_dom_home.png" alt="Logo DOM MMI"></a>
         <hr>
-        <form action="#">
-            <input title="id" type="text" placeholder="Identifiant" />
-            <input title="psw" type="password" placeholder="Mot de passe" />
-            <a class="bouton btn-deco" href="pages/actualites.html">Connexion</a>
+        <form ng-submit="connectUser(user)">
+            <input ng-model="user.log" title="id" type="text" placeholder="Identifiant" />
+            <input ng-model="user.lepsw" title="psw" type="password" placeholder="Mot de passe" />
+            <input type="submit" class="bouton btn-deco" href="pages/actualites.html" value="Connexion"/>
             <a class="bouton btn-deco" href="pages/inscriptions.html">Inscription</a>
+            {{message}}
         </form>
         <hr>
         <a href="http://mmimontbeliard.com"><img class="logo-mmi" src="medias/interface/logos/mmi.png" alt="Logo MMI Montbéliard"></a>
