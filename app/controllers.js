@@ -1,5 +1,6 @@
-app.controller('MainController', function($scope, $http) {
 
+
+app.controller('IndexController', function($scope, $http) {
 
     // connectUser START
     $scope.connectUser = function(user){
@@ -37,6 +38,12 @@ app.controller('MainController', function($scope, $http) {
 
 
     };
+
+}); // connectUser END
+
+
+
+app.controller('ActuController', function($scope, $http) {
 
     $http.get("http://localhost/dom-angular/api/pages/actualites/actualites.php")
         .then(function success(response) {

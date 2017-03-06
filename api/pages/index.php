@@ -6,7 +6,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 
 $data = json_decode(file_get_contents("php://input"));
 $log = $data->user;
-$psw = $data->psw;
+$psw = $data->psw; //AJOUTER SHA1() ICI
 
 if(isset($_SESSION["toto"])) {
     header('Location: index.php?page=actualites');

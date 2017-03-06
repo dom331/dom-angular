@@ -2,13 +2,13 @@ app.config(function($routeProvider) {
     $routeProvider
         .when
         ("/", {
-            templateUrl: "pages/actualite.html",
-            controller: "MainController"
+            templateUrl: "pages/index.html",
+            controller: "IndexController"
         })
         .when
         ("/pages/actualites", {
             templateUrl: "pages/actualites.html",
-            controller: "MainController"
+            controller: "ActuController"
         })
         // .when
         // ("/competences", {
