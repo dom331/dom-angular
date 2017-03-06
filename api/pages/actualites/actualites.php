@@ -1,5 +1,6 @@
 <?php
 
+
 require_once '../../dao/DaoActualite.php';
 
 //var_dump($_SESSION) or die();
@@ -17,13 +18,12 @@ for($i=0;$i<count($liste); $i++){
 
 }
 
-
 //var_dump($param) or die();
 
 
 
-require_once ("../../dao/DaoUtilisateur.php");
-require_once ('../../dao/DaoEvenements.php');
+require_once("../../dao/DaoUtilisateur.php");
+require_once('../../dao/DaoEvenements.php');
 $daoU = new DaoUtilisateur();
 
 $liste2 = $daoU->getNonApprouve();
@@ -43,6 +43,7 @@ $param = array(
     "notifs" => $notifs,
     "session" => $_SESSION);
 json_encode($param);
-echo $param;
+print_r( $param);
 //var_dump($param) or die();
+
 ?>

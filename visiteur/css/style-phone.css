@@ -1,0 +1,116 @@
+
+/* Couleurs ************************************************************/
+/* Pages non-connecté ************************************************************/
+.deconnecte hr {
+  width: 70%;
+  min-width: 200px;
+}
+/* INDEX ************************************************************/
+.formulaire-index form {
+  width: 70%;
+  min-width: 200px;
+}
+.logo-home {
+  width: 70%;
+  min-width: 200px;
+  margin: 25px auto 20px auto;
+}
+.triangle {
+  display: none;
+}
+.index h1 {
+  font-size: 10vw;
+  padding-top: 30px;
+}
+.index .filtre {
+  height: 100vh;
+}
+.index .rond {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+}
+.index p {
+  margin: 220px 20px 20px 20px;
+  line-height: 25px;
+}
+#actus .filtre {
+  background-color: rgba(182, 222, 222, 0.8);
+}
+#actus .rond {
+  border: solid 5px #1B2E59;
+}
+#actus p {
+  margin-left: 20px;
+  color: black;
+  border: solid 5px #E62651;
+}
+#events .filtre {
+  background-color: rgba(230, 38, 81, 0.8);
+}
+#events .rond {
+  border: solid 5px #B6DEDE;
+}
+#events p {
+  margin-right: 20px;
+}
+#edt .filtre {
+  background-color: rgba(27, 46, 89, 0.8);
+}
+#edt .rond {
+  border: solid 5px #F2EEE9;
+}
+#edt p {
+  margin-left: 20px;
+}
+#absences .filtre {
+  background-color: rgba(239, 232, 223, 0.8);
+}
+#absences .rond {
+  border: solid 5px #E62651;
+}
+#absences p {
+  margin-right: 20px;
+}
+#contact .filtre {
+  background-color: rgba(182, 222, 222, 0.8);
+}
+#contact .rond {
+  border: solid 5px #1B2E59;
+}
+#contact p {
+  margin-left: 20px;
+}
+#objets .filtre {
+  background-color: rgba(230, 38, 81, 0.8);
+}
+#objets .rond {
+  border: solid 5px #B6DEDE;
+}
+#objets p {
+  margin-right: 20px;
+}
+/* CHOIX INSCRIPTIONS ************************************************************/
+#inscriptions i {
+  display: none;
+}
+#inscriptions .choix {
+  margin: 0 auto 10px auto;
+}
+#inscriptions .choix > div {
+  display: flex;
+  flex-direction: column;
+}
+#inscriptions .bouton {
+  width: 100%;
+  white-space: normal;
+}
+/* FORMULAIRE INSCRIPTION ************************************************************/
+#formulaire-inscription form {
+  min-width: 200px;
+  width: 70%;
+  flex-direction: column;
+}
+#formulaire-inscription input {
+  width: 100%;
+}

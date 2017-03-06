@@ -13,7 +13,7 @@ app.controller('IndexController', function($scope, $http) {
         // On fait un petit pack des infos pour que ce soit plus propre
         var info = {
             method: 'POST',
-            url: 'http://localhost/dom-angular/api/pages/index.php',
+            url: 'http://localhost/dom-angular/api/pages/divers/index.php',
             data: {
                 user: user.log,
                 psw: user.lepsw
@@ -30,7 +30,7 @@ app.controller('IndexController', function($scope, $http) {
             console.log("ENVOYE A PHP: OUI");
             console.log("PHP SAYS: " + data);
             $scope.message = data;
-            window.location.href = 'http://localhost/dom-angular/pages/actualites.html';
+            window.location.href = '../pages/actualites';
         }).error(function(data, status, headers, config){
             // si jamais ca merde sur l'envoi
             console.log("Erreur: "+data+status);
@@ -55,3 +55,12 @@ app.controller('ActuController', function($scope, $http) {
         });
 
 }); // connectUser END
+
+
+app.controller('EventController', function($scope, $http) {
+
+});
+
+app.controller('AdminController', function($scope, $http) {
+
+});

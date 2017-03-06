@@ -1,0 +1,679 @@
+html{
+    background-color: #1B2E59; /* LE TEMPS de nettoyer les css */
+}
+
+/* Polices ************************************************************/
+@font-face {
+  font-family: Raleway;
+  src: url(../fonts/Raleway/Raleway-Regular.ttf);
+  src: url(../fonts/Raleway/Raleway-Bold.ttf);
+  src: url(../fonts/Raleway/Raleway-Light.ttf);
+  src: url(../fonts/Raleway/Raleway-Semibold.ttf);
+  src: url(../fonts/Raleway/Raleway-Thin.ttf);
+}
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
+/* Couleurs ************************************************************/
+/* Global ************************************************************/
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: Raleway, sans-serif;
+}
+body {
+  background-color: #EFE8DF;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+h1 {
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 25px;
+  white-space: pre-wrap;
+}
+h2 {
+  margin: 0;
+}
+input {
+  font-family: "Open Sans Semibold", sans-serif;
+}
+.bouton {
+  transition: 0.5s ease;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #E62651;
+  border: solid 2px #AC1738;
+  width: 100%;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+.bouton:hover {
+  background-color: white;
+  color: #E62651;
+}
+.btn-deco {
+  border-radius: 5px;
+  height: 45px;
+  max-height: 45px;
+}
+/* Pages non-connecté ************************************************************/
+.deconnecte {
+  background-color: #1B2E59;
+  text-align: center;
+}
+.deconnecte hr {
+  width: 40%;
+  min-width: 320px;
+  margin: 0 auto 0 auto;
+}
+.logo-home {
+  width: 275px;
+  margin: 25px auto 20px auto;
+}
+.logo-mmi {
+  width: 60px;
+  margin-top: 15px;
+}
+/* INDEX ************************************************************/
+.formulaire-index {
+  position: relative;
+}
+.formulaire-index form {
+  margin: 20px auto;
+  width: 40%;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.formulaire-index input {
+  border-radius: 5px;
+  height: 45px;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #9E9E9E;
+  border: solid 2px #9E9E9E;
+  text-indent: 10px;
+}
+.triangle {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+}
+.bas {
+  bottom: 0;
+  right: 0;
+  border-bottom: 100vh solid rgba(182, 222, 222, 0.8);
+  border-left: 100vw solid transparent;
+}
+.droite {
+  top: 0;
+  right: 0;
+  border-left: 100vw solid transparent;
+}
+.gauche {
+  top: 0;
+  left: 0;
+  border-right: 100vw solid transparent;
+}
+.index h1 {
+  font-size: 6vw;
+  margin-top: 0;
+  letter-spacing: 8px;
+  text-align: center;
+  padding-top: 20px;
+}
+.index .rond {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.index i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.index p {
+  font-family: "Open Sans", sans-serif;
+  margin: 0 20px 20px 20px;
+  font-size: 16px;
+  padding: 10px;
+  line-height: 45px;
+}
+.index > div {
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+#actus {
+  background: url(../medias/background/actus.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#actus h1 {
+  color: #E62651;
+}
+#actus i {
+  color: #1B2E59;
+}
+#actus .rond {
+  background: #B6DEDE;
+  border: solid 10px #1B2E59;
+}
+#actus p {
+  margin-left: 60%;
+  color: black;
+  border: solid 5px #E62651;
+}
+#actus .triangle {
+  border-top: 100vh solid rgba(182, 222, 222, 0.8);
+}
+#events {
+  background: url(../medias/background/events.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#events h1 {
+  color: #E6DACB;
+}
+#events i {
+  color: #B6DEDE;
+}
+#events .rond {
+  background: #E62651;
+  border: solid 10px #B6DEDE;
+}
+#events p {
+  margin-right: 60%;
+  color: #F2EEE9;
+  border: solid 5px #E6DACB;
+}
+#events .triangle {
+  border-top: 100vh solid rgba(230, 38, 81, 0.8);
+}
+#edt {
+  background: url(../medias/background/edt.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#edt h1 {
+  color: #B6DEDE;
+}
+#edt i {
+  color: #F2EEE9;
+}
+#edt .rond {
+  background: #1B2E59;
+  border: solid 10px #F2EEE9;
+}
+#edt p {
+  margin-left: 60%;
+  color: #F2EEE9;
+  border: solid 5px #B6DEDE;
+}
+#edt .triangle {
+  border-top: 100vh solid rgba(27, 46, 89, 0.8);
+}
+#absences {
+  background: url(../medias/background/absences.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#absences h1 {
+  color: #1B2E59;
+}
+#absences i {
+  color: #E62651;
+}
+#absences .rond {
+  background: #E6DACB;
+  border: solid 10px #E62651;
+}
+#absences p {
+  margin-right: 60%;
+  color: black;
+  border: solid 5px #1B2E59;
+}
+#absences .triangle {
+  border-top: 100vh solid rgba(239, 232, 223, 0.8);
+}
+#contact {
+  background: url(../medias/background/contact.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#contact h1 {
+  color: #E62651;
+}
+#contact i {
+  color: #1B2E59;
+}
+#contact .rond {
+  background: #B6DEDE;
+  border: solid 10px #1B2E59;
+}
+#contact p {
+  margin-left: 60%;
+  color: black;
+  border: solid 5px #E62651;
+}
+#contact .triangle {
+  border-top: 100vh solid rgba(182, 222, 222, 0.8);
+}
+#objets {
+  background: url(../medias/background/objets.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#objets h1 {
+  color: #E6DACB;
+}
+#objets i {
+  color: #B6DEDE;
+}
+#objets .rond {
+  background: #E62651;
+  border: solid 10px #B6DEDE;
+}
+#objets p {
+  margin-right: 60%;
+  color: #F2EEE9;
+  border: solid 5px #E6DACB;
+}
+#objets .triangle {
+  border-top: 100vh solid rgba(230, 38, 81, 0.8);
+}
+/* CHOIX INSCRIPTIONS ************************************************************/
+#inscriptions h1 {
+  color: white;
+  margin: 20px auto 10px auto;
+}
+#inscriptions i {
+  color: #B6DEDE;
+}
+#inscriptions .choix {
+  margin: 10px auto 30px auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+#inscriptions .choix > div {
+  display: flex;
+  justify-content: space-around;
+}
+#inscriptions .bouton {
+  text-align: center;
+  width: 30%;
+  height: auto;
+  min-height: 45px;
+  margin: 10px auto;
+  padding: 15px 5px;
+  color: white;
+  background-color: #E62651;
+  border: solid 2px #AC1738;
+  white-space: pre-wrap;
+}
+#inscriptions .bouton:hover {
+  background-color: white;
+  color: #E62651;
+}
+/* FORMULAIRE INSCRIPTION ************************************************************/
+#formulaire-inscription h1 {
+  color: white;
+  margin: 20px auto 10px auto;
+}
+#formulaire-inscription form {
+  margin: 10px auto;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#formulaire-inscription input {
+  border-radius: 5px;
+  height: 45px;
+  width: 49%;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #9E9E9E;
+  border: solid 2px #9E9E9E;
+  text-indent: 10px;
+}
+#formulaire-inscription input:last-of-type {
+  width: 100%;
+}
+/* MENU ************************************************************/
+#menu {
+  background-color: #E62651;
+  width: 320px;
+  min-width: 320px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  position: fixed;
+}
+#menu .icones {
+  width: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+#menu i:hover {
+  color: #B6DEDE;
+  transition: 0.3s ease;
+}
+#menu .photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #AC1738;
+}
+#menu h2 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+#menu hr {
+  width: 125px;
+  border: 1px solid white;
+  margin: 10px auto;
+}
+#menu a {
+  color: white;
+}
+#menu .contact {
+  margin: 15px auto 0 auto;
+  width: 200px;
+}
+#menu p {
+  margin-top: 15px;
+  font-size: 10px;
+}
+.fa-bell {
+  position: relative;
+}
+#notification {
+  font-size: 14px;
+  font-family: "Open Sans Semibold", sans-serif;
+  color: #AC1738;
+  padding: 2.5px;
+  top: -15px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+.pages-menu {
+  text-transform: uppercase;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  display: block;
+  padding: 15px 20px;
+  transition: 1s ease;
+  letter-spacing: 2px;
+}
+.pages-menu:hover {
+  background-color: #AC1738;
+}
+.contact {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+}
+/* HEADER ************************************************************/
+header {
+  padding: 15px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #F2EEE9;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+#hamburger {
+  height: 60px;
+  width: 60px;
+  display: none;
+}
+.logo-dom {
+  width: 200px;
+  margin-left: 60px;
+}
+#liens-externes {
+  margin: 55px 60px 0 0;
+  width: 520px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.externe {
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: block;
+  width: 60px;
+  height: 60px;
+  transition: 0.5s ease;
+}
+.externe:hover {
+  background-color: #B6DEDE;
+}
+a[href="https://mail-edu.univ-fcomte.fr"] {
+  background-image: url(../medias/interface/icones/mail.png);
+}
+a[href="https://absences.pu-pm.univ-fcomte.fr"] {
+  background-image: url(../medias/interface/icones/absent.png);
+}
+a[href="http://moodle.univ-fcomte.fr"] {
+  background-image: url(../medias/interface/icones/moodle.png);
+}
+a[href="https://sedna.univ-fcomte.fr/direct/myplanning.jsp"] {
+  background-image: url(../medias/interface/icones/calendrier.png);
+}
+/* PAGE CONNECTE ************************************************************/
+#contenu {
+  margin-left: 320px;
+}
+main {
+  padding: 20px 35px;
+}
+main h1 {
+  margin-left: 20px;
+  font-size: 35px;
+  color: #1B2E59;
+}
+main hr {
+  border: 1px solid #1B2E59;
+  width: 265px;
+  margin: 0 0 0 20px;
+}
+.fa-plus-square {
+  color: #E62651;
+  transition: 0.5s ease;
+}
+.fa-plus-square:hover {
+  transform: rotate(180deg);
+  color: #AC1738;
+}
+/* ACTUALITES ************************************************************/
+.button-plus {
+  position: absolute;
+  right: 80px;
+  top: 170px;
+}
+.liste-actu {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.actu {
+  position: relative;
+  text-transform: uppercase;
+  margin: 20px;
+  transition: 0.5s ease;
+}
+.actu span {
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 40px;
+  background-color: #E62651;
+  z-index: 1;
+}
+.actu h2 {
+  color: #B6DEDE;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(27, 46, 89, 0.8);
+  padding-left: 50px;
+}
+.principale img {
+  width: 520px;
+  height: 240px;
+  border: 2px solid #E62651;
+}
+.principale h2 {
+  font-size: 24px;
+  padding-top: 8px;
+}
+.principale:hover {
+  -webkit-box-shadow: 0 0 10px 1px #E62651;
+  box-shadow: 0 0 10px 1px #E62651;
+}
+.secondaire img {
+  width: 240px;
+  height: 240px;
+  border: 2px solid #1B2E59;
+}
+.secondaire h2 {
+  font-size: 16px;
+  padding-top: 12px;
+}
+.secondaire:hover {
+  -webkit-box-shadow: 0 0 10px 1px #1B2E59;
+  box-shadow: 0 0 10px 1px #1B2E59;
+}
+/* AJOUT-ACTUALITES ************************************************************/
+.explications {
+  border: 2px solid #B6DEDE;
+  background-color: #F2EEE9;
+  padding: 10px;
+  margin: 20px 0 20px 20px;
+  font-size: 16px;
+}
+#ajout-actualite {
+  display: flex;
+  justify-content: space-between;
+}
+#ajout-actualite * {
+  margin: 10px;
+}
+#ajout-actualite > div {
+  width: 100%;
+  margin: 0 10px;
+}
+#ajout-actualite h3 {
+  color: #E62651;
+  font-size: 18px;
+}
+#ajout-actualite input {
+  height: 45px;
+}
+#ajout-actualite .ajout {
+  font-size: 18px;
+  font-family: "Open Sans Semibold", sans-serif;
+  border-radius: 5px;
+  border: 2px solid #9E9E9E;
+  width: 100%;
+  padding: 5px 0 5px 10px;
+}
+#ajout-actualite .boutons-radio {
+  width: 100%;
+  margin: 0 10px;
+  display: flex;
+}
+#ajout-actualite input[type="radio"] {
+  display: none;
+}
+#ajout-actualite .label {
+  text-transform: uppercase;
+  color: #E62651;
+  font-size: 18px;
+  padding-top: 12px;
+  text-align: center;
+  border: 2px solid #E62651;
+  border-radius: 5px;
+  width: 140px;
+  height: 45px;
+}
+#ajout-actualite .bouton {
+  height: 45px;
+  padding: 0;
+}
+/* ADMINISTRATION ************************************************************/
+.mainAdmin {
+  padding: 10px 60px;
+}
+.administration p {
+  border: 2px solid #B6DEDE;
+}
+.administration .liste {
+  width: 100%;
+  overflow: hidden;
+}
+.administration .liste .inside {
+  display: flex;
+  width: 100%;
+}
+.administration .boutonav {
+  background-image: url("../medias/interface/icones/plus.png");
+  width: 35px;
+  height: 35px;
+}
+.administration .liste .inside img {
+  margin: 30px;
+  border: 4px solid #E62651;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+.administration .membres,
+.administration .evenements {
+  background-color: #E6DACB;
+}

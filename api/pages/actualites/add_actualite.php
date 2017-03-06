@@ -1,6 +1,6 @@
 <?php
 
-require_once 'dao/DaoActualite.php';
+require_once '../../dao/DaoActualite.php';
 
 if(isset($_POST["soumettre"])) {
 
@@ -37,8 +37,8 @@ if(isset($_POST["soumettre"])) {
         echo  "erreur";
     }
 }
-require_once ('dao/DaoUtilisateur.php');
-require_once ('dao/DaoEvenements.php');
+require_once('../../dao/DaoUtilisateur.php');
+require_once('../../dao/DaoEvenements.php');
 $daoU = new DaoUtilisateur();
 
 $liste2 = $daoU->getNonApprouve();

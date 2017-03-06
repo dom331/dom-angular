@@ -1,7 +1,7 @@
 <?php
 
-require_once 'dao/DaoEvenements.php';
-require_once 'dao/DaoUtilisateur.php';
+require_once '../../dao/DaoEvenements.php';
+require_once '../../dao/DaoUtilisateur.php';
 
 /////////////////////////////////////////////////////// LISTE DES EVENEMENTS NON APPROUVE ////////////////////////////
 
@@ -37,8 +37,8 @@ for($i=0;$i<count($utilisateurs); $i++){
 
 
 
-require_once ('dao/DaoUtilisateur.php');
-require_once ('dao/DaoEvenements.php');
+require_once('../../dao/DaoUtilisateur.php');
+require_once('../../dao/DaoEvenements.php');
 $daoU = new DaoUtilisateur();
 
 $liste2 = $daoU->getNonApprouve();

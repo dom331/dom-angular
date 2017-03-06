@@ -1,6 +1,6 @@
 <?php
 
-require_once ("dao/DaoActualite.php");
+require_once("../../dao/DaoActualite.php");
 
 
 $daoActualite = new DaoActualite();
@@ -19,8 +19,8 @@ $infos['oui']['responsables']=$daoActualite->bean->getResponsables();
 
 
 //var_dump($param) or die();
-require_once ('dao/DaoUtilisateur.php');
-require_once ('dao/DaoEvenements.php');
+require_once('../../dao/DaoUtilisateur.php');
+require_once('../../dao/DaoEvenements.php');
 $daoU = new DaoUtilisateur();
 
 $liste2 = $daoU->getNonApprouve();

@@ -1,0 +1,176 @@
+/* Couleurs ************************************************************/
+@rose : #E62651;
+@violet : #AC1738;
+@bleu : #B6DEDE;
+@marine : #1B2E59;
+@blanc : #F2EEE9;
+@beige : #EFE8DF;
+@jaune : #E6DACB;
+@gris : #9E9E9E;
+
+
+/* Pages non-connecté ************************************************************/
+.deconnecte{
+  background-color: @marine;
+  text-align: center;
+
+  & hr{
+    margin: 0 auto 0 auto;
+  }
+}
+
+/* INDEX ************************************************************/
+
+// TRIANGLES //
+.triangle{
+  display: none;
+}
+
+// FONCTIONNALITES //
+
+.index {
+  & h1 {
+    font-size: 50px;
+    padding-top: 50px;
+  }
+
+  & .filtre{
+    height: 100vh;
+  }
+
+  & .rond{
+    top: 40%;
+  }
+
+  & p{
+    margin: 40vh 10% 20px 10%;
+    line-height: 30px;
+  }
+}
+
+
+// 1 - ACTUALITES //
+#actus{
+  & .filtre{
+    background-color: fade(@bleu, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @marine;
+  }
+
+  & p{
+    margin-left: 10%;
+    color: black;
+    border: solid 5px @rose;
+  }
+}
+
+// 2 - ÉVÉNEMENT //
+#events{
+  & .filtre{
+    background-color: fade(@rose, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @bleu;
+  }
+
+  & p{
+    margin-right: 10%;
+  }
+}
+
+// 3 - EDT //
+#edt{
+  & .filtre{
+    background-color: fade(@marine, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @blanc;
+  }
+
+  & p{
+    margin-left: 10%;
+  }
+}
+
+// 4 - ABSENCES //
+#absences{
+  & .filtre{
+    background-color: fade(@beige, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @rose;
+  }
+
+  & p{
+    margin-right: 10%;
+  }
+}
+
+// 5 - CONTACT //
+#contact{
+  & .filtre{
+    background-color: fade(@bleu, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @marine;
+  }
+
+  & p{
+    margin-left: 10%;
+  }
+}
+
+// 6 - OBJETS PERDUS //
+#objets{
+  & .filtre{
+    background-color: fade(@rose, 80%);
+  }
+
+  & .rond{
+    border: solid 5px @bleu;
+  }
+
+  & p{
+    margin-right: 10%;
+  }
+}
+
+
+/* CHOIX INSCRIPTIONS ************************************************************/
+#inscriptions{
+
+  & i{
+    display: none;
+  }
+
+  & .choix > div{
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .bouton{
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+/* FORMULAIRE INSCRIPTION ************************************************************/
+
+#formulaire-inscription{
+
+  & form{
+    min-width: 200px;
+    width: 70%;
+    flex-direction: column;
+  }
+
+  & input{
+    width: 100%;
+  }
+}

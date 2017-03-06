@@ -1,6 +1,6 @@
 <?php
 
-require_once ("dao/DaoUtilisateur.php");
+require_once("../../dao/DaoUtilisateur.php");
 
 $daoUtilisateur = new DaoUtilisateur();
 
@@ -17,8 +17,8 @@ for($i=0;$i<count($liste); $i++){
 }
 
 
-require_once ('dao/DaoUtilisateur.php');
-require_once ('dao/DaoEvenements.php');
+require_once('../../dao/DaoUtilisateur.php');
+require_once('../../dao/DaoEvenements.php');
 $daoU = new DaoUtilisateur();
 
 $liste2 = $daoU->getNonApprouve();
