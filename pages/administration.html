@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/style-desktop.css" media="all">
     <link rel="stylesheet" href="../css/style-tablet.css" media="all and (min-width: 420px) and (max-width: 980px)">
     <link rel="stylesheet" href="../css/style-phone.css" media="all and (max-width: 420px)">
+    <script src="../js/jquery-1.11.3.js"></script>
 </head>
 
 <body class="connecte">
@@ -73,7 +74,7 @@
     </header>
 
 
-    <main>
+    <main class="mainAdmin">
         <h1>Administration</h1>
 
         <hr>
@@ -85,14 +86,21 @@
                 utiliser leurs identifiants. Affichez d'abord le profil du candidat, vérifiez ses informations et levez
                 tout doutes sur son identité. Il ne vous reste qu'à presser le bouton APPROUVER !
             </p>
-
+            <button class="prec boutonav"></button>
             <div class="liste membres">
-                <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                <div class="inside">
+                    <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                    <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                    <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                    <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                    <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                    <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                    <img src="../medias/interface/photo.jpg" alt="Louis Barberot">
+                </div>
             </div>
+            <button class="suiv boutonav"></button>
+
+
 
             <h2>Évenements à approuver</h2>
 
@@ -100,16 +108,35 @@
                 Les événements pouvant être proposés par n'importe quel utilisateur, vous êtes responsable de
                 l'approbation de ceux-ci. N'hésitez pas à consulter les responsables de l'évènement.
             </p>
-
+            <button class="prec boutonav"></button>
             <div class="liste evenements">
-                <img src="../medias/interface/temps.png" alt="Louis Barberot">
-                <img src="../medias/interface/temps.png" alt="Louis Barberot">
-                <img src="../medias/interface/temps.png" alt="Louis Barberot">
-                <img src="../medias/interface/temps.png" alt="Louis Barberot">
-                <img src="../medias/interface/temps.png" alt="Louis Barberot">
+
+                <div class="inside">
+                    <img src="../medias/interface/temps.png" alt="Louis Barberot">
+                    <img src="../medias/interface/temps.png" alt="Louis Barberot">
+                    <img src="../medias/interface/temps.png" alt="Louis Barberot">
+                    <img src="../medias/interface/temps.png" alt="Louis Barberot">
+                    <img src="../medias/interface/temps.png" alt="Louis Barberot">
+                </div>
             </div>
+            <button class="suiv boutonav"></button>
         </div>
     </main>
 </div>
+<script>
+    $(document).ready(function () {
+        var Nbmembres = $('.membres .inside img').length,
+                Numimg = 1,
+                l = ($('.inside img').width())*2,
+                Content = $('.inside');
+        console.log(l);
+        $('.suiv').on("click", function () {
+            Content.animate({'margin-left':-l, 'transition' : '2s'});
+        });
+        $('.prec').on("click", function () {
+            Content.animate({'margin-left':l, 'transition' : '2s'});
+        });
+    })
+</script>
 </body>
 </html>
