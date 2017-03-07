@@ -297,7 +297,7 @@ class DaoUtilisateur extends Dao
     {
         $sql = "SELECT * 
                 FROM utilisateur
-                WHERE UTILISATEUR_APPROUVE = 0 or null
+                WHERE UTILISATEUR_APPROUVE = 0
                 ORDER BY NOM_UTILISATEUR";
         $requete = $this->pdo->prepare($sql);
         $liste = array();

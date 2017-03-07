@@ -45,14 +45,32 @@ app.controller('IndexController', function($scope, $http) {
 
 app.controller('ActuController', function($scope, $http) {
 
+    $http.get("http://localhost/dom-angular/api/pages/deconnexion/redirection.php")
+        .then(function success(response) {
+            console.log(response.data);
+            if (response.data == "nullnon existant"){
+                window.location.href = "visiteur/#/";
+            }
+        });
+
     $http.get("http://localhost/dom-angular/api/pages/actualites/actualites.php")
         .then(function success(response) {
-            $scope.donnees = response.data;
+            $scope.donnees = response.data.substr(4);
             console.log($scope.donnees);
         }, function myError(response) {
             $scope.donnees = response.statusText;
             console.log(response.data);
         });
+
+    $('.deconnexion').on("click", function () {
+        $http.get("http://localhost/dom-angular/api/pages/deconnexion/deconnexion.php")
+            .then(function success(response){
+                console.log("session détruite"+response.data);
+                window.location.href = "visiteur/#/";
+            }, function MyError(response) {
+            console.log("session existante"+response.data);
+        })
+    })
 
 }); // connectUser END
 
