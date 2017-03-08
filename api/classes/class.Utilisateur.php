@@ -12,9 +12,9 @@ class Utilisateur {
     private $image=null;
     private $convoque=0;
     private $date_inscription=null;
-    private $admin=null;
-    private $ex_mmi=null;
-    private $approuve=null;
+    private $admin=0;
+    private $ex_mmi=0;
+    private $approuve=0;
     private $date_naiss=null;
 
     private $lesActualites = array();
@@ -25,8 +25,8 @@ class Utilisateur {
     private $leAvatar =  null;
 
     public function Utilisateur($id=0, $nom=null, $prenom=null, $identifiant=null, $psw=null, $email=null,
-                                $description=null, $image=null, $convoque=0, $date_inscription=null, $admin=null, $ex_mmi=null,
-                                $approuve=null, $date_naiss=null) {
+                                $description=null, $image=null, $convoque=0, $date_inscription=null, $admin=0, $ex_mmi=0,
+                                $approuve=0, $date_naiss=null) {
         $this->id=$id;
         $this->nom=$nom;
         $this->prenom=$prenom;

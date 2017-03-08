@@ -1,12 +1,8 @@
 <?php
 
-require_once '../../classes/class.Statut.php';
 require_once '../../classes/class.Utilisateur.php';
 require_once '../../classes/class.Actualite.php';
 require_once '../../classes/class.Evenements.php';
-require_once '../../classes/class.Mediatheque.php';
-require_once '../../classes/class.Site_web.php';
-require_once '../../classes/class.Groupe.php';
 require_once 'Dao.php';
 
 class DaoUtilisateur extends Dao
@@ -297,7 +293,7 @@ class DaoUtilisateur extends Dao
     {
         $sql = "SELECT * 
                 FROM utilisateur
-                WHERE UTILISATEUR_APPROUVE = 0 or null
+                WHERE UTILISATEUR_APPROUVE = 0
                 ORDER BY NOM_UTILISATEUR";
         $requete = $this->pdo->prepare($sql);
         $liste = array();

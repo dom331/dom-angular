@@ -13,7 +13,7 @@ app.controller('IndexController', function($scope, $http) {
         // On fait un petit pack des infos pour que ce soit plus propre
         var info = {
             method: 'POST',
-            url: 'http://localhost/dom-angular/api/pages/divers/index.php',
+            url: 'http://localhost/dom-angular/visiteur/api/pages/divers/index.php',
             data: {
                 user: user.log,
                 psw: user.lepsw
@@ -45,14 +45,32 @@ app.controller('IndexController', function($scope, $http) {
 
 app.controller('ActuController', function($scope, $http) {
 
+    $http.get("http://localhost/dom-angular/api/pages/deconnexion/redirection.php")
+        .then(function success(response) {
+            console.log(response.data);
+            if (response.data == "nullnon existant"){
+                window.location.href = "visiteur/#/";
+            }
+        });
+
     $http.get("http://localhost/dom-angular/api/pages/actualites/actualites.php")
         .then(function success(response) {
-            $scope.infoUsers = response.data;
-            console.log(response.data);
+            $scope.donnees = response.data;
+            console.log($scope.donnees);
         }, function myError(response) {
-            $scope.infoUsers = response.statusText;
+            $scope.donnees = response.statusText;
             console.log(response.data);
         });
+
+    $('.deconnexion').on("click", function () {
+        $http.get("http://localhost/dom-angular/api/pages/deconnexion/deconnexion.php")
+            .then(function success(response){
+                console.log("session détruite"+response.data);
+                window.location.href = "visiteur/#/";
+            }, function MyError(response) {
+            console.log("session existante"+response.data);
+        })
+    })
 
 }); // connectUser END
 
@@ -62,5 +80,18 @@ app.controller('EventController', function($scope, $http) {
 });
 
 app.controller('AdminController', function($scope, $http) {
+
+});
+
+app.controller('MembresController', function($scope, $http) {
+
+});
+app.controller('ProfilController', function($scope, $http) {
+
+});
+app.controller('VieScoController', function($scope, $http) {
+
+});
+app.controller('ObjPerduController', function($scope, $http) {
 
 });

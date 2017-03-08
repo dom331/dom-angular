@@ -2,17 +2,17 @@
 
 class Evenements {
 
-    private $id=0;
-    private $titre=null;
-    private $contenu=null;
-    private $image="default.png";
-    private $date=null;
-    private $prix=0;
-    private $a_prevoir=null;
-    private $approuve=null;
+    public $id=0;
+    public $titre=null;
+    public $contenu=null;
+    public $image="default.png";
+    public $date=null;
+    public $prix=0;
+    public $a_prevoir=null;
+    public $approuve=null;
 
-    private $leAuteur = null;
-    private $lesImages = array();
+    public $leAuteur = null;
+    public $lesImages = array();
 
     public function Evenements($id=0, $titre=null, $contenu=null, $image="default.png", $date=null,  $prix=0, $a_prevoir=null, $approuve=null) {
         $this->id=$id;

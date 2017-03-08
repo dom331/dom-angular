@@ -818,7 +818,80 @@ main{
     height: 45px;
     padding: 0;
   }
+}
 
+/* ACTUALITE-TYPE ************************************************************/
+
+.fond-article{
+  background-color: @jaune;
+  padding: 20px;
+  margin: 20px 10px;
+}
+
+.colonne-gauche{
+  width: 70%;
+}
+
+.colonne-droite{
+  width: 30%;
+}
+
+.infos-article{
+  text-align: center;
+}
+
+.infos{
+  height: 45px;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 10px;
+  background-color: @marine;
+  color: white;
+  font-family: "Open Sans Semibold", sans-serif;
+}
+
+.image-article{
+  width: 100%;
+  margin: 0;
+  border: 2px solid @marine;
+}
+
+.texte-article{
+  padding: 10px;
+  line-height: 25px;
+  background-color: @blanc;
+  border: 2px solid @marine;
+}
+
+.photo-article{
+  border-radius: 50%;
+  width: 75%;
+  border: 2px solid @marine;
+}
+
+.btn-article{
+  color: black;
+  background-color: @bleu;
+  border: 2px solid darken(@bleu, 20%);
+
+  &:hover{
+    padding-bottom: 8px;
+    color: @bleu;
+    background-color: black;
+  }
+}
+
+.article{
+  display: flex;
+  margin: 10px;
+
+ & button{
+   padding-bottom: 8px;
+ }
+
+  & h3{
+    margin-top: 0;
+  }
 }
 
 

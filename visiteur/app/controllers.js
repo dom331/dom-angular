@@ -12,7 +12,7 @@ app.controller('IndexController', function($scope, $http) {
         // On fait un petit pack des infos pour que ce soit plus propre
         var info = {
             method: 'POST',
-            url: 'http://localhost/dom-angular/api/pages/divers/index.php',
+            url: 'http://localhost/dom-angular/visiteur/api/pages/divers/index.php',
             data: {
                 user: user.log,
                 psw: user.lepsw

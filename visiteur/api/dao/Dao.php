@@ -3,7 +3,7 @@
 
 class Dao{
     
-    public $bean=null;  
+    public $bean=null;
     public $pdo=null; 
         
     public function Dao() {

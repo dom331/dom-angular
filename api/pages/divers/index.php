@@ -27,7 +27,7 @@ $daoUtilisateur = new DaoUtilisateur();
     } else {
 
 
-        if ($daoUtilisateur->bean->getIdentifiant() != null) {
+        if ($daoUtilisateur->bean->getIdentifiant() != '') {
 
 
             $_SESSION['toto'] = array();

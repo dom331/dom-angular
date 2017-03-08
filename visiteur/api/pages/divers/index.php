@@ -30,16 +30,15 @@ $daoUtilisateur = new DaoUtilisateur();
         if ($daoUtilisateur->bean->getIdentifiant() != null) {
 
 
-            $_SESSION = array();
-
-            $_SESSION['id'] = $daoUtilisateur->bean->getId();
-            $_SESSION['nom'] = $daoUtilisateur->bean->getNom();
-            $_SESSION['prenom'] = $daoUtilisateur->bean->getPrenom();
-            $_SESSION['mail'] = $daoUtilisateur->bean->getEmail();
-            $_SESSION['admin'] = $daoUtilisateur->bean->getAdmin();
-            $_SESSION['avatar'] = $daoUtilisateur->bean->getImage();
-            $_SESSION['convoque'] = $daoUtilisateur->bean->getConvoque();
-            $_SESSION['description'] = $daoUtilisateur->bean->getDescription();
+            $_SESSION['toto'] = array();
+            $_SESSION['toto']['id'] = $daoUtilisateur->bean->getId();
+            $_SESSION['toto']['nom'] = $daoUtilisateur->bean->getNom();
+            $_SESSION['toto']['prenom'] = $daoUtilisateur->bean->getPrenom();
+            $_SESSION['toto']['mail'] = $daoUtilisateur->bean->getEmail();
+            $_SESSION['toto']['admin'] = $daoUtilisateur->bean->getAdmin();
+            $_SESSION['toto']['avatar'] = $daoUtilisateur->bean->getImage();
+            $_SESSION['toto']['convoque'] = $daoUtilisateur->bean->getConvoque();
+            $_SESSION['toto']['description'] = $daoUtilisateur->bean->getDescription();
 
             $informations = json_encode($_SESSION);
             echo $informations;

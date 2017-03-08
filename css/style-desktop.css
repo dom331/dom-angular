@@ -642,6 +642,66 @@ main hr {
   height: 45px;
   padding: 0;
 }
+/* ACTUALITE-TYPE ************************************************************/
+.fond-article {
+  background-color: #E6DACB;
+  padding: 20px;
+  margin: 20px 10px;
+}
+.colonne-gauche {
+  width: 70%;
+}
+.colonne-droite {
+  width: 30%;
+}
+.infos-article {
+  text-align: center;
+}
+.infos {
+  height: 45px;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #1B2E59;
+  color: white;
+  font-family: "Open Sans Semibold", sans-serif;
+}
+.image-article {
+  width: 100%;
+  margin: 0;
+  border: 2px solid #1B2E59;
+}
+.texte-article {
+  padding: 10px;
+  line-height: 25px;
+  background-color: #F2EEE9;
+  border: 2px solid #1B2E59;
+}
+.photo-article {
+  border-radius: 50%;
+  width: 75%;
+  border: 2px solid #1B2E59;
+}
+.btn-article {
+  color: black;
+  background-color: #B6DEDE;
+  border: 2px solid #70bebe;
+}
+.btn-article:hover {
+  padding-bottom: 8px;
+  color: #B6DEDE;
+  background-color: black;
+}
+.article {
+  display: flex;
+  margin: 10px;
+}
+.article button {
+  padding-bottom: 8px;
+}
+.article h3 {
+  margin-top: 0;
+}
 /* ADMINISTRATION ************************************************************/
 .mainAdmin {
   padding: 10px 60px;

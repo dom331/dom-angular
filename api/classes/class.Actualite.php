@@ -2,19 +2,19 @@
 
 class Actualite{
 
-    private $id = 0;
-    private $titre = null;
-    private $contenu = null;
-    private $image = "default.png";
-    private $perdu = 0;
-    private $urgent = 0;
-    private $date = null;
-    private $responsables = null;
+    public $id = 0;
+    public $titre = 0;
+    public $contenu = 0;
+    public $image = "default.png";
+    public $perdu = 0;
+    public $urgent = 0;
+    public $date = 0;
+    public $responsables = 0;
 
-    private $leAuteur = null;
-    private $lesImages = array();
+    public $leAuteur = 0;
+    public $lesImages = array();
 
-    public function Actualite($id=0, $titre=null,$contenu=null, $image="default.png", $perdu = 0, $urgent = 0, $date=null,$responsables=null){
+    public function Actualite($id=0, $titre=0,$contenu=0, $image="default.png", $perdu = 0, $urgent = 0, $date=0,$responsables=0){
         $this->id = $id;
         $this->titre = $titre;
         $this->contenu = $contenu;

@@ -1,113 +1,45 @@
-<!DOCTYPE html>
-<html lang="en" class="connecte">
-<head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>DOM</title>
-
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="../css/style-desktop.css" media="all">
-    <link rel="stylesheet" href="../css/style-tablet.css" media="all and (min-width: 420px) and (max-width: 980px)">
-    <link rel="stylesheet" href="../css/style-phone.css" media="all and (max-width: 420px)">
-</head>
-
-<body class="connecte">
-
-<div id="menu">
-    <div class="icones">
-        <a href="administration.html"><i class="fa fa-bell" aria-hidden="true"><span id="notification">8</span></i></a>
-        <a href="../index.html"><i class="fa fa-power-off" aria-hidden="true"></i></a>
-    </div>
-
-    <a href="profil/profil.html"><img src="../medias/interface/photo.jpg" alt="Photo" class="photo"></a>
-
-    <h2>Name</h2>
-
-    <hr>
-
-    <ul>
-        <li><a class="pages-menu" href="actualites.html">Actualités</a></li>
-        <li><a class="pages-menu" href="evenements.html">Événements</a></li>
-        <li><a class="pages-menu" href="vie-scolaire/vie-scolaire.html">Vie scolaire</a></li>
-        <li><a class="pages-menu" href="vie-scolaire/membres.html">Membres</a></li>
-    </ul>
-
-    <hr>
-
-    <a class="pages-menu" href="administration.html">Administration</a>
-
-    <hr>
-
-    <ul class="contact">
-        <li><a href="https://www.facebook.com/mmimontbeliard/?fref=ts"></a><i class="fa fa-facebook-square fa-3x"
-                                                                              aria-hidden="true"></i></li>
-        <li><a href="https://twitter.com/mmimontbeliard"></a><i class="fa fa-twitter-square fa-3x"
-                                                                aria-hidden="true"></i></li>
-        <li><a href="https://fr.linkedin.com/company/src-media"></a><i class="fa fa-linkedin-square fa-3x"
-                                                                       aria-hidden="true"></i></li>
-    </ul>
-
-    <a href="http://mmimontbeliard.com"><img class="logo-mmi" src="../medias/interface/logos/mmi.png"
-                                             alt="Logo MMI Montbéliard"></a>
-
-
-    <p>Site réalisé dans le cadre d’un projet au <a href="http://mmimontbeliard.com"><b>département MMI</b></a> de
-        Montbéliard.
-    <p>Tous droits réservés - 2016/2017</p>
-    </p>
-</div>
-
-<div id="contenu">
-    <header>
-        <img id="hamburger" src="../medias/interface/icones/menu.png" alt="Menu Hamburger">
-        <a href="../index.html"><img class="logo-dom" src="../medias/interface/logos/logo_dom.png"
-                                     alt="Logo DOM MMI"></a>
-        <div id="liens-externes">
-            <a class="externe" href="https://mail-edu.univ-fcomte.fr"></a>
-            <a class="externe" href="https://absences.pu-pm.univ-fcomte.fr"></a>
-            <a class="externe" href="http://moodle.univ-fcomte.fr"></a>
-            <a class="externe" href="https://sedna.univ-fcomte.fr/direct/myplanning.jsp"></a>
-        </div>
-    </header>
-
-
-    <main>
-        <h1>Titre évenement</h1>
+        <h1>Nom éVenement</h1>
 
         <hr>
 
         <div class="article">
-            <div>
-                <img src="../../medias/interface/espace.png" alt="Homme espace">
+
+            <div class="colonne-gauche">
+                <div class="fond-article">
+                    <img class="image-article" src="medias/interface/espace.png" alt="Homme espace">
+                </div>
+                <div class="fond-article">
+                    <h3>Description :</h3>
+                    <p class="texte-article">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut convallis erat. Donec
+                        elementum aliquet purus, sed tristique mi tempor id. Nulla vitae ante et eros ultrices laoreet.
+                        Fusce ultricies urna ut lacus iaculis pellentesque. Vivamus augue massa, posuere sed diam sed,
+                        varius vestibulum orci. Morbi tortor enim, ultricies sed malesuada vitae, commodo id leo.
+                        Integer mattis tempor erat eget sollicitudin. Integer consectetur egestas ante, at dignissim
+                        orci consequat vel. Nulla vitae ante et eros ultrices laoreet. Fusce ultricies urna ut lacus
+                        iaculis pellentesque. Vivamus augue massa, posuere sed diam sed, varius vestibulum orci. Morbi
+                        tortor enim, ultricies sed malesuada vitae, commodo id leo. Integer mattis tempor erat eget
+                        sollicitudin. Integer consectetur egestas ante, at dignissim orci consequat vel.
+                    </p>
+                </div>
             </div>
-            <div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolore eius esse minima nisi,
-                    officiis optio provident quibusdam rerum unde! Consequuntur dignissimos dolor dolores eos excepturi
-                    neque numquam officia voluptas!
-                </p>
-            </div>
-            <div>
-                <button class="bouton">Modifier</button>
-                <button class="bouton">Supprimer</button>
-            </div>
-            <div>
-                <a class="bouton">Article suivant</a>
-                <a class="bouton">Article précédent</a>
-            </div>
-            <div>
-                <p>Prix : 12€</p>
-                <p>A prévoir :
-                    - enceinte bluetooth
-                    - parapluie
-                    - serpillère
-                    - sandwich
-                    - boissons</p>
+
+            <div class="colonne-droite">
+                <div class="fond-article infos-article">
+                    <a href="#/profil?id=12"><img class="photo-article" src="medias/interface/photo.jpg"
+                                                         alt="Photo"></a>
+                    <p class="infos">22/10/2017</p>
+                    <a href="#/profil?id=12"><p class="infos">Louis Barberot</p></a>
+                </div>
+
+                <div class="fond-article">
+                    <button class="bouton">Modifier</button>
+                    <button class="bouton">Supprimer</button>
+                </div>
+
+                <div class="fond-article">
+                    <button class="bouton btn-article">Article suivant</button>
+                    <button class="bouton btn-article">Article précédent</button>
+                </div>
             </div>
         </div>
-    </main>
-</div>
-</body>
-</html>
