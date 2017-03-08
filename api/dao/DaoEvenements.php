@@ -2,7 +2,6 @@
 
 require_once '../../classes/class.Utilisateur.php';
 require_once '../../classes/class.Evenements.php';
-require_once '../../classes/class.Mediatheque.php';
 require_once 'Dao.php';
 
 class DaoEvenements extends Dao{

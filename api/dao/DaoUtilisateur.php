@@ -1,12 +1,8 @@
 <?php
 
-require_once '../../classes/class.Statut.php';
 require_once '../../classes/class.Utilisateur.php';
 require_once '../../classes/class.Actualite.php';
 require_once '../../classes/class.Evenements.php';
-require_once '../../classes/class.Mediatheque.php';
-require_once '../../classes/class.Site_web.php';
-require_once '../../classes/class.Groupe.php';
 require_once 'Dao.php';
 
 class DaoUtilisateur extends Dao

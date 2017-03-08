@@ -1,7 +1,6 @@
 <?php
 
 require_once '../../classes/class.Utilisateur.php';
-require_once '../../classes/class.Mediatheque.php';
 require_once '../../classes/class.Actualite.php';
 require_once 'Dao.php';
 

@@ -55,7 +55,7 @@ app.controller('ActuController', function($scope, $http) {
 
     $http.get("http://localhost/dom-angular/api/pages/actualites/actualites.php")
         .then(function success(response) {
-            $scope.donnees = response.data.substr(4);
+            $scope.donnees = response.data;
             console.log($scope.donnees);
         }, function myError(response) {
             $scope.donnees = response.statusText;
@@ -80,5 +80,18 @@ app.controller('EventController', function($scope, $http) {
 });
 
 app.controller('AdminController', function($scope, $http) {
+
+});
+
+app.controller('MembresController', function($scope, $http) {
+
+});
+app.controller('ProfilController', function($scope, $http) {
+
+});
+app.controller('VieScoController', function($scope, $http) {
+
+});
+app.controller('ObjPerduController', function($scope, $http) {
 
 });

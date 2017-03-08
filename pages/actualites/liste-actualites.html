@@ -1,0 +1,16 @@
+<h1>Actualités</h1>
+<a href="#/actualite/ajout" class="button-plus">
+    <i class="fa fa-plus-square fa-5x" aria-hidden="true"></i>
+</a>
+
+<hr>
+
+<div ng-repeat="liste in donnees.liste" class="liste-actu">
+    <a href="#/actualite?id=6">
+        <div class="actu secondaire">
+            <img src="medias/interface/{{liste.image}}" alt="Homme Espace">
+            <span>22<br/>Fev.</span>
+            <h2>{{liste.titre}}</h2>
+        </div>
+    </a>
+</div>

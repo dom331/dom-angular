@@ -4,7 +4,6 @@ header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header('Access-Control-Allow-Methods: GET, POST, PUT');
 require_once '../../dao/DaoActualite.php';
 
-//var_dump($_SESSION) or die();
 $dao = new DaoActualite();
 
 $liste = $dao->getListe();
@@ -40,7 +39,10 @@ $events = count($liste3);
 $notifs['number'] = array();
 $notifs['number']['oui'] = $events + $users;
 $param = array(
-    "sess" => $_SESSION);
+    "liste" => $liste,
+    "notifs" => $notifs,
+    "sess" => $_SESSION
+);
 
 echo json_encode($param);
 //var_dump($param);
