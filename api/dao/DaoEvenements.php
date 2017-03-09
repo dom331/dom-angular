@@ -153,7 +153,7 @@ class DaoEvenements extends Dao{
             if($donnees = $requete->fetch()){
                 $utilisateur = new Utilisateur($donnees['ID_UTILISATEUR'], $donnees['NOM_UTILISATEUR'], $donnees['PRENOM_UTILISATEUR'],
                     $donnees['IDENTIFIANT_UTILISATEUR'], $donnees['PSW_UTILISATEUR'], $donnees['EMAIL_UTILISATEUR'],
-                    $donnees['DESCRIPTION_UTILISATEUR'], $donnees['DATE_INSCRIPTION'], $donnees['ADMIN'], $donnees['PEDAGOGIE'],
+                    $donnees['DESCRIPTION_UTILISATEUR'], $donnees['IMAGE'], $donnees['CONVOQUE'], $donnees['DATE_INSCRIPTION'], $donnees['ADMIN'], $donnees['PEDAGOGIE'],
                 $donnees['EX_MMI'], $donnees['UTILISATEUR_APPROUVE'], $donnees['DATE_NAISS']);
                 $this->bean->setLeUtilisateur($utilisateur);
             }

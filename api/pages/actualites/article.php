@@ -22,6 +22,7 @@ $daoActualite = new DaoActualite();
             $infos['oui']['date']=$daoActualite->bean->getDate_debut();
             $infos['oui']['responsables']=$daoActualite->bean->getResponsables();
             $daoActualite->setLeUtilisateur();
+            $infos['oui']['userId'] = $daoActualite->bean->getLeUtilisateur()->getId();
             $infos['oui']['userNom'] = $daoActualite->bean->getLeUtilisateur()->getNom();
             $infos['oui']['userPrenom'] = $daoActualite->bean->getLeUtilisateur()->getPrenom();
             $infos['oui']['userImg'] = $daoActualite->bean->getLeUtilisateur()->getImage();

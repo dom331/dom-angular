@@ -38,4 +38,6 @@ $param = array(
     "notifs" => $notifs);
 
 
+echo json_encode($param);
+
 //var_dump($param) or die();

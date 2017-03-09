@@ -1,11 +1,16 @@
 <?php
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+header('Access-Control-Allow-Methods: GET, POST, PUT');
 
+$data = json_decode(file_get_contents("php://input"));
+//var_dump($data);
+$id = $data->id;
 require_once("../../dao/DaoUtilisateur.php");
 
 
         $daoUtilisateur = new DaoUtilisateur();
 
-        $id = $_GET['id'];
         $daoUtilisateur->find($id);
 
         $infos['oui'] = array();
@@ -58,6 +63,8 @@ if (isset($_POST['annuler_conv'])){
         $daoUtilisateur->updateConvoque();
         header('Location: #');
 }
+
+echo json_encode($param);
 
 
 ?>

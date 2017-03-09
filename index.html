@@ -24,7 +24,7 @@
         <a class="deconnexion"><i class="fa fa-power-off" aria-hidden="true"></i></a>
     </div>
 
-    <a href="#/profil"><img src="medias/interface/{{donnees.sess.toto.avatar}}" alt="Photo" class="photo"></a>
+    <a href="#/profil?id={{donnees.sess.toto.id}}"><img src="medias/uploads/avatars/{{donnees.sess.toto.avatar}}" alt="Photo" class="photo"></a>
 
     <h2>{{donnees.sess.toto.prenom}}</h2>
 
@@ -38,11 +38,11 @@
     </ul>
 
     <hr>
-    <div>
+    <div ng-if="donnees.sess.toto.admin == true">
     <a class="pages-menu" href="#/administration">Administration</a>
-    </div>
-    <hr>
 
+    <hr>
+    </div>
     <ul class="contact">
         <li><a href="https://www.facebook.com/mmimontbeliard/?fref=ts"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a></li>
         <li><a href="https://twitter.com/mmimontbeliard"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a></li>

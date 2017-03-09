@@ -2,26 +2,26 @@
 
 class Utilisateur {
 
-    private $id=0;
-    private $nom=null;
-    private $prenom=null;
-    private $identifiant=null;
-    private $psw=null;
-    private $email=null;
-    private $description=null;
-    private $image=null;
-    private $convoque=0;
-    private $date_inscription=null;
-    private $admin=0;
-    private $pedagogie=0;
-    private $ex_mmi=0;
-    private $approuve=0;
-    private $date_naiss=null;
+    public $id=0;
+    public $nom=null;
+    public $prenom=null;
+    public $identifiant=null;
+    public $psw=null;
+    public $email=null;
+    public $description=null;
+    public $image=null;
+    public $convoque=0;
+    public $date_inscription=null;
+    public $admin=0;
+    public $pedagogie=0;
+    public $ex_mmi=0;
+    public $approuve=0;
+    public $date_naiss=null;
 
-    private $lesActualites = array();
-    private $lesSites = array();
-    private $lesEvenements =  array();
-    private $lesObjets =  array();
+    public $lesActualites = array();
+    public $lesSites = array();
+    public $lesEvenements =  array();
+    public $lesObjets =  array();
 
     public function Utilisateur($id=0, $nom=null, $prenom=null, $identifiant=null, $psw=null, $email=null,
                                 $description=null, $image=null, $convoque=0, $date_inscription=null, $admin=0, $pedagogie=0, $ex_mmi=0,

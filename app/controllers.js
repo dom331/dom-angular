@@ -108,6 +108,38 @@ app.controller('ActuController', function($scope, $http) {
 
 app.controller('EventController', function($scope, $http) {
 
+    if (gup('id')) {
+        var infoss = gup('id');
+        var eventType = {
+            method: 'POST',
+            url: 'http://localhost/dom-angular/api/pages/evenements/article_evenement.php',
+            data: {
+                id: infoss
+            }
+        };
+
+        $http(eventType).success(function (data, status, headers, config) {
+            console.log(status);
+            console.log("ENVOYE A PHP: OUI");
+            console.log("article_type_says: " + data);
+            $scope.message = data;
+            // window.location.href = '../pages/actualites';
+        }).error(function (data, status, headers, config) {
+            // si jamais ca merde sur l'envoi
+            console.log("Erreur: " + data + status);
+        });
+    }
+
+    $http.get("http://localhost/dom-angular/api/pages/evenements/evenements.php")
+        .then(function success(response){
+            $scope.message = response.data;
+            console.log("liste_evenements"+$scope.message);
+        }, function MyError(response) {
+            console.log("erreur ajax"+response.data);
+        });
+
+
+
 });
 
 app.controller('AdminController', function($scope, $http) {
@@ -116,9 +148,40 @@ app.controller('AdminController', function($scope, $http) {
 
 app.controller('MembresController', function($scope, $http) {
 
+    $http.get("http://localhost/dom-angular/api/pages/membres/listemembres.php")
+        .then(function success(response){
+            $scope.message = response.data;
+            console.log("liste_membre"+$scope.message);
+        }, function MyError(response) {
+            console.log("erreur ajax"+response.data);
+        })
+
+    
 });
 app.controller('ProfilController', function($scope, $http) {
 
+    if (gup('id')) {
+        var infoss = gup('id');
+        var profiltype = {
+            method: 'POST',
+            url: 'http://localhost/dom-angular/api/pages/profil/profil.php',
+            data: {
+                id: infoss
+            }
+        };
+
+        $http(profiltype).success(function (data, status, headers, config) {
+            console.log(status);
+            console.log("ENVOYE A PHP: OUI");
+            console.log("PHP SAYS: " + data);
+            $scope.message = data;
+            // window.location.href = '../pages/actualites';
+        }).error(function (data, status, headers, config) {
+            // si jamais ca merde sur l'envoi
+            console.log("Erreur: " + data + status);
+        });
+    }
+    
 });
 app.controller('VieScoController', function($scope, $http) {
 
