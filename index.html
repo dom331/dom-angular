@@ -12,14 +12,7 @@
     <link rel="stylesheet" href="css/style-tablet.css" media="all and (min-width: 420px) and (max-width: 980px)">
     <link rel="stylesheet" href="css/style-phone.css" media="all and (max-width: 420px)">
 
-    <script src="js/angular.js"></script>
-    <script src="js/angular-route.js"></script>
-    <script src="js/angular-locale_fr.js"></script>
-    <script src="js/angular-messages.js"></script>
-    <script src="js/jquery-1.11.3.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/routes.js"></script>
-    <script src="app/controllers.js"></script>
+
 
 </head>
 
@@ -31,7 +24,7 @@
         <a class="deconnexion"><i class="fa fa-power-off" aria-hidden="true"></i></a>
     </div>
 
-    <a href="#/profil"><img src="medias/interface/photo.jpg" alt="Photo" class="photo"></a>
+    <a href="#/profil?id={{donnees.sess.toto.id}}"><img src="medias/uploads/avatars/{{donnees.sess.toto.avatar}}" alt="Photo" class="photo"></a>
 
     <h2>{{donnees.sess.toto.prenom}}</h2>
 
@@ -45,11 +38,11 @@
     </ul>
 
     <hr>
-
+    <div ng-if="donnees.sess.toto.admin == true">
     <a class="pages-menu" href="#/administration">Administration</a>
 
     <hr>
-
+    </div>
     <ul class="contact">
         <li><a href="https://www.facebook.com/mmimontbeliard/?fref=ts"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a></li>
         <li><a href="https://twitter.com/mmimontbeliard"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a></li>
@@ -80,6 +73,14 @@
     <main ng-view>
 
     </main>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-locale_fr.js"></script>
+    <script src="js/angular-messages.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/controllers.js"></script>
 </div>
 </body>
 </html>

@@ -1,29 +1,27 @@
-
-        <h1>Profil</h1>
+<div ng-controller="ProfilController">
+        <h1>{{message.liste.oui.prenom}} {{message.liste.oui.nom}}</h1>
 
         <hr>
 
-        <div class="profil">
+        <div  class="profil">
             <div>
-                <img src="medias/interface/espace.png" alt="Homme espace">
+                <img src="medias/uploads/avatars/{{message.liste.oui.avatar}}" alt="Homme espace">
                 <div class="dates-profil">
                     <h4>Date d'inscription :</h4>
-                    <p>08/01/2017</p>
+                    <p>{{message.liste.oui.date_inscription | date}}</p>
                     <h4>Date de naissance :</h4>
-                    <p>03/04/1997</p>
+                    <p>{{message.liste.oui.naiss | date}}</p>
                 </div>
             </div>
             <div>
                 <h4>Description :</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolore eius esse minima nisi,
-                    officiis optio provident quibusdam rerum unde! Consequuntur dignissimos dolor dolores eos excepturi
-                    neque numquam officia voluptas!
+                    {{message.liste.oui.description}}
                 </p>
             </div>
             <div>
                 <h4>Adresse mail :</h4>
-                <p>louis.barberot@gmail.com</p>
+                <p>{{message.liste.oui.email}}</p>
                 <a href="#">Facebook</a>
                 <a href="#">Twitter</a>
                 <a href="#">LinkedIn</a>
@@ -34,3 +32,4 @@
                 <button class="bouton">Convoquer</button>
             </div>
         </div>
+</div>

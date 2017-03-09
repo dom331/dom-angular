@@ -2,9 +2,9 @@
 
 class Site_web{
 
-    private $id = 0;
-    private $url = null;
-    private $nom = null;
+    public $id = 0;
+    public $url = null;
+    public $nom = null;
 
     private $leUtilisateur = null;
 

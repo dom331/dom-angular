@@ -1,11 +1,16 @@
 <?php
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+header('Access-Control-Allow-Methods: GET, POST, PUT');
 
+$data = json_decode(file_get_contents("php://input"));
+//var_dump($data);
+$id = $data->id;
 require_once("../../dao/DaoEvenements.php");
 
 
 $daoEvenement = new DaoEvenements();
 
-        $id = $_GET['id'];
         $daoEvenement->find($id);
         
         $infos['oui'] = array();
@@ -14,12 +19,14 @@ $daoEvenement = new DaoEvenements();
         $infos['oui']['titre']=$daoEvenement->bean->getTitre();
         $infos['oui']['contenu']=$daoEvenement->bean->getContenu();
         $infos['oui']['image']=$daoEvenement->bean->getImage();
-        $infos['oui']['date']=$daoEvenement->bean->getDate();
+        $infos['oui']['date_debut']=$daoEvenement->bean->getDate_debut();
         $infos['oui']['prix']=$daoEvenement->bean->getPrix();
         $infos['oui']['a_prevoir']=$daoEvenement->bean->getA_prevoir();
-        $daoEvenement->setLeAuteur();
-        $infos['oui']['auteurNom']=$daoEvenement->bean->getLeAuteur()->getNom();
-        $infos['oui']['auteurPrenom']=$daoEvenement->bean->getLeAuteur()->getPrenom();
+        $daoEvenement->setLeUtilisateur();
+        $infos['oui']['userId'] = $daoEvenement->bean->getLeUtilisateur()->getId();
+        $infos['oui']['userNom'] = $daoEvenement->bean->getLeUtilisateur()->getNom();
+        $infos['oui']['userPrenom'] = $daoEvenement->bean->getLeUtilisateur()->getPrenom();
+        $infos['oui']['userImg'] = $daoEvenement->bean->getLeUtilisateur()->getImage();
 
 
 require_once('../../dao/DaoUtilisateur.php');
@@ -42,7 +49,7 @@ $param = array(
     "liste" => $infos,
     "notifs" => $notifs);
 
-
+echo json_encode($param);
 
 //var_dump($param) or die();
 

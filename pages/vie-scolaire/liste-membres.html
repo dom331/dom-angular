@@ -1,29 +1,15 @@
-
+<div ng-controller="MembresController">
 <h1>Membres</h1>
 
 <hr>
-
 <input class="ajout" title="recherche" type="text" placeholder="Votre recherche..."/>
 
 <div class="membres">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-    <img src="medias/interface/photo.jpg" alt="Louis Barberot">
+    <div ng-repeat="membre in message.liste" ng-if="membre.approuve == true">
+        <a href="#/profil?id={{membre.id}}">
+    <img src="medias/uploads/avatars/{{membre.image}}" alt="{{membre.prenom}}">
+        <p>{{membre.prenom}} {{membre.nom}}</p>
+        </a>
+    </div>
+</div>
 </div>

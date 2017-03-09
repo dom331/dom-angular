@@ -11,7 +11,7 @@ for($i=0;$i<count($liste); $i++){
     $dao = new DaoEvenements();
 
     $dao->find($liste[$i]->getId());
-    $dao->setLeAuteur();
+    $dao->setLeUtilisateur();
     $liste[$i] = $dao->bean;
 
 }
@@ -35,4 +35,6 @@ $notifs['number']['oui'] = $events + $users;
 $param = array(
     "liste" => $liste,
     "notifs" => $notifs);
+
+echo json_encode($param);
 //var_dump($param) or die();

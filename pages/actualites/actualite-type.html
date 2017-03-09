@@ -1,37 +1,27 @@
-        <h1>Actu Type</h1>
+        <h1>{{message.liste.oui.titre}}</h1>
 
         <hr>
 
         <div class="article">
-
             <div class="colonne-gauche">
                 <div class="fond-article">
-                    <img class="image-article" src="medias/interface/espace.png" alt="Homme espace">
+                    <img class="image-article" src="medias/uploads/actualites/{{message.liste.oui.image}}" alt="Homme espace">
                 </div>
                 <div class="fond-article">
                     <h3>Description :</h3>
                     <p class="texte-article">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut convallis erat. Donec
-                        elementum aliquet purus, sed tristique mi tempor id. Nulla vitae ante et eros ultrices laoreet.
-                        Fusce ultricies urna ut lacus iaculis pellentesque. Vivamus augue massa, posuere sed diam sed,
-                        varius vestibulum orci. Morbi tortor enim, ultricies sed malesuada vitae, commodo id leo.
-                        Integer mattis tempor erat eget sollicitudin. Integer consectetur egestas ante, at dignissim
-                        orci consequat vel. Nulla vitae ante et eros ultrices laoreet. Fusce ultricies urna ut lacus
-                        iaculis pellentesque. Vivamus augue massa, posuere sed diam sed, varius vestibulum orci. Morbi
-                        tortor enim, ultricies sed malesuada vitae, commodo id leo. Integer mattis tempor erat eget
-                        sollicitudin. Integer consectetur egestas ante, at dignissim orci consequat vel.
+                        {{message.liste.oui.contenu}}
                     </p>
                 </div>
             </div>
 
             <div class="colonne-droite">
                 <div class="fond-article infos-article">
-                    <a href="#/actualite?id=6"><img class="photo-article" src="medias/interface/photo.jpg"
-                                                         alt="Photo"></a>
+                    <a href="#/profil?id={{message.liste.oui.userId}}"><img class="photo-article" src="medias/uploads/avatars/{{message.liste.oui.userImg}}" alt="Photo"></a>
                     <p class="infos">22/10/2017</p>
-                    <a href="#/actualite?id=6"><p class="infos">Louis Barberot</p></a>
+                    <a href="#/profil?id={{message.liste.oui.userId}}"><p class="infos">{{message.liste.oui.userPrenom}} {{message.liste.oui.userNom}}</p></a>
                 </div>
-                <div class="fond-article">
+                <div ng-if="donnees.sess.toto.admin == true" class="fond-article">
                     <button class="bouton">Modifier</button>
                     <button class="bouton">Supprimer</button>
                 </div>

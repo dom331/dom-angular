@@ -39,6 +39,8 @@ $daoUtilisateur = new DaoUtilisateur();
             $_SESSION['toto']['avatar'] = $daoUtilisateur->bean->getImage();
             $_SESSION['toto']['convoque'] = $daoUtilisateur->bean->getConvoque();
             $_SESSION['toto']['description'] = $daoUtilisateur->bean->getDescription();
+            $_SESSION['toto']['date_inscription'] = $daoUtilisateur->bean->getDate_inscription();
+            $_SESSION['toto']['date_naiss'] = $daoUtilisateur->bean->getDate_naiss();
 
             $informations = json_encode($_SESSION);
             echo $informations;

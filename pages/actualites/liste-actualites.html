@@ -6,10 +6,10 @@
 <hr>
 
 <div ng-repeat="liste in donnees.liste" class="liste-actu">
-    <a href="#/actualite?id=6">
+    <a href="#/actualite?id={{liste.id}}">
         <div class="actu secondaire">
             <img src="medias/interface/{{liste.image}}" alt="Homme Espace">
-            <span>22<br/>Fev.</span>
+            <span>{{liste.date_debut | date }}</span>
             <h2>{{liste.titre}}</h2>
         </div>
     </a>
