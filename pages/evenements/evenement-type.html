@@ -1,6 +1,6 @@
 <div ng-controller="EventController">
 
-        <h1>{{message.liste.oui.titre}}</h1>
+        <h1>{{article.liste.oui.titre}}</h1>
 
         <hr>
 
@@ -8,22 +8,22 @@
 
             <div class="colonne-gauche">
                 <div class="fond-article">
-                    <img class="image-article" src="medias/uploads/evenements/{{message.liste.oui.image}}" alt="Homme espace">
+                    <img class="image-article" src="medias/uploads/evenements/{{article.liste.oui.image}}" alt="Homme espace">
                 </div>
                 <div class="fond-article">
                     <h3>Description :</h3>
                     <p class="texte-article">
-                        {{message.liste.oui.contenu}}
+                        {{article.liste.oui.contenu}}
                     </p>
                 </div>
             </div>
 
             <div class="colonne-droite">
                 <div class="fond-article infos-article">
-                    <a href="#/profil?id={{message.liste.oui.userId}}"><img class="photo-article" src="medias/uploads/avatars/{{message.liste.oui.userImg}}"
+                    <a href="#/profil?id={{article.liste.oui.userId}}"><img class="photo-article" src="medias/uploads/avatars/{{article.liste.oui.userImg}}"
                                                          alt="Photo"></a>
-                    <p class="infos">{{message.liste.oui.date_debut | date}}</p>
-                    <a href="#/profil?id=12"><p class="infos">{{message.liste.oui.userPrenom}} {{message.liste.oui.userNom}}</p></a>
+                    <p class="infos">{{article.liste.oui.date_debut | date}}</p>
+                    <a href="#/profil?id=12"><p class="infos">{{article.liste.oui.userPrenom}} {{article.liste.oui.userNom}}</p></a>
                 </div>
 
                 <div class="fond-article" ng-if="donnees.sess.toto.admin == true">

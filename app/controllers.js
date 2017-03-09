@@ -122,7 +122,7 @@ app.controller('EventController', function($scope, $http) {
             console.log(status);
             console.log("ENVOYE A PHP: OUI");
             console.log("article_type_says: " + data);
-            $scope.message = data;
+            $scope.article = data;
             // window.location.href = '../pages/actualites';
         }).error(function (data, status, headers, config) {
             // si jamais ca merde sur l'envoi
