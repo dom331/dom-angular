@@ -28,6 +28,7 @@ class DaoUtilisateur extends Dao
         $this->bean->setConvoque($donnees['CONVOQUE']);
         $this->bean->setDate_inscription($donnees['DATE_INSCRIPTION']);
         $this->bean->setAdmin($donnees['ADMIN']);
+        $this->bean->setPedagogie($donnees['PEDAGOGIE']);
         $this->bean->setEx_mmi($donnees['EX_MMI']);
         $this->bean->setApprouve($donnees['UTILISATEUR_APPROUVE']);
         $this->bean->setDate_naiss($donnees['DATE_NAISS']);
@@ -38,7 +39,7 @@ class DaoUtilisateur extends Dao
     {
         $sql = "INSERT INTO utilisateur(NOM_UTILISATEUR, PRENOM_UTILISATEUR, IDENTIFIANT_UTILISATEUR,
                             PSW_UTILISATEUR, EMAIL_UTILISATEUR, DESCRIPTION_UTILISATEUR, IMAGE, DATE_INSCRIPTION,
-                            ADMIN, EX_MMI, UTILISATEUR_APPROUVE, DATE_NAISS, ID_GROUPE) 
+                            ADMIN, PEDAGOGIE, EX_MMI, UTILISATEUR_APPROUVE, DATE_NAISS) 
                 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $requete = $this->pdo->prepare($sql);
@@ -52,10 +53,11 @@ class DaoUtilisateur extends Dao
         $requete->bindValue(7, $this->bean->getImage());
         $requete->bindValue(8, $this->bean->getDate_inscription());
         $requete->bindValue(9, $this->bean->getAdmin());
-        $requete->bindValue(10, $this->bean->getEx_mmi());
-        $requete->bindValue(11, $this->bean->getApprouve());
-        $requete->bindValue(12, $this->bean->getDate_naiss());
-        $requete->bindValue(13, $this->bean->getLeGroupe());
+        $requete->bindValue(10, $this->bean->getPedagogie());
+        $requete->bindValue(11, $this->bean->getEx_mmi());
+        $requete->bindValue(12, $this->bean->getApprouve());
+        $requete->bindValue(13, $this->bean->getDate_naiss());
+        
 
         $requete->execute();
     }
@@ -151,6 +153,7 @@ class DaoUtilisateur extends Dao
                     $donnees['CONVOQUE'],
                     $donnees['DATE_INSCRIPTION'],
                     $donnees['ADMIN'],
+                    $donnees['PEDAGOGIE'],
                     $donnees['EX_MMI'],
                     $donnees['UTILISATEUR_APPROUVE'],
                     $donnees['DATE_NAISS']
@@ -166,99 +169,17 @@ class DaoUtilisateur extends Dao
 
     }
 
-    public function setLesStatuts()
-    {
-
-    }
-
     public function setLesEvenements()
     {
 
     }
-
-    public function setLeAvatar()
-    {
-        $sql = "SELECT * FROM utilisateur, mediatheque WHERE utilisateur.ID_MEDIA = mediatheque.ID_MEDIA AND utilisateur.ID_UTILISATEUR = " . $this->bean->getId();
-        $requete = $this->pdo->prepare($sql);
-        if ($requete->execute()) {
-            if ($donnees = $requete->fetch()) {
-                $avatar = new Mediatheque($donnees['ID_MEDIA'], $donnees['NOM_MEDIA'], $donnees['EXTENSION_MEDIA'], $donnees['CATEGORIE_MEDIA']);
-                $this->bean->setLeAvatar($avatar);
-            }
-        }
-    }
-
-    public function setLeGroupe()
-    {
-        $sql = "SELECT * FROM utilisateur, groupe_utilisateur WHERE groupe_utilisateur.ID_GROUPE = utilisateur.ID_GROUPE AND utilisateur.ID_UTILISATEUR = " . $this->bean->getId();
-        $requete = $this->pdo->prepare($sql);
-        if ($requete->execute()) {
-            if ($donnees = $requete->fetch()) {
-                $groupe = new Groupe($donnees['ID_GROUPE'], $donnees['NOM_GROUPE'], $donnees['ANNEE_GROUPE'], $donnees['ID_PARENT'], $donnees['PEDAGOGIQUE']);
-                $this->bean->setLeGroupe($groupe);
-            }
-        }
-    }
+    
 
     public function setLesSites()
     {
 
     }
-
-    public function addAvatar($avatar){
-        $sql = "INSERT INTO mediatheque(ID_MEDIA, NOM_MEDIA, TAILLE_MEDIA, EXTENSION_MEDIA, CATEGORIE_MEDIA, ID_ACTUALITE, ID_EVENEMENT, ID_UTILISATEUR, ID_STATUT)
-               VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        $requete = $this->pdo->prepare($sql);
-
-        // date du jour
-        $requete->bindValue(1, $avatar);
-        $requete->bindValue(2, "default.png");
-        $requete->bindValue(3, 100);
-        $requete->bindValue(4, "png");
-        $requete->bindValue(5, "avatar");
-        $requete->bindValue(6, null);
-        $requete->bindValue(7, null);
-        $requete->bindValue(8, $this->bean->getId());
-        $requete->bindValue(9, null);
-
-        $requete->execute();
-    }
-
-    public function deleteAvatar()
-    {
-
-    }
-
-    public function addEvenement()
-    {
-
-    }
-
-    public function deleteEvenement()
-    {
-
-    }
-
-    public function addActualite()
-    {
-
-    }
-
-    public function deleteActualite()
-    {
-
-    }
-
-    public function addSite()
-    {
-
-    }
-
-    public function deleteSite()
-    {
-
-    }
+    
 
     public function cnx($identifiant, $psw)
     {
@@ -281,6 +202,7 @@ class DaoUtilisateur extends Dao
                 $this->bean->setConvoque($donnees['CONVOQUE']);
                 $this->bean->setDate_inscription($donnees['DATE_INSCRIPTION']);
                 $this->bean->setAdmin($donnees['ADMIN']);
+                $this->bean->setPedagogie($donnees['PEDAGOGIE']);
                 $this->bean->setEx_mmi($donnees['EX_MMI']);
                 $this->bean->setApprouve($donnees['UTILISATEUR_APPROUVE']);
                 $this->bean->setDate_naiss($donnees['DATE_NAISS']);
@@ -311,6 +233,7 @@ class DaoUtilisateur extends Dao
                     $donnees['CONVOQUE'],
                     $donnees['DATE_INSCRIPTION'],
                     $donnees['ADMIN'],
+                    $donnees['PEDAGOGIE'],
                     $donnees['EX_MMI'],
                     $donnees['UTILISATEUR_APPROUVE'],
                     $donnees['DATE_NAISS']

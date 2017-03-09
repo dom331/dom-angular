@@ -1,4 +1,11 @@
-
+function gup( name, url ) {
+    if (!url) url = location.href;
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( url );
+    return results == null ? null : results[1];
+}
 
 app.controller('IndexController', function($scope, $http) {
 
@@ -45,10 +52,11 @@ app.controller('IndexController', function($scope, $http) {
 
 app.controller('ActuController', function($scope, $http) {
 
+
     $http.get("http://localhost/dom-angular/api/pages/deconnexion/redirection.php")
         .then(function success(response) {
             console.log(response.data);
-            if (response.data == "nullnon existant"){
+            if (response.data == "non existant"){
                 window.location.href = "visiteur/#/";
             }
         });
@@ -61,6 +69,29 @@ app.controller('ActuController', function($scope, $http) {
             $scope.donnees = response.statusText;
             console.log(response.data);
         });
+
+    if (gup('id')) {
+        var infoss = gup('id');
+        var articletype = {
+            method: 'POST',
+            url: 'http://localhost/dom-angular/api/pages/actualites/article.php',
+            data: {
+                id: infoss
+            }
+        };
+
+        $http(articletype).success(function (data, status, headers, config) {
+            console.log(status);
+            console.log("ENVOYE A PHP: OUI");
+            console.log("PHP SAYS: " + data);
+            $scope.message = data;
+            // window.location.href = '../pages/actualites';
+        }).error(function (data, status, headers, config) {
+            // si jamais ca merde sur l'envoi
+            console.log("Erreur: " + data + status);
+        });
+    }
+
 
     $('.deconnexion').on("click", function () {
         $http.get("http://localhost/dom-angular/api/pages/deconnexion/deconnexion.php")

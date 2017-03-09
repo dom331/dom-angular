@@ -6,16 +6,17 @@ class Dao{
     public $bean=null;
     public $pdo=null;
         
-    public function Dao() {
+    public function Dao()
+    {
         // Instanciation pdo
         $parametres = parse_ini_file("../../param/param.ini");
         // connexion à la bdd avec fichier de paramètres
         $this->pdo = new PDO(
             $parametres['dsn'],
-            $parametres['user'], 
+            $parametres['user'],
             $parametres['psw'],
             array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
-        ); 
+        );
     }        
 
     public function findById($table=null, $colonne = null, $valeur=0){
