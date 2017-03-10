@@ -154,7 +154,16 @@ app.controller('MembresController', function($scope, $http) {
             console.log("liste_membre"+$scope.message);
         }, function MyError(response) {
             console.log("erreur ajax"+response.data);
-        })
+        });
+
+    $http.get("http://localhost/dom-angular/api/pages/viescolaire/objetsperdus.php")
+        .then(function success(response){
+            $scope.objetsperdus = response.data;
+            console.log("objets_perdus"+$scope.message);
+        }, function MyError(response) {
+            console.log("erreur ajax"+response.data);
+        });
+    
 
     
 });

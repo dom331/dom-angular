@@ -1,39 +1,39 @@
 <?php
 
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+header('Access-Control-Allow-Methods: GET, POST, PUT');
+
+$data = json_decode(file_get_contents("php://input"));
+$nom = $data->nom;
+$prenom = $data->prenom;
+$identifiant = $data->identifiant;
+$psw = $data->psw;  //AJOUTER SHA1() ICI
+$email = $data->email;
+
+//var_dump($nom, $prenom, $psw, $identifiant, $email);
+
 if(isset($_SESSION["toto"])) {
     header('Location: index.php?page=actualites');
 }
 require_once '../../dao/DaoUtilisateur.php';
 
-if (isset($_POST['soumettre'])){
-    
-    if(!empty($_POST['nom'])){
-
         $dao = new DaoUtilisateur();
 
-            $dao->bean->setNom(ucwords($_POST['nom']));
-            $dao->bean->setPrenom(ucwords($_POST['prenom']));
-            $dao->bean->setIdentifiant($_POST['identifiant']);
-            $dao->bean->setPsw($_POST['mdp']);
-            $dao->bean->setEmail($_POST['email']);
+            $dao->bean->setNom(ucwords($nom));
+            $dao->bean->setPrenom(ucwords($prenom));
+            $dao->bean->setIdentifiant($identifiant);
+            $dao->bean->setPsw($psw);
+            $dao->bean->setEmail($email);
             $dao->bean->setDate_inscription(date("Y-m-d"));
-            $dao->bean->setImage("default.png");
-            $dao->bean->setEx_mmi(0);
-            $dao->bean->setAdmin(0);
-            $dao->bean->setApprouve(0);
-//            $dao->bean->setLeAvatar(null);
-            $dao->bean->setLeGroupe(1);
 //        var_dump($dao) or die();
-        $dao->create();
-        header('Location: index.php');
+            $dao->create();
+
+echo json_encode($dao);
         
         
-        
-    }
-    else{
-        echo "erreur";
-    }
-}
+
+
 
    
 

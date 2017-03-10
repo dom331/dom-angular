@@ -134,19 +134,6 @@ class DaoObjets_perdus extends Dao{
 
 
     public function setLeUtilisateur(){
-        $sql = "SELECT * FROM objet_perdus, utilisateur
-        WHERE objet_perdus.ID_UTILISATEUR = utilisateur.ID_UTILISATEUR 
-        AND objet_perdus.ID_OBJET = ".$this->bean->getId();
-        $requete = $this->pdo->prepare($sql);
-        if($requete->execute()){
-            if($donnees = $requete->fetch()){
-                $utilisateur = new Utilisateur($donnees['ID_UTILISATEUR'], $donnees['NOM_UTILISATEUR'], $donnees['PRENOM_UTILISATEUR'],
-                    $donnees['IDENTIFIANT_UTILISATEUR'], $donnees['PSW_UTILISATEUR'], $donnees['EMAIL_UTILISATEUR'],
-                    $donnees['DESCRIPTION_UTILISATEUR'], $donnees['IMAGE'], $donnees['CONVOQUE'], $donnees['DATE_INSCRIPTION'], $donnees['ADMIN'], $donnees['PEDAGOGIE'],
-                    $donnees['EX_MMI'], $donnees['UTILISATEUR_APPROUVE'], $donnees['DATE_NAISS']);
-                $this->bean->setLeUtilisateur($utilisateur);
-            }
-        }
 
     }
 
