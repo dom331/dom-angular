@@ -1,3 +1,4 @@
+<div ng-controller="MembresController">
         <h1>Vie scolaire</h1>
 
         <hr>
@@ -9,15 +10,17 @@
                 Si toutefois vous n'êtes pas convoqué(e) mais que vous connaissez une des personnes suivantes,
                 n'hésitez pas à l'avertir. Merci de votre compréhension.
             </p>
+<!--{{message | json }}-->
 
+            <div ng-repeat="convoque in message.liste" ng-if="convoque.convoque == true">
             <div class="liste convocations">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
+                <img src="medias/uploads/avatars/{{convoque.image}}" alt="{{convoque.image}}">
+                <p>{{convoque.prenom}} {{convoque.nom}}</p>
+            </div>
+            <p>Vous êtes <strong>convoqué(e)</strong>, merci de vous présenter au <strong>secrétariat</strong> s'il vous plait.</p>
             </div>
 
+<!--{{objetsperdus}}-->
             <h2>Objets perdus</h2>
             <a href="#/objet-perdu/ajout" class="button-plus">
                 <i class="fa fa-plus-square fa-5x" aria-hidden="true"></i>
@@ -27,12 +30,10 @@
                 Les objets suivants ont été retrouvés dans le départements ou ses alentours.
                 Si vous reconnaissez une de vos affaires, rendez vous au secrétariat !
             </p>
-
+            <div ng-repeat="objet in objetsperdus.objets">
             <div class="liste objets">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
+                <img src="medias/uploads/objetsperdus/{{objet.image}}" alt="{{objet.image}}">
+                <h3>{{objet.titre}}</h3>
             </div>
         </div>
+</div>
