@@ -10,7 +10,7 @@ if(!empty($_FILES))
         if(move_uploaded_file($_FILES['file']['tmp_name'], $path))
         {
                 $dao->bean->setImage($_FILES['file']['name']);
-                echo "okkkkkkk";
+                echo "okkkkkkkkk";
                 $dao->create();
         }
 }
