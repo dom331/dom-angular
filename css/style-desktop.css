@@ -715,6 +715,8 @@ main hr {
 .administration .liste {
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
   margin: 20px 0 40px 0;
 }
 .vie-scolaire .liste img,
@@ -731,33 +733,9 @@ main hr {
   -webkit-box-shadow: 0 0 8px 1px #E62651;
   box-shadow: 0 0 8px 1px #E62651;
 }
-.vie-scolaire .membres,
-.administration .membres,
-.vie-scolaire .evenements,
-.administration .evenements {
-  background-color: #E6DACB;
-}
 /* ADMINISTRATION ************************************************************/
 .administration p {
   border: 2px solid #B6DEDE;
-}
-.administration .liste {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px 0 40px 0;
-}
-.administration .liste img {
-  margin: 30px;
-  border: 4px solid #E62651;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-}
-.administration .membres,
-.administration .evenements {
-  background-color: #E6DACB;
 }
 /* PROFIL ************************************************************/
 .profil {
