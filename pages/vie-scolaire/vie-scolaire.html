@@ -5,7 +5,7 @@
 
         <div class="vie-scolaire">
             <h2>Convocations</h2>
-            <p>
+            <p class="explications">
                 Les personnes convoquées sont exigées de contacter l'administration du département MMI au plus vite.
                 Si toutefois vous n'êtes pas convoqué(e) mais que vous connaissez une des personnes suivantes,
                 n'hésitez pas à l'avertir. Merci de votre compréhension.
@@ -13,12 +13,12 @@
 <!--{{message | json }}-->
 
             <div ng-repeat="convoque in message.liste" ng-if="convoque.convoque == true">
-                <a href="#/profil?id={{convoque.id}}">
-            <div class="liste convocations">
-                <img src="medias/uploads/avatars/{{convoque.image}}" alt="{{convoque.image}}">
-                <p>{{convoque.prenom}} {{convoque.nom}}</p>
-            </div>
-                </a>
+            <a href="#/profil?id={{convoque.id}}">
+                <div class="liste convocations membres">
+                    <img src="medias/uploads/avatars/{{convoque.image}}" alt="{{convoque.image}}">
+                    <p>{{convoque.prenom}} {{convoque.nom}}</p>
+                </div>
+            </a>
             <p>Vous êtes <strong>convoqué(e)</strong>, merci de vous présenter au <strong>secrétariat</strong> s'il vous plait.</p>
             </div>
 
@@ -28,18 +28,18 @@
                 <i class="fa fa-plus-square fa-5x" aria-hidden="true"></i>
             </a>
 
-            <p>
+            <p class="explications">
                 Les objets suivants ont été retrouvés dans le départements ou ses alentours.
                 Si vous reconnaissez une de vos affaires, rendez vous au secrétariat !
             </p>
             <div ng-repeat="objet in objetsperdus.objets">
 
-            <div class="liste objets">
+            <div class="liste objets membres">
                 <a href="#/objet-perdu?id={{objet.id}}">
-                <div>
-                <img src="medias/uploads/objetsperdus/{{objet.image}}" alt="{{objet.image}}">
-                <h3>{{objet.titre}}</h3>
-                </div>
+                    <div>
+                        <img src="medias/uploads/objetsperdus/{{objet.image}}" alt="{{objet.image}}">
+                        <p>{{objet.titre}}</p>
+                    </div>
                 </a>
             </div>
 

@@ -1,9 +1,12 @@
 <div ng-controller="EventController">
         <h1>Événéments</h1>
-        <a href="#/evenement/ajout"><i class="fa fa-plus-square fa-5x" aria-hidden="true"></i></a>
+        <a href="#/evenement/ajout" class="button-plus">
+            <i class="fa fa-plus-square fa-5x" aria-hidden="true"></i>
+        </a>
+
         <hr>
 
-        <div ng-repeat="event in message.liste" class="liste-actu" ng-if="event.approuve == true">
+    <div ng-repeat="event in message.liste" class="liste-actu" ng-if="event.approuve == true">
             <a href="#/evenement?id={{event.id}}">
                 <div class="actu principale">
                     <img src="medias/uploads/evenements/{{event.image}}" alt="{{event.image}}">
