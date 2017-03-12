@@ -1,0 +1,861 @@
+/* Polices ************************************************************/
+@font-face {
+  font-family: Raleway;
+  src: url(../fonts/Raleway/Raleway-Regular.ttf);
+  src: url(../fonts/Raleway/Raleway-Bold.ttf);
+  src: url(../fonts/Raleway/Raleway-Light.ttf);
+  src: url(../fonts/Raleway/Raleway-Semibold.ttf);
+  src: url(../fonts/Raleway/Raleway-Thin.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
+
+
+/* Couleurs ************************************************************/
+@rose : #E62651;
+@violet : #AC1738;
+@bleu : #B6DEDE;
+@marine : #1B2E59;
+@blanc : #F2EEE9;
+@beige : #EFE8DF;
+@jaune : #E6DACB;
+@gris : #9E9E9E;
+
+/* Global ************************************************************/
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-family: Raleway, sans-serif;
+}
+
+body{
+  background-color: @beige;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+ul,li{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+h1, h2, h3, h4{
+  text-transform: uppercase;
+}
+
+h1{
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 25px;
+  white-space: pre-wrap;
+}
+
+h2{
+  margin: 0;
+}
+
+input{
+  font-family: "Open Sans Semibold", sans-serif;
+}
+
+.bouton{
+  transition: 0.5s ease;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  background-color: @rose;
+  border: solid 2px @violet;
+  width: 100%;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+
+.bouton:hover{
+  background-color: white;
+  color: @rose;
+}
+
+.btn-deco{
+  border-radius: 5px;
+  height: 45px;
+  max-height: 45px;
+}
+
+
+/* Pages non-connecté ************************************************************/
+
+.deconnecte{
+  background-color: @marine;
+  text-align: center;
+
+  & hr{
+    width: 40%;
+    min-width: 320px;
+    margin: 0 auto 0 auto;
+  }
+}
+
+.logo-home{
+  width: 275px;
+  margin: 25px auto 20px auto;
+}
+
+.logo-mmi{
+  width: 60px;
+  margin-top: 15px;
+}
+
+
+/* INDEX ************************************************************/
+
+.formulaire-index{
+  position: relative;
+
+  & form{
+    margin: 20px auto;
+    width: 40%;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & input{
+    border-radius: 5px;
+    height: 45px;
+    margin: 10px 0;
+    font-size: 18px;
+    color: @gris;
+    border: solid 2px @gris;
+    text-indent: 10px;
+  }
+}
+
+// TRIANGLES //
+.triangle{
+  position: absolute;
+z-index: -1;
+  width: 0;
+  height: 0;
+}
+
+.bas{
+  bottom: 0;
+  right: 0;
+  border-bottom: 100vh solid fade(@bleu, 80%);
+  border-left: 100vw solid transparent;
+}
+
+.droite{
+  top: 0;
+  right: 0;
+  border-left: 100vw solid transparent;
+}
+
+.gauche{
+  top: 0;
+  left: 0;
+  border-right: 100vw solid transparent;
+}
+
+// FONCTIONNALITES //
+
+.index {
+  & h1 {
+    font-size: 6vw;
+    margin-top: 0;
+    letter-spacing: 8px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  & .rond{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  & i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  & p{
+    font-family: "Open Sans", sans-serif;
+    margin: 0 20px 20px 20px;
+    font-size: 16px;
+    padding: 10px;
+    line-height: 45px;
+  }
+}
+
+.index{
+  & > div{
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+
+// 1 - ACTUALITES //
+#actus{
+  background: url(../medias/background/actus.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+  & h1{
+    color: @rose;
+  }
+
+  & i{
+    color: @marine;
+  }
+
+  & .rond{
+    background: @bleu;
+    border: solid 10px @marine;
+  }
+
+  & p{
+    margin-left: 60%;
+    color: black;
+    border: solid 5px @rose;
+  }
+
+  & .triangle{
+    border-top: 100vh solid fade(@bleu, 80%);
+  }
+}
+
+// 2 - ÉVÉNEMENT //
+#events{
+  background: url(../medias/background/events.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+  & h1{
+    color: @jaune;
+  }
+
+  & i{
+    color: @bleu;
+  }
+
+  & .rond{
+    background: @rose;
+    border: solid 10px @bleu;
+  }
+
+  & p{
+    margin-right: 60%;
+    color: @blanc;
+    border: solid 5px @jaune;
+  }
+
+  & .triangle{
+    border-top: 100vh solid fade(@rose, 80%);
+  }
+}
+
+// 3 - EDT //
+#edt{
+  background: url(../medias/background/edt.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+
+  & h1{
+    color: @bleu;
+  }
+
+  & i{
+    color: @blanc;
+  }
+
+  & .rond{
+    background: @marine;
+    border: solid 10px @blanc;
+  }
+
+  & p{
+    margin-left: 60%;
+    color: @blanc;
+    border: solid 5px @bleu;
+  }
+
+  & .triangle{
+    border-top: 100vh solid fade(@marine, 80%);
+  }
+}
+
+// 4 - ABSENCES //
+#absences{
+  background: url(../medias/background/absences.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+  & h1{
+    color: @marine;
+  }
+
+  & i{
+    color: @rose;
+  }
+
+  & .rond{
+    background: @jaune;
+    border: solid 10px @rose;
+  }
+
+  & p{
+    margin-right: 60%;
+    color: black;
+    border: solid 5px @marine;
+  }
+
+  & .triangle{
+    border-top: 100vh solid fade(@beige, 80%);
+  }
+}
+
+// 5 - CONTACT //
+#contact{
+  background: url(../medias/background/contact.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+  & h1{
+    color: @rose;
+  }
+
+  & i{
+    color: @marine;
+  }
+
+  & .rond{
+    background: @bleu;
+    border: solid 10px @marine;
+  }
+
+  & p{
+    margin-left: 60%;
+    color: black;
+    border: solid 5px @rose;
+  }
+
+  & .triangle{
+    border-top: 100vh solid fade(@bleu, 80%);
+  }
+}
+
+// 6 - OBJETS PERDUS //
+#objets{
+  background: url(../medias/background/objets.jpg) center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+  & h1{
+    color: @jaune;
+  }
+
+  & i{
+    color: @bleu;
+  }
+
+  & .rond{
+    background: @rose;
+    border: solid 10px @bleu;
+  }
+
+  & p{
+    margin-right: 60%;
+    color: @blanc;
+    border: solid 5px @jaune;
+  }
+
+  & .triangle{
+    border-top: 100vh solid fade(@rose, 80%);
+  }
+}
+
+
+/* CHOIX INSCRIPTIONS ************************************************************/
+#inscriptions{
+  & h1{
+    color: white;
+    margin: 20px auto 10px auto;
+  }
+
+  & i{
+    color: @bleu;
+  }
+
+  & .choix{
+    margin: 10px auto 30px auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .choix > div{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  & .bouton{
+    text-align: center;
+    width: 30%;
+    height: auto;
+    min-height: 45px;
+    margin: 10px auto;
+    padding: 15px 5px;
+    color: white;
+    background-color: @rose;
+    border: solid 2px @violet;
+    white-space: pre-wrap;
+  }
+
+  & .bouton:hover{
+    background-color: white;
+    color: @rose;
+  }
+}
+
+
+/* FORMULAIRE INSCRIPTION ************************************************************/
+
+#formulaire-inscription{
+  & h1{
+    color: white;
+    margin: 20px auto 10px auto;
+  }
+
+  & form{
+    margin: 10px auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  & input{
+    border-radius: 5px;
+    height: 45px;
+    width: 49%;
+    margin: 10px 0;
+    font-size: 18px;
+    color: @gris;
+    border: solid 2px @gris;
+    text-indent: 10px;
+  }
+
+  & input:last-of-type{
+    width: 100%;
+  }
+}
+
+
+/* MENU ************************************************************/
+
+#menu{
+  background-color: @rose;
+  width: 320px;
+  min-width: 320px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  position: fixed;
+
+  & .icones{
+    width: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+  }
+
+  & i:hover{
+    color: @bleu;
+    transition: 0.3s ease;
+  }
+
+  & .photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid @violet;
+  }
+
+  & h2{
+    margin: 10px 0;
+    font-size: 20px;
+  }
+
+  & hr{
+    width: 125px;
+    border: 1px solid white;
+    margin: 10px auto;
+  }
+
+  & a{
+    color: white;
+  }
+
+  & .contact{
+    margin: 15px auto 0 auto;
+    width: 200px;
+  }
+
+  & p{
+    margin-top: 15px;
+    font-size: 10px;
+  }
+}
+
+
+.fa-bell{
+  position: relative;
+}
+
+
+
+#notification{
+  font-size: 14px;
+  font-family: "Open Sans Semibold", sans-serif;
+  color: @violet;
+  padding: 2.5px;
+  top: -15px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.pages-menu{
+  text-transform: uppercase;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  display: block;
+  padding: 15px 20px;
+  transition: 1s ease;
+  letter-spacing: 2px;
+}
+
+.pages-menu:hover{
+  background-color: @violet;
+}
+
+.contact{
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* HEADER ************************************************************/
+
+header{
+  padding: 15px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  background-color: @blanc;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+#hamburger{
+  height: 60px;
+  width: 60px;
+  display: none;
+}
+
+.logo-dom{
+  width: 200px;
+  margin-left: 60px;
+}
+
+#liens-externes{
+  margin: 55px 60px 0 0;
+  width: 520px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.externe{
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: block;
+  width: 60px;
+  height: 60px;
+  transition: 0.5s ease;
+}
+
+.externe:hover{
+  background-color: @bleu;
+}
+
+a[href="https://mail-edu.univ-fcomte.fr"]{
+  background-image: url(../medias/interface/icones/mail.png);
+}
+
+a[href="https://absences.pu-pm.univ-fcomte.fr"]{
+  background-image: url(../medias/interface/icones/absent.png);
+}
+
+a[href="http://moodle.univ-fcomte.fr"]{
+  background-image: url(../medias/interface/icones/moodle.png);
+}
+
+a[href="https://sedna.univ-fcomte.fr/direct/myplanning.jsp"]{
+  background-image: url(../medias/interface/icones/calendrier.png);
+}
+
+/* PAGE CONNECTE ************************************************************/
+
+#contenu{
+  margin-left: 320px;
+}
+
+main{
+  padding: 20px 35px;
+
+  & h1{
+    margin-left: 20px;
+    font-size: 35px;
+    color: @marine;
+  }
+
+  & hr{
+    border: 1px solid @marine;
+    width: 265px;
+    margin: 0 0 0 20px;
+  }
+}
+
+.fa-plus-square{
+  color: @rose;
+  transition: 0.5s ease;
+}
+
+.fa-plus-square:hover{
+  transform: rotate(180deg);
+  color: @violet;
+}
+
+/* ACTUALITES ************************************************************/
+
+.button-plus{
+  position: absolute;
+  right: 80px;
+  top: 170px;
+}
+
+.liste-actu{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.actu{
+  position: relative;
+  text-transform: uppercase;
+  margin: 20px;
+  transition: 0.5s ease;
+  
+  & span{
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 40px;
+    background-color: @rose;
+    z-index: 1;
+  }
+
+  & h2{
+    color: @bleu;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: fade(@marine, 80%);
+    padding-left: 50px;
+  }
+}
+
+.principale{
+  & img {
+    width: 520px;
+    height: 240px;
+    border: 2px solid @rose;
+  }
+
+  & h2{
+    font-size: 24px;
+    padding-top: 8px;
+  }
+}
+
+.principale:hover{
+  -webkit-box-shadow: 0 0 10px 1px @rose;
+  box-shadow: 0 0 10px 1px @rose;
+}
+
+.secondaire{
+
+ & img{
+    width: 240px;
+    height: 240px;
+    border: 2px solid @marine;
+  }
+
+  & h2{
+    font-size: 16px;
+    padding-top: 12px;
+  }
+}
+
+.secondaire:hover{
+  -webkit-box-shadow: 0 0 10px 1px @marine;
+  box-shadow: 0 0 10px 1px @marine;
+}
+
+
+/* AJOUT-ACTUALITES ************************************************************/
+
+.explications{
+  border: 2px solid @bleu;
+  background-color: @blanc;
+  padding: 10px;
+  margin: 20px 0 20px 20px;
+  font-size: 16px;
+}
+
+#ajout-actualite{
+  display: flex;
+  justify-content: space-between;
+
+  & *{
+    margin: 10px;
+  }
+
+  & > div{
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  & h3{
+    color: @rose;
+    font-size: 18px;
+  }
+
+  & input{
+    height: 45px;
+  }
+
+  & .ajout{
+    font-size: 18px;
+    font-family: "Open Sans Semibold", sans-serif;
+    border-radius: 5px;
+    border: 2px solid @gris;
+    width: 100%;
+    padding: 5px 0 5px 10px;
+  }
+
+  .boutons-radio{
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
+  }
+
+  & input[type="radio"]{
+    display: none;
+  }
+
+  & .label{
+    text-transform: uppercase;
+    color: @rose;
+    font-size: 18px;
+    padding-top: 12px;
+    text-align: center;
+    border: 2px solid @rose;
+    border-radius: 5px;
+    width: 140px;
+    height: 45px;
+  }
+
+  .bouton{
+    height: 45px;
+    padding: 0;
+  }
+
+}
+
+
+/* ADMINISTRATION ************************************************************/
+.mainAdmin{
+  padding:10px 60px;
+}
+
+.administration{
+  & p{
+    border: 2px solid @bleu;
+  }
+
+  & .liste{
+    width:100%;
+    overflow: hidden;
+  }
+
+  & .liste .inside{
+    display: flex;
+    width:100%;
+  }
+
+  & .boutonav{
+    background-image: url("../medias/interface/icones/plus.png");
+    width: 35px;
+    height: 35px;
+  }
+
+  & .liste .inside img{
+    margin: 30px;
+    border: 4px solid @rose;
+    border-radius: 50%;
+    width:150px;
+    height: 150px;
+  }
+  & .membres, .evenements{
+    background-color: @jaune;
+  }
+}
