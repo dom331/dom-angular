@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
         .when
         ("/actualite/ajout", {
             templateUrl: "pages/actualites/ajout-actualite.html",
-            controller: "ActuController"
+            controller: "AjoutActuController"
         })
         .when
         ("/evenements", {

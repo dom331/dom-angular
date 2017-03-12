@@ -195,6 +195,3 @@ app.controller('ProfilController', function($scope, $http) {
 app.controller('VieScoController', function($scope, $http) {
 
 });
-app.controller('ObjPerduController', function($scope, $http) {
-
-});

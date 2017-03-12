@@ -1,1 +1,35 @@
+<div ng-controller="ObjPerduController">
 <h1>Objet Perdu Type</h1>
+
+<hr>
+
+<div class="article">
+    <div class="colonne-gauche">
+        <div class="fond-article">
+            <img class="image-article" src="medias/uploads/objetsperdus/{{article.liste.oui.image}}" alt="Homme espace">
+        </div>
+        <div class="fond-article">
+            <h3>Description :</h3>
+            <p class="texte-article">
+                {{article.liste.oui.contenu}}
+            </p>
+        </div>
+    </div>
+
+    <div class="colonne-droite">
+        <div class="fond-article infos-article">
+            <a href="#/profil?id={{article.liste.oui.userId}}"><img class="photo-article" src="medias/uploads/avatars/{{article.liste.oui.userImg}}" alt="Photo"></a>
+            <p class="infos">22/10/2017</p>
+            <a href="#/profil?id={{article.liste.oui.userId}}"><p class="infos">{{article.liste.oui.userPrenom}} {{article.liste.oui.userNom}}</p></a>
+        </div>
+        <div ng-if="donnees.sess.toto.admin == true" class="fond-article">
+            <button class="bouton">Modifier</button>
+            <button class="bouton">Supprimer</button>
+        </div>
+        <div class="fond-article">
+            <button class="bouton btn-article">Article suivant</button>
+            <button class="bouton btn-article">Article précédent</button>
+        </div>
+    </div>
+</div>
+</div>

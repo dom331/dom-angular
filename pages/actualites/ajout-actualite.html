@@ -1,4 +1,6 @@
-        <h1>Ajouter actualité</h1>
+<div ng-controller="AjoutActuController">
+
+<h1>Ajouter actualité</h1>
 
         <hr>
 
@@ -8,24 +10,29 @@
             Le champ "Source de l'information" peut être une URL ou une personne/organisation.
         </p>
 
-        <form id="ajout-actualite">
+        <form ng-submit="AjoutActu(actu)" id="ajout-actualite" enctype="multipart/form-data">
             <div>
-                <input class="ajout" title="titre" type="text" placeholder="Titre de l'actualité"/>
-                <textarea class="ajout" title="description" id="" cols="30" rows="10" placeholder="Description de l'actualité"></textarea>
+                <input ng-model="actu.titre" class="ajout" title="titre" type="text" placeholder="Titre de l'actualité"/>
+                <textarea ng-model="actu.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="Description de l'actualité"></textarea>
             </div>
            <div>
-               <input class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
-               <input class="ajout" title="image" type="text" placeholder="Image : choisissez un fichier"/>
+               <input ng-model="actu.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
+               <input ngf-select="uploadFiles($file, $invalidFiles)"
+                      accept="image/*" ngf-max-height="1000" ngf-max-size="1MB"
+                      class="ajout" title="image" type="file" file-input="files"
+                      placeholder="Image : choisissez un fichier"/>
 
                <h3>Appliquer la mention "urgent"?</h3>
 
                <div class="boutons-radio">
-                  <input type="radio" name="group1" value="Milk" id="rad1">
-                  <label class="label" for="rad1">Oui</label>
-                  <input type="radio" name="group1" value="Milk" id="rad2">
-                  <label class="label" for="rad2">Non</label>
+                  <input type="radio" ng-model="actu.urgent" value="1" id="rad1">
+                  <label id="radio1" class="label" for="rad1">Oui</label>
+                  <input type="radio" ng-model="actu.urgent" value="0" id="rad2">
+                  <label id="radio2" class="label" for="rad2">Non</label>
                </div>
 
-               <input type="submit" class="bouton" title="submit" value="Soumettre">
+
+               <input ng-click="uploadFile()" type="submit" class="bouton" title="submit" value="Soumettre">
            </div>
         </form>
+</div>
