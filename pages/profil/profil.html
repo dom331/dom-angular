@@ -3,33 +3,40 @@
 
         <hr>
 
-        <div  class="profil">
-            <div>
-                <img src="medias/uploads/avatars/{{message.liste.oui.avatar}}" alt="Homme espace">
-                <div class="dates-profil">
-                    <h4>Date d'inscription :</h4>
-                    <p>{{message.liste.oui.date_inscription | date}}</p>
-                    <h4>Date de naissance :</h4>
-                    <p>{{message.liste.oui.naiss | date}}</p>
+        <div class="profil">
+            <div class="colonne-gauche">
+                <div class="fond-article">
+                    <img src="medias/uploads/avatars/{{message.liste.oui.avatar}}" alt="Homme espace">
+                    <div class="dates-profil">
+                        <h4>Date d'inscription :</h4>
+                        <p class="infos">{{message.liste.oui.date_inscription | date}}</p>
+                        <h4>Date de naissance :</h4>
+                        <p class="infos">{{message.liste.oui.naiss | date}}</p>
+                    </div>
+                </div>
+                <div class="fond-article">
+                    <h3>Description :</h3>
+                    <p class="texte-article">
+                        {{message.liste.oui.description}}
+                    </p>
                 </div>
             </div>
-            <div>
-                <h4>Description :</h4>
-                <p>
-                    {{message.liste.oui.description}}
-                </p>
-            </div>
-            <div>
-                <h4>Adresse mail :</h4>
-                <p>{{message.liste.oui.email}}</p>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Portfolio</a>
-            </div>
-            <div>
-                <button class="bouton">Modifier</button>
-                <button class="bouton">Convoquer</button>
+
+            <div class="colonne-droite">
+                <div class="fond-article">
+                    <h4>Adresse mail :</h4>
+                    <p class="infos">{{message.liste.oui.email}}</p>
+                    <div class="rs">
+                        <a href="#"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="fond-article">
+                    <button class="bouton">Modifier</button>
+                    <button class="bouton">Convoquer</button>
+                </div>
             </div>
         </div>
 </div>
