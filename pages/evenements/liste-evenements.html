@@ -6,8 +6,8 @@
 
         <hr>
 
-    <div ng-repeat="event in message.liste" class="liste-actu" ng-if="event.approuve == true">
-            <a href="#/evenement?id={{event.id}}">
+    <div class="liste-actu">
+            <a ng-repeat="event in message.liste" href="#/evenement?id={{event.id}}" ng-if="event.approuve == true">
                 <div class="actu principale">
                     <img src="medias/uploads/evenements/{{event.image}}" alt="{{event.image}}">
                     <span>{{event.date_debut | date : "dd MMM"}}</span>
