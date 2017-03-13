@@ -10,24 +10,24 @@
             Le champ "Source de l'information" peut être une URL ou une personne/organisation.
         </p>
 
-        <form ng-submit="AjoutActu(actu)" id="ajout-actualite" enctype="multipart/form-data">
+        <form ng-submit="AjoutActu(actu, file)" id="ajout-actualite" enctype="multipart/form-data">
             <div>
-                <input ng-model="actu.titre" class="ajout" title="titre" type="text" placeholder="Titre de l'actualité"/>
-                <textarea ng-model="actu.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="Description de l'actualité"></textarea>
+                <input name="titre" ng-model="actu.titre" class="ajout" title="titre" type="text" placeholder="Titre de l'actualité"/>
+                <textarea name="contenu" ng-model="actu.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="Description de l'actualité"></textarea>
             </div>
            <div>
-               <input ng-model="actu.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
-               <input ngf-select="uploadFiles($file, $invalidFiles)"
-                      accept="image/*" ngf-max-height="1000" ngf-max-size="1MB"
+               <input name="responsable" ng-model="actu.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
+               <input ng-model="file" name="file" ngf-select
+                      accept="image/*"
                       class="ajout" title="image" type="file" file-input="files"
                       placeholder="Image : choisissez un fichier"/>
 
                <h3>Appliquer la mention "urgent"?</h3>
 
                <div class="boutons-radio">
-                  <input type="radio" ng-model="actu.urgent" value="1" id="rad1">
+                  <input name="urgent" type="radio" ng-model="actu.urgent" value="1" id="rad1">
                   <label id="radio1" class="label" for="rad1">Oui</label>
-                  <input type="radio" ng-model="actu.urgent" value="0" id="rad2">
+                  <input name="urgent" type="radio" ng-model="actu.urgent" value="0" id="rad2">
                   <label id="radio2" class="label" for="rad2">Non</label>
                </div>
 
