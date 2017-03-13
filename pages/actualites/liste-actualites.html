@@ -10,13 +10,11 @@
     <a href="#/actualite?id={{liste.id}}">
         <div class="actu principale">
             <img src="medias/uploads/actualites/{{liste.image}}" alt="Homme Espace">
-            <span>{{liste.date_debut | date }}</span>
+            <span>{{liste.date_debut | date : "dd MMM" }}</span>
             <h2>{{liste.titre}}</h2>
         </div>
     </a>
-</div>
 
-<div class="liste-actu">
     <a ng-repeat="liste in donnees.liste" href="#/actualite?id={{liste.id}}">
         <div class="actu secondaire">
             <img src="medias/uploads/actualites/{{liste.image}}" alt="Homme Espace">

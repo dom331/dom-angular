@@ -28,6 +28,9 @@ a {
 a:hover {
   text-decoration: none;
 }
+.hr-center {
+  margin: 40px auto;
+}
 ul,
 li {
   margin: 0;
@@ -534,7 +537,7 @@ main hr {
 .liste-actu {
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 .actu {
   position: relative;
@@ -563,8 +566,10 @@ main hr {
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: rgba(27, 46, 89, 0.8);
+  background-color: #1B2E59;
   padding-left: 50px;
+  font-size: 16px;
+  padding-top: 12px;
 }
 .principale {
   width: 520px;
@@ -574,10 +579,6 @@ main hr {
   width: 100%;
   height: 100%;
   border: 2px solid #E62651;
-}
-.principale h2 {
-  font-size: 24px;
-  padding-top: 8px;
 }
 .principale:hover {
   -webkit-box-shadow: 0 0 10px 1px #E62651;
@@ -591,10 +592,6 @@ main hr {
   width: 100%;
   height: 100%;
   border: 2px solid #1B2E59;
-}
-.secondaire h2 {
-  font-size: 16px;
-  padding-top: 12px;
 }
 .secondaire:hover {
   -webkit-box-shadow: 0 0 10px 1px #1B2E59;
@@ -720,6 +717,14 @@ main hr {
   margin-top: 0;
 }
 /* VIE SCOLAIRE ************************************************************/
+.liste-objets {
+  position: relative;
+}
+.liste-objets .button-plus {
+  position: absolute;
+  top: -25px;
+  right: 0;
+}
 .vie-scolaire,
 .administration {
   margin: 20px;
@@ -728,27 +733,41 @@ main hr {
 .administration h2 {
   color: #AC1738;
 }
-.vie-scolaire .liste,
-.administration .liste {
+.vie-scolaire .liste a,
+.administration .liste a {
+  color: #1B2E59;
+  padding-bottom: 30px;
+  transition: 0.2s ease border;
+  border-left: 0 double #E6DACB;
+  border-right: 0 double #E6DACB;
+}
+.vie-scolaire .liste a:hover,
+.administration .liste a:hover {
+  border-left: 10px double #E6DACB;
+  border-right: 10px double #E6DACB;
+  background-color: #deceba;
+}
+.liste {
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0 40px 0;
+  margin: 20px 0 20px 0;
 }
-.vie-scolaire .liste img,
-.administration .liste img {
-  margin: 30px;
+.liste img {
+  margin: 30px 30px 0 30px;
   border: 4px solid #E62651;
   border-radius: 50%;
   width: 150px;
   height: 150px;
   transition: 0.5s ease;
 }
-.vie-scolaire .liste img:hover,
-.administration .liste img:hover {
-  -webkit-box-shadow: 0 0 8px 1px #E62651;
-  box-shadow: 0 0 8px 1px #E62651;
+.sous-convoque {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #EFE8DF;
+  padding: 10px;
+  margin: 5px 10px;
 }
 /* ADMINISTRATION ************************************************************/
 .administration p {
@@ -794,5 +813,10 @@ main hr {
   flex-wrap: wrap;
 }
 .membres > div > div {
-  margin: 10px 20px;
+  padding: 20px 10px;
+  margin: 10px;
+  text-align: center;
+}
+.membres > div > div:hover {
+  background-color: #deceba;
 }

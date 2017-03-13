@@ -10,38 +10,44 @@
                 Si toutefois vous n'êtes pas convoqué(e) mais que vous connaissez une des personnes suivantes,
                 n'hésitez pas à l'avertir. Merci de votre compréhension.
             </p>
+
 <!--{{message | json }}-->
 
-            <div ng-repeat="convoque in message.liste" ng-if="convoque.convoque == true">
-            <a href="#/profil?id={{convoque.id}}">
-                <div class="liste convocations membres">
-                    <img src="medias/uploads/avatars/{{convoque.image}}" alt="{{convoque.image}}">
-                    <p>{{convoque.prenom}} {{convoque.nom}}</p>
+            <div ng-repeat="convoque in message.liste" ng-if="convoque.convoque == true" >
+                <div class="liste convocations membres fond-article">
+                    <a href="#/profil?id={{convoque.id}}" >
+                        <img src="medias/uploads/avatars/{{convoque.image}}" alt="{{convoque.image}}">
+                        <p class="sous-convoque">{{convoque.prenom}} {{convoque.nom}}</p>
+                    </a>
                 </div>
-            </a>
-            <p>Vous êtes <strong>convoqué(e)</strong>, merci de vous présenter au <strong>secrétariat</strong> s'il vous plait.</p>
-            </div>
 
+            </div>
+            <p>Vous êtes <strong>convoqué(e)s</strong>, merci de vous présenter au <strong>secrétariat</strong> s'il vous plait.</p>
+
+            <hr class="hr-center">
 <!--{{objetsperdus}}-->
-            <h2>Objets perdus</h2>
-            <a href="#/objet-perdu/ajout" class="button-plus">
-                <i class="fa fa-plus-square fa-5x" aria-hidden="true"></i>
-            </a>
-
-            <p class="explications">
-                Les objets suivants ont été retrouvés dans le départements ou ses alentours.
-                Si vous reconnaissez une de vos affaires, rendez vous au secrétariat !
-            </p>
-            <div ng-repeat="objet in objetsperdus.objets">
-
-            <div class="liste objets membres">
-                <a href="#/objet-perdu?id={{objet.id}}">
-                    <div>
-                        <img src="medias/uploads/objetsperdus/{{objet.image}}" alt="{{objet.image}}">
-                        <p>{{objet.titre}}</p>
-                    </div>
+            <div class="liste-objets">
+                <a href="#/objet-perdu/ajout" class="button-plus">
+                    <i class="fa fa-plus-square fa-5x" aria-hidden="true"></i>
                 </a>
-            </div>
 
+                <h2>Objets perdus</h2>
+
+                <p class="explications">
+                    Les objets suivants ont été retrouvés dans le départements ou ses alentours.
+                    Si vous reconnaissez une de vos affaires, rendez vous au secrétariat !
+                </p>
+                <div ng-repeat="objet in objetsperdus.objets">
+
+                <div class="liste objets membres fond-article">
+                    <a href="#/objet-perdu?id={{objet.id}}">
+                        <div>
+                            <img src="medias/uploads/objetsperdus/{{objet.image}}" alt="{{objet.image}}">
+                            <p class="sous-convoque">{{objet.titre}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
+    </div>
 </div>
