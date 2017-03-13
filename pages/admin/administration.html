@@ -1,4 +1,4 @@
-<div class="mainAdmin">
+<div ng-controller="AdminController" class="mainAdmin">
     <h1>Administration</h1>
 
     <hr>
@@ -10,12 +10,10 @@
             utiliser leurs identifiants. Affichez d'abord le profil du candidat, vérifiez ses informations et levez
             tout doutes sur son identité. Il ne vous reste qu'à presser le bouton APPROUVER !
         </p>
+
         <div class="liste membres convocations fond-article">
-            <p class="sous-convoque">01 Jan 2017 | Louis Barberot</p>
-            <p class="sous-convoque">01 Jan 2017 | Louis Barberot</p>
-            <p class="sous-convoque">01 Jan 2017 | Louis Barberot</p>
-            <p class="sous-convoque">01 Jan 2017 | Louis Barberot</p>
-            <p class="sous-convoque">01 Jan 2017 | Louis Barberot</p>
+            <p ng-repeat="membre in membres.liste" ng-if="membre.approuve == 0" class="sous-convoque">{{membre.date_inscription | date}} | {{membre.prenom}} {{membre.nom}}</p>
+
         </div>
 
         <h2>Évenements à approuver</h2>
@@ -25,9 +23,9 @@
             l'approbation de ceux-ci. N'hésitez pas à consulter les responsables de l'évènement.
         </p>
         <div class="liste evenements fond-article">
-            <div class="inside">
-                <img src="medias/interface/temps.png" alt="Louis Barberot">
-                <p class="sous-convoque">Event</p>
+            <div ng-repeat="events in events.liste" ng-if="events.approuve == 0" class="inside">
+                <img  src="medias/uploads/evenements/{{events.image}}" alt="{{events.image}}">
+                <p class="sous-convoque">{{events.titre}}</p>
             </div>
         </div>
     </div>

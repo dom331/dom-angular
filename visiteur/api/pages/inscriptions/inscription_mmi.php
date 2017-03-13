@@ -24,6 +24,7 @@ require_once '../../dao/DaoUtilisateur.php';
             $dao->bean->setPrenom(ucwords($prenom));
             $dao->bean->setIdentifiant($identifiant);
             $dao->bean->setPsw($psw);
+            $dao->bean->setImage("default.png");
             $dao->bean->setEmail($email);
             $dao->bean->setDate_inscription(date("Y-m-d"));
 //        var_dump($dao) or die();

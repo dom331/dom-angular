@@ -13,15 +13,15 @@
 
 <!--{{message | json }}-->
 
-            <div ng-repeat="convoque in message.liste" ng-if="convoque.convoque == true" >
+
                 <div class="liste convocations membres fond-article">
-                    <a href="#/profil?id={{convoque.id}}" >
+                    <a ng-repeat="convoque in message.liste" ng-if="convoque.convoque == true" href="#/profil?id={{convoque.id}}" >
                         <img src="medias/uploads/avatars/{{convoque.image}}" alt="{{convoque.image}}">
                         <p class="sous-convoque">{{convoque.prenom}} {{convoque.nom}}</p>
                     </a>
                 </div>
 
-            </div>
+
             <p>Vous êtes <strong>convoqué(e)s</strong>, merci de vous présenter au <strong>secrétariat</strong> s'il vous plait.</p>
 
             <hr class="hr-center">
@@ -37,17 +37,16 @@
                     Les objets suivants ont été retrouvés dans le départements ou ses alentours.
                     Si vous reconnaissez une de vos affaires, rendez vous au secrétariat !
                 </p>
-                <div ng-repeat="objet in objetsperdus.objets">
+
 
                 <div class="liste objets membres fond-article">
-                    <a href="#/objet-perdu?id={{objet.id}}">
+                    <a ng-repeat="objet in objetsperdus.objets" href="#/objet-perdu?id={{objet.id}}">
                         <div>
                             <img src="medias/uploads/objetsperdus/{{objet.image}}" alt="{{objet.image}}">
                             <p class="sous-convoque">{{objet.titre}}</p>
                         </div>
                     </a>
                 </div>
-            </div>
         </div>
     </div>
 </div>
