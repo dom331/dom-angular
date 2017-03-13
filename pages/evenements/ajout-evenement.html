@@ -1,3 +1,4 @@
+<div ng-controller="AjoutEventController">
         <h1>Ajouter évenement</h1>
 
         <hr>
@@ -8,18 +9,22 @@
             Lorsque l'administration reconnaitra votre évènement comme correct et réalisable, l'administration publiera votre événement.
         </p>
 
-        <form id="ajout-actualite">
+        <form ng-submit="AjoutEvent(event, file)" enctype="multipart/form-data" id="ajout-actualite">
             <div>
-                <input class="ajout" title="titre" type="text" placeholder="Nom de l'événement"/>
-                <textarea class="ajout" title="description" id="" cols="30" rows="12" placeholder="Description de l'événement"></textarea>
+                <input ng-model="event.titre" class="ajout" title="titre" type="text" placeholder="Nom de l'événement"/>
+                <textarea ng-model="event.desc" class="ajout" title="description" id="" cols="30" rows="12" placeholder="Description de l'événement"></textarea>
             </div>
             <div>
-                <input class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
-                <input class="ajout" title="date" type="text" placeholder="Date"/>
-                <input class="ajout" title="image" type="text" placeholder="Image : choisissez un fichier"/>
-                <input class="ajout" title="prix" type="text" placeholder="Prix"/>
-                <input class="ajout" title="image" type="text" placeholder="A prévoir"/>
+                <input ng-model="event.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
+                <input ng-model="event.date" class="ajout" title="date" type="text" placeholder="Date"/>
+                <input ng-model="file" name="file" ngf-select
+                       accept="image/*"
+                       class="ajout" title="image" type="file" file-input="files"
+                       placeholder="Image : choisissez un fichier"/>
+                <input ng-model="event.prix" class="ajout" title="prix" type="text" placeholder="Prix"/>
+                <input ng-model="event.a_prevoir" class="ajout" title="image" type="text" placeholder="A prévoir"/>
 
                 <input type="submit" class="bouton" title="submit" value="Soumettre">
             </div>
         </form>
+</div>

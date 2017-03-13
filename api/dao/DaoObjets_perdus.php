@@ -25,7 +25,7 @@ class DaoObjets_perdus extends Dao{
     }
 
     public function create(){
-        $sql = "INSERT INTO objet_perdus(TITRE_ACTUALITE, CONTENU_ACTUALITE, IMAGE,  DATE_DEBUT_ACTUALITE, DATE_FIN_ACTUALITE, ARCHIVE, RESPONSABLES_ACTUALITE, ID_UTILISATEUR) 
+        $sql = "INSERT INTO objet_perdus(TITRE_OBJET, CONTENU_OBJET, IMAGE,  DATE_DEBUT_OBJET, DATE_FIN_OBJET, ARCHIVE, RESPONSABLES_OBJET, ID_UTILISATEUR) 
                 VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
         $requete = $this->pdo->prepare($sql);
@@ -33,11 +33,11 @@ class DaoObjets_perdus extends Dao{
         $requete->bindValue(1, $this->bean->getTitre());
         $requete->bindValue(2, $this->bean->getContenu());
         $requete->bindValue(3, $this->bean->getImage());
-        $requete->bindValue(5, $this->bean->getDate_debut());
-        $requete->bindValue(6, $this->bean->getDate_fin());
-        $requete->bindValue(7, $this->bean->getArchive());
-        $requete->bindValue(8, $this->bean->getResponsables());
-        $requete->bindValue(9, $this->bean->getLeUtilisateur());
+        $requete->bindValue(4, $this->bean->getDate_debut());
+        $requete->bindValue(5, $this->bean->getDate_fin());
+        $requete->bindValue(6, $this->bean->getArchive());
+        $requete->bindValue(7, $this->bean->getResponsables());
+        $requete->bindValue(8, $this->bean->getLeUtilisateur());
 
         $requete->execute();
     }

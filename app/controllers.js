@@ -140,7 +140,8 @@ app.controller('EventController', function($scope, $http) {
             method: 'POST',
             url: 'http://localhost/dom-angular/api/pages/evenements/article_evenement.php',
             data: {
-                id: infoss
+                id: infoss,
+                suppr: "non"
             }
         };
 
@@ -149,6 +150,28 @@ app.controller('EventController', function($scope, $http) {
             console.log("ENVOYE A PHP: OUI");
             console.log("article_type_says: " + data);
             $scope.article = data;
+            $('#btnsuppr').on("click", function () {
+                console.log("btn clicked");
+                var supprArt = {
+                    method: 'POST',
+                    url: 'http://localhost/dom-angular/api/pages/evenements/article_evenement.php',
+                    data: {
+                        id: infoss,
+                        suppr: "supprimer"
+                    }
+                };
+                $http(supprArt).success(function (data, status, headers, config) {
+                    console.log(status);
+                    console.log("ENVOYE A PHP: OUI");
+                    console.log("PHP SAYS: " + data);
+                    $scope.message = data;
+                    window.location.href = '#/evenements';
+
+                }).error(function (data, status, headers, config) {
+                    // si jamais ca merde sur l'envoi
+                    console.log("Erreur: " + data + status);
+                });
+            });
             // window.location.href = '../pages/actualites';
         }).error(function (data, status, headers, config) {
             // si jamais ca merde sur l'envoi

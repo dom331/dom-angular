@@ -6,6 +6,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 $data = json_decode(file_get_contents("php://input"));
 //var_dump($data);
 $id = $data->id;
+$suppr = $data->suppr;
 require_once("../../dao/daoObjets_perdus.php");
 
 
@@ -27,6 +28,9 @@ $infos['oui']['userNom'] = $daoObjets_perdus->bean->getLeUtilisateur()->getNom()
 $infos['oui']['userPrenom'] = $daoObjets_perdus->bean->getLeUtilisateur()->getPrenom();
 $infos['oui']['userImg'] = $daoObjets_perdus->bean->getLeUtilisateur()->getImage();
 
+if ($suppr == "supprimer"){
+    $daoObjets_perdus->delete();
+}
 
 //var_dump($param) or die();
 require_once('../../dao/DaoUtilisateur.php');
