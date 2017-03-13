@@ -9,7 +9,7 @@
         <div ng-repeat="membre in message.liste" ng-if="membre.approuve == true">
             <a href="#/profil?id={{membre.id}}">
                 <img src="medias/uploads/avatars/{{membre.image}}" alt="{{membre.prenom}}">
-                 <p>{{membre.prenom}} {{membre.nom}}</p>
+                 <p class="sous-convoque">{{membre.prenom}} {{membre.nom}}</p>
             </a>
         </div>
     </div>
