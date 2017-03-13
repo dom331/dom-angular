@@ -63,7 +63,7 @@ input {
   border: solid 2px #AC1738;
   width: 100%;
   margin: 10px 0;
-  padding-top: 10px;
+  min-height: 45px;
 }
 .bouton:hover {
   background-color: white;
@@ -453,9 +453,9 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: #F2EEE9;
-  -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
-  box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
+  box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
 }
 #hamburger {
   height: 60px;
@@ -501,7 +501,7 @@ a[href="https://sedna.univ-fcomte.fr/direct/myplanning.jsp"] {
   margin-left: 320px;
 }
 main {
-  padding: 20px 35px;
+  padding: 20px 60px;
 }
 main h1 {
   margin-left: 20px;
@@ -590,7 +590,7 @@ main hr {
   border: 2px solid #B6DEDE;
   background-color: #F2EEE9;
   padding: 10px;
-  margin: 20px 0 20px 20px;
+  margin: 20px 0;
   font-size: 16px;
 }
 #ajout-actualite {
@@ -702,34 +702,80 @@ main hr {
 .article h3 {
   margin-top: 0;
 }
-/* ADMINISTRATION ************************************************************/
-.mainAdmin {
-  padding: 10px 60px;
+/* VIE SCOLAIRE ************************************************************/
+.vie-scolaire,
+.administration {
+  margin: 20px;
 }
-.administration p {
-  border: 2px solid #B6DEDE;
+.vie-scolaire h2,
+.administration h2 {
+  color: #AC1738;
 }
+.vie-scolaire .liste,
 .administration .liste {
   width: 100%;
   overflow: hidden;
-}
-.administration .liste .inside {
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
+  margin: 20px 0 40px 0;
 }
-.administration .boutonav {
-  background-image: url("../medias/interface/icones/plus.png");
-  width: 35px;
-  height: 35px;
-}
-.administration .liste .inside img {
+.vie-scolaire .liste img,
+.administration .liste img {
   margin: 30px;
   border: 4px solid #E62651;
   border-radius: 50%;
   width: 150px;
   height: 150px;
+  transition: 0.5s ease;
 }
-.administration .membres,
-.administration .evenements {
-  background-color: #E6DACB;
+.vie-scolaire .liste img:hover,
+.administration .liste img:hover {
+  -webkit-box-shadow: 0 0 8px 1px #E62651;
+  box-shadow: 0 0 8px 1px #E62651;
+}
+/* ADMINISTRATION ************************************************************/
+.administration p {
+  border: 2px solid #B6DEDE;
+}
+/* PROFIL ************************************************************/
+.profil {
+  width: 100%;
+  display: flex;
+}
+.profil img {
+  margin: auto;
+}
+.profil .dates-profil {
+  width: 50%;
+}
+.profil h4 {
+  color: #1B2E59;
+}
+.profil .rs {
+  display: flex;
+  justify-content: space-between;
+}
+.profil i {
+  color: #1B2E59;
+}
+.profil i:hover {
+  transition: 0.5s ease;
+  color: #E62651;
+}
+.profil .colonne-gauche {
+  width: 60%;
+}
+.profil .colonne-droite {
+  width: 40%;
+}
+.profil > .colonne-gauche > div:nth-child(1) {
+  display: flex;
+}
+/* MEMBRES ************************************************************/
+.membres > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.membres > div > div {
+  margin: 10px 20px;
 }
