@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
         .when
         ("/evenement/ajout", {
             templateUrl: "pages/evenements/ajout-evenement.html",
-            controller: "EventController"
+            controller: "AjoutEventController"
         })
         .when
         ("/evenement/modif", {

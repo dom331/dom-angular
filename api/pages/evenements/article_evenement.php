@@ -6,6 +6,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 $data = json_decode(file_get_contents("php://input"));
 //var_dump($data);
 $id = $data->id;
+$suppr = $data->suppr;
 require_once("../../dao/DaoEvenements.php");
 
 
@@ -28,6 +29,9 @@ $daoEvenement = new DaoEvenements();
         $infos['oui']['userPrenom'] = $daoEvenement->bean->getLeUtilisateur()->getPrenom();
         $infos['oui']['userImg'] = $daoEvenement->bean->getLeUtilisateur()->getImage();
 
+if ($suppr == "supprimer"){
+        $daoEvenement->delete();
+}
 
 require_once('../../dao/DaoUtilisateur.php');
 require_once('../../dao/DaoEvenements.php');
