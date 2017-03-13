@@ -6,6 +6,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 $data = json_decode(file_get_contents("php://input"));
 //var_dump($data);
 $id = $data->id;
+$suppr = $data->suppr;
 require_once("../../dao/DaoActualite.php");
 
 
@@ -26,6 +27,10 @@ $daoActualite = new DaoActualite();
             $infos['oui']['userNom'] = $daoActualite->bean->getLeUtilisateur()->getNom();
             $infos['oui']['userPrenom'] = $daoActualite->bean->getLeUtilisateur()->getPrenom();
             $infos['oui']['userImg'] = $daoActualite->bean->getLeUtilisateur()->getImage();
+
+if ($suppr == "supprimer"){
+    $daoActualite->delete();
+}
 
 
 //var_dump($param) or die();
