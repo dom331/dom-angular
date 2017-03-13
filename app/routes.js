@@ -16,6 +16,11 @@ app.config(function($routeProvider) {
             controller: "AjoutActuController"
         })
         .when
+        ("/actualite/modif", {
+            templateUrl: "pages/actualites/modif-actualite.html",
+            controller: "ModifActuController"
+        })
+        .when
         ("/evenements", {
             templateUrl: "pages/evenements/liste-evenements.html",
             controller: "EventController"
@@ -29,6 +34,11 @@ app.config(function($routeProvider) {
         ("/evenement/ajout", {
             templateUrl: "pages/evenements/ajout-evenement.html",
             controller: "AjoutEventController"
+        })
+        .when
+        ("/evenement/modif", {
+            templateUrl: "pages/evenements/modif-evenement.html",
+            controller: "ModifEventController"
         })
         .when
         ("/membres", {
