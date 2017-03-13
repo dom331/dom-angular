@@ -69,6 +69,7 @@ app.controller('ActuController', function($scope, $http) {
             $scope.donnees = response.statusText;
             console.log(response.data);
         });
+    
 
     if (gup('id')) {
         var infoss = gup('id');

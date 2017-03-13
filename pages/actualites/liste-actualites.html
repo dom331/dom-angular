@@ -17,7 +17,7 @@
 </div>
 
 <div class="liste-actu">
-    <a ng-repeat="liste in donnees.liste" href="#/actualite?id={{liste.id}}">
+    <a ng-repeat="liste in donnees.liste" href="#/actualite?id={{liste.id}}" ng-if="liste.urgent == 0">
         <div class="actu secondaire">
             <img src="medias/uploads/actualites/{{liste.image}}" alt="Homme Espace">
             <span>{{liste.date_debut | date : "dd MMM" }}</span>

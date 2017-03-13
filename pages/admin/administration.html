@@ -1,4 +1,4 @@
-<div class="mainAdmin">
+<div ng-controller="AdminController" class="mainAdmin">
     <h1>Administration</h1>
 
     <hr>
@@ -11,13 +11,7 @@
             tout doutes sur son identité. Il ne vous reste qu'à presser le bouton APPROUVER !
         </p>
         <div class="liste membres">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
-                <img src="medias/interface/photo.jpg" alt="Louis Barberot">
+                <img ng-repeat="membre in membres.liste" ng-if="membre.approuve == 0" src="medias/uploads/avatars/{{membre.image}}" alt="{{membre.image}}">
         </div>
 
         <h2>Évenements à approuver</h2>
@@ -29,11 +23,7 @@
         <div class="liste evenements">
 
             <div class="inside">
-                <img src="medias/interface/temps.png" alt="Louis Barberot">
-                <img src="medias/interface/temps.png" alt="Louis Barberot">
-                <img src="medias/interface/temps.png" alt="Louis Barberot">
-                <img src="medias/interface/temps.png" alt="Louis Barberot">
-                <img src="medias/interface/temps.png" alt="Louis Barberot">
+                <img ng-repeat="events in events.liste" ng-if="events.approuve == 0" src="medias/uploads/evenements/{{events.image}}" alt="{{events.image}}">
             </div>
         </div>
     </div>
