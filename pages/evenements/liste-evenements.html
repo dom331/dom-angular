@@ -10,7 +10,7 @@
             <a href="#/evenement?id={{event.id}}">
                 <div class="actu principale">
                     <img src="medias/uploads/evenements/{{event.image}}" alt="{{event.image}}">
-                    <span>{{event.date_debut | date}}</span>
+                    <span>{{event.date_debut | date : "dd MMM"}}</span>
                     <h2>{{event.titre}}</h2>
                 </div>
             </a>
