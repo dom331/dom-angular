@@ -62,6 +62,7 @@ app.controller('AjoutActuController', function ($scope, $http, Upload, $timeout)
             file.upload.then(function (response) {
                 $timeout(function () { //Succes
                     console.log(response.data);
+                    window.location.href = "#/";
                 });
                 },
                 function(response) { // Erreur

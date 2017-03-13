@@ -76,7 +76,8 @@ app.controller('ActuController', function($scope, $http) {
             method: 'POST',
             url: 'http://localhost/dom-angular/api/pages/actualites/article.php',
             data: {
-                id: infoss
+                id: infoss,
+                suppr : "non"
             }
         };
 
@@ -86,10 +87,33 @@ app.controller('ActuController', function($scope, $http) {
             console.log("PHP SAYS: " + data);
             $scope.message = data;
             // window.location.href = '../pages/actualites';
+            $('#btnsuppr').on("click", function () {
+                console.log("btn clicked");
+                var supprArt = {
+                    method: 'POST',
+                    url: 'http://localhost/dom-angular/api/pages/actualites/article.php',
+                    data: {
+                        id: infoss,
+                        suppr: "supprimer"
+                    }
+                };
+                $http(supprArt).success(function (data, status, headers, config) {
+                    console.log(status);
+                    console.log("ENVOYE A PHP: OUI");
+                    console.log("PHP SAYS: " + data);
+                    $scope.message = data;
+                        window.location.href = '#/';
+
+                }).error(function (data, status, headers, config) {
+                    // si jamais ca merde sur l'envoi
+                    console.log("Erreur: " + data + status);
+                });
+            });
         }).error(function (data, status, headers, config) {
             // si jamais ca merde sur l'envoi
             console.log("Erreur: " + data + status);
         });
+
     }
 
 
@@ -102,6 +126,8 @@ app.controller('ActuController', function($scope, $http) {
             console.log("session existante"+response.data);
         })
     })
+
+
 
 }); // connectUser END
 

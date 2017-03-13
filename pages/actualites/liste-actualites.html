@@ -5,7 +5,17 @@
 
 <hr>
 
-<div ng-repeat="liste in donnees.liste" class="liste-actu">
+<div ng-repeat="liste in donnees.liste" class="liste-actu" ng-if="liste.urgent == 1">
+    <a href="#/actualite?id={{liste.id}}">
+        <div class="actu principale">
+            <img src="medias/uploads/actualites/{{liste.image}}" alt="Homme Espace">
+            <span>{{liste.date_debut | date }}</span>
+            <h2>{{liste.titre}}</h2>
+        </div>
+    </a>
+</div>
+
+<div ng-repeat="liste in donnees.liste" class="liste-actu" ng-if="liste.urgent == 0">
     <a href="#/actualite?id={{liste.id}}">
         <div class="actu secondaire">
             <img src="medias/uploads/actualites/{{liste.image}}" alt="Homme Espace">
