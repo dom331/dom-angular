@@ -68,7 +68,11 @@ h2{
   margin: 0;
 }
 
-input{
+p{
+  font-family: "Raleway Medium", sans-serif;
+}
+
+ input{
   font-family: "Open Sans Semibold", sans-serif;
 }
 
@@ -98,7 +102,23 @@ input{
 
 
 /* Pages non-connecté ************************************************************/
+#btn-connexion{
+  transition: 0.5s ease;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  background-color: @rose;
+  border: solid 2px @violet;
+  width: 100%;
+  margin: 10px 0;
+  min-height: 45px;
 
+  & :hover{
+    background-color: white;
+    color: @rose;
+  }
+}
 .deconnecte{
   background-color: @marine;
   text-align: center;
@@ -715,7 +735,8 @@ main{
 
 .principale{
   & img {
-    width: 520px;
+    min-width: 240px;
+    max-width: 520px;
     height: 240px;
     border: 2px solid @rose;
   }
@@ -796,6 +817,7 @@ main{
     width: 100%;
     margin: 0 10px;
     display: flex;
+    font-family: "Raleway Medium", sans-serif;
   }
 
   & input[type="radio"]{
