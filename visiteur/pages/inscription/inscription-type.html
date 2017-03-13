@@ -5,11 +5,11 @@
         <hr>
         <h1>Inscription {{choix}}...</h1>
         <form ng-submit="inscriptionEtudiant(user)">
-            <input ng-model="user.prenom" title="prenom" type="text" placeholder="Prénom"/>
-            <input ng-model="user.nom" title="nom" type="text" placeholder="Nom"/>
-            <input ng-model="user.identifiant" title="id" type="text" placeholder="Identifiant LDAP"/>
-            <input ng-model="user.psw" title="psw" type="password" placeholder="Mot de passe LDAP"/>
-            <input ng-model="user.email" title="email" type="email" placeholder="Adresse email"/>
+            <input class="input" ng-model="user.prenom" title="prenom" type="text" placeholder="Prénom"/>
+            <input class="input" ng-model="user.nom" title="nom" type="text" placeholder="Nom"/>
+            <input class="input" ng-model="user.identifiant" title="id" type="text" placeholder="Identifiant LDAP"/>
+            <input class="input" ng-model="user.psw" title="psw" type="password" placeholder="Mot de passe LDAP"/>
+            <input class="input" ng-model="user.email" title="email" type="email" placeholder="Adresse email"/>
             <input type="submit" class="bouton btn-deco" value="Soumettre">
         </form>
         <hr>

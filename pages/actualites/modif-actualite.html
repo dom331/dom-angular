@@ -1,14 +1,8 @@
 <div ng-controller="AjoutActuController">
 
-<h1>Ajout actualité</h1>
+<h1>Modifier actualité</h1>
 
         <hr>
-
-        <p class="explications">
-            Les champs marqués par le symbole * doivent être obligatoirement renseignés.
-            <br/>
-            Le champ "Source de l'information" peut être une URL ou une personne/organisation.
-        </p>
 
         <form ng-submit="AjoutActu(actu, file)" id="ajout-actualite" enctype="multipart/form-data">
             <div>
@@ -31,8 +25,7 @@
                   <label id="radio2" class="label" for="rad2">Non</label>
                </div>
 
-
-               <input ng-click="uploadFile()" type="submit" class="bouton" title="submit" value="Soumettre">
+               <input type="submit" class="bouton" title="submit" value="Modifier">
            </div>
         </form>
 </div>
