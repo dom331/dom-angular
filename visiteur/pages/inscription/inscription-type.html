@@ -4,13 +4,35 @@
         <a href="#/"><img class="logo-home" src="medias/interface/logos/logo_dom_home.png" alt="Logo DOM MMI"></a>
         <hr>
         <h1>Inscription {{choix}}...</h1>
-        <form ng-submit="inscriptionEtudiant(user)">
-            <input class="input" ng-model="user.prenom" title="prenom" type="text" placeholder="Prénom"/>
-            <input class="input" ng-model="user.nom" title="nom" type="text" placeholder="Nom"/>
-            <input class="input" ng-model="user.identifiant" title="id" type="text" placeholder="Identifiant LDAP"/>
-            <input class="input" ng-model="user.psw" title="psw" type="password" placeholder="Mot de passe LDAP"/>
-            <input class="input" ng-model="user.email" title="email" type="email" placeholder="Adresse email"/>
-            <input type="submit" class="bouton btn-deco" value="Soumettre">
+        <form name="formulaire" ng-submit="inscriptionEtudiant(user)" novalidate>
+
+
+            <input class="input" name="prenom" ng-model="user.prenom" title="prenom" type="text" placeholder="Prénom" ng-maxlength="64" required/>
+
+            <div ng-messages="formulaire.prenom.$error" style="color:red" ng-messages-include="../msg.html"></div>
+
+
+            <input class="input" ng-model="user.nom" name="nom" title="nom" type="text" placeholder="Nom" ng-maxlength="64" required/>
+
+            <div ng-messages="formulaire.nom.$error" style="color:red" ng-messages-include="../msg.html"></div>
+
+
+            <input class="input" ng-model="user.identifiant" name="identifiant" title="id" type="text" placeholder="Identifiant LDAP" ng-minlength="4" ng-maxlength="10" required/>
+
+            <div ng-messages="formulaire.identifiant.$error" style="color:red" ng-messages-include="../msg.html"></div>
+
+
+            <input class="input" ng-model="user.psw" title="psw" name="psw" type="password" placeholder="Mot de passe LDAP" ng-maxlength="64" required/>
+
+            <div ng-messages="formulaire.psw.$error" style="color:red" ng-messages-include="../msg.html"></div>
+
+
+            <input class="input" ng-model="user.email" title="email" name="email" type="email" placeholder="Adresse email" ng-maxlength="100" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)|(\-[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/" required/>
+
+            <div ng-messages="formulaire.email.$error" style="color:red" ng-messages-include="../msg.html"></div>
+
+
+            <input type="submit" class="bouton btn-deco" value="Soumettre" ng-disabled="formulaire.$invalid">
         </form>
         <hr>
         <a href="http://mmimontbeliard.com"><img class="logo-mmi" src="medias/interface/logos/mmi.png" alt="Logo MMI Montbéliard"></a>
