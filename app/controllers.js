@@ -82,6 +82,10 @@ app.controller('ActuController', function($scope, $http) {
             }
         };
 
+        $scope.redirect = function () {
+            window.location.href = '#/actualite/modif?id='+infoss;
+        };
+
         $http(articletype).success(function (data, status, headers, config) {
             console.log(status);
             console.log("ENVOYE A PHP: OUI");
@@ -144,6 +148,9 @@ app.controller('EventController', function($scope, $http) {
                 id: infoss,
                 suppr: "non"
             }
+        };
+        $scope.redirection = function () {
+            window.location.href = '#/evenement/modif?id='+infoss;
         };
 
         $http(eventType).success(function (data, status, headers, config) {
