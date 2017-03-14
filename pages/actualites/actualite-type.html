@@ -22,7 +22,7 @@
                     <a href="#/profil?id={{message.liste.oui.userId}}"><p class="infos">{{message.liste.oui.userPrenom}} {{message.liste.oui.userNom}}</p></a>
                 </div>
                 <div ng-if="donnees.sess.toto.admin == true" class="fond-article">
-                    <button id="modifier" class="bouton">Modifier</button>
+                    <input ng-click="redirect()" type="submit" id="modifier" value="modifier" class="bouton"/>
                     <button id="btnsuppr" class="bouton">Supprimer</button>
                 </div>
             </div>

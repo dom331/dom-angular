@@ -69,6 +69,7 @@ app.controller('ActuController', function($scope, $http) {
             $scope.donnees = response.statusText;
             console.log(response.data);
         });
+    
 
     if (gup('id')) {
         var infoss = gup('id');
@@ -79,6 +80,10 @@ app.controller('ActuController', function($scope, $http) {
                 id: infoss,
                 suppr : "non"
             }
+        };
+
+        $scope.redirect = function () {
+            window.location.href = '#/actualite/modif?id='+infoss;
         };
 
         $http(articletype).success(function (data, status, headers, config) {
@@ -143,6 +148,9 @@ app.controller('EventController', function($scope, $http) {
                 id: infoss,
                 suppr: "non"
             }
+        };
+        $scope.redirection = function () {
+            window.location.href = '#/evenement/modif?id='+infoss;
         };
 
         $http(eventType).success(function (data, status, headers, config) {

@@ -1,20 +1,20 @@
-<div ng-controller="AjoutActuController">
+<div ng-controller="ModifActuController">
 
-<h1>Modifier actualité</h1>
+<h1>{{message.liste.oui.titre}}</h1>
 
         <hr>
 
         <form ng-submit="AjoutActu(actu, file)" id="ajout-actualite" enctype="multipart/form-data">
             <div>
-                <input name="titre" ng-model="actu.titre" class="ajout" title="titre" type="text" placeholder="Titre de l'actualité"/>
-                <textarea name="contenu" ng-model="actu.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="Description de l'actualité"></textarea>
+                <input name="titre" ng-model="actu.titre" class="ajout" title="titre" type="text" placeholder="{{message.liste.oui.titre}}"/>
+                <textarea name="contenu" ng-model="actu.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="{{message.liste.oui.contenu}}"></textarea>
             </div>
            <div>
-               <input name="responsable" ng-model="actu.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
+               <input name="responsable" ng-model="actu.responsables" class="ajout" title="auteur" type="text" placeholder="{{message.liste.oui.responsables}}"/>
                <input ng-model="file" name="file" ngf-select
                       accept="image/*"
                       class="ajout" title="image" type="file" file-input="files"
-                      placeholder="Image : choisissez un fichier"/>
+                      placeholder="{{message.liste.oui.image}}"/>
 
                <h3>Appliquer la mention "urgent"?</h3>
 
