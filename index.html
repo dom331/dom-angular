@@ -6,16 +6,20 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.min.css" >
+    <link rel="stylesheet" href="css/jquery-ui.css">
 
     <link rel="stylesheet" href="css/style-desktop.css" media="all">
     <link rel="stylesheet" href="css/style-tablet.css" media="all and (min-width: 420px) and (max-width: 980px)">
     <link rel="stylesheet" href="css/style-phone.css" media="all and (max-width: 420px)">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
 
 </head>
 
 <body class="connecte">
+
+<img id="hamburger" src="medias/interface/icones/menu.png" alt="Menu Hamburger">
 
 <div id="menu">
     <div class="icones">
@@ -37,7 +41,7 @@
     </ul>
 
     <hr>
-    <div ng-if="donnees.sess.toto.admin == true">
+    <div ng-if="donnees.sess.toto.admin == true" id="admin">
     <a class="pages-menu" href="#/administration">Administration</a>
 
     <hr>
@@ -58,7 +62,6 @@
 
 <div id="contenu" >
     <header>
-        <img id="hamburger" src="medias/interface/icones/menu.png" alt="Menu Hamburger">
         <a href="#/"><img class="logo-dom" src="medias/interface/logos/logo_dom.png" alt="Logo DOM MMI"></a>
         <div id="liens-externes">
             <a class="externe" href="https://mail-edu.univ-fcomte.fr"></a>
@@ -88,6 +91,16 @@
     <script src="app/admin/administration.js"></script>
     <script src="app/actualites/modif.js"></script>
     <script src="app/evenements/modif.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#hamburger').on('click', function(){
+                $('#menu').toggleClass('ouvert');
+                $('#contenu').on('click', function () {
+                    $('#menu').removeClass('ouvert');
+                });
+            });
+        })
+    </script>
 
 </div>
 </body>

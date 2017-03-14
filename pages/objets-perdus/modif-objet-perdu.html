@@ -1,0 +1,28 @@
+<div ng-controller="ObjPerduController">
+
+    <h1>Modification objet perdu</h1>
+
+    <hr>
+
+    <p class="explications">
+        Les champs marqués par le symbole * doivent être obligatoirement renseignés.
+        <br/>
+        Le champ "Source de l'information" peut être une URL ou une personne/organisation.
+    </p>
+
+    <form ng-submit="AjoutObj(objet, file)" id="ajout-actualite" enctype="multipart/form-data">
+        <div>
+            <input name="titre" ng-model="objet.titre" class="ajout" title="titre" type="text" placeholder="Titre de l'objet"/>
+            <textarea name="contenu" ng-model="objet.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="Description de l'objet"></textarea>
+        </div>
+        <div>
+            <input name="responsable" ng-model="objet.responsables" class="ajout" title="auteur" type="text" placeholder="Responsable de l'objet"/>
+            <input ng-model="file" name="file" ngf-select
+                   accept="image/*"
+                   class="ajout" title="image" type="file" file-input="files"
+                   placeholder="Image : choisissez un fichier"/>
+
+            <input type="submit" class="bouton" title="submit" value="Soumettre">
+        </div>
+    </form>
+</div>

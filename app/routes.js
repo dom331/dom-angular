@@ -75,7 +75,11 @@ app.config(function($routeProvider) {
             templateUrl: "pages/objets-perdus/ajout-objet-perdu.html",
             controller: "ObjPerduController"
         })
-
+        .when
+        ("/objet-perdu/modif", {
+            templateUrl: "pages/objets-perdus/modif-objet-perdu.html",
+            controller: "ObjPerduController"
+        })
     
         .otherwise
         ({
