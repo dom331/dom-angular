@@ -9,22 +9,41 @@
             Lorsque l'administration reconnaitra votre évènement comme correct et réalisable, l'administration publiera votre événement.
         </p>
 
-        <form ng-submit="AjoutEvent(event, file)" enctype="multipart/form-data" id="ajout-actualite">
+        <form name="formulaire" ng-submit="AjoutEvent(event, file)" enctype="multipart/form-data" id="ajout-actualite" novalidate>
             <div>
-                <input ng-model="event.titre" class="ajout" title="titre" type="text" placeholder="Nom de l'événement"/>
-                <textarea ng-model="event.desc" class="ajout" title="description" id="" cols="30" rows="12" placeholder="Description de l'événement"></textarea>
+                <input ng-minlength="3" ng-maxlength="64" name="titre" required  ng-model="event.titre" class="ajout" title="titre" type="text" placeholder="Nom de l'événement"/>
+                <div ng-messages="formulaire.titre.$error" style="color:red" ng-messages-include="msg.html"></div>
+
+                <textarea required ng-minlength="10" ng-maxlength="200" name="desc" ng-model="event.desc" class="ajout" title="description" id="" cols="30" rows="12" placeholder="Description de l'événement"></textarea>
+                <div ng-messages="formulaire.desc.$error" style="color:red" ng-messages-include="msg.html"></div>
+                
             </div>
             <div>
+<<<<<<< HEAD
                 <input ng-model="event.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
                 <input ng-model="event.date" id="datepicker" class="ajout" title="date" type="text" placeholder="Date"/>
                 <input ng-model="file" name="file" ngf-select
+=======
+                <input ng-minlength="3" ng-maxlength="64" required name="responsable"  ng-model="event.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
+                <div ng-messages="formulaire.responsable.$error" style="color:red" ng-messages-include="msg.html"></div>
+                
+                <input required name="date" ng-model="event.date" class="ajout" title="date" type="text" placeholder="Date"/>
+                <div ng-messages="formulaire.date.$error" style="color:red" ng-messages-include="msg.html"></div>
+                
+                <input required  ng-model="file" name="file" ngf-select
+>>>>>>> refs/remotes/origin/master
                        accept="image/*"
-                       class="ajout" title="image" type="file" file-input="files"
+                       class="ajout" title="image" type="file" file-input required ="files"
                        placeholder="Image : choisissez un fichier"/>
-                <input ng-model="event.prix" class="ajout" title="prix" type="text" placeholder="Prix"/>
-                <input ng-model="event.a_prevoir" class="ajout" title="image" type="text" placeholder="A prévoir"/>
-
-                <input type="submit" class="bouton" title="submit" value="Soumettre">
+                <div ng-messages="formulaire.file.$error" style="color:red" ng-messages-include="msg.html"></div>
+                
+                <input ng-minlength="1" ng-maxlength="3" ng-pattern="/[0-9]{1,3}/" required name="prix" ng-model="event.prix" class="ajout" title="prix" type="text" placeholder="Prix"/>
+                <div ng-messages="formulaire.prix.$error" style="color:red" ng-messages-include="msg.html"></div>
+                
+                <input ng-minlength="3" ng-maxlength="64" required name="prevoir" ng-model="event.a_prevoir" class="ajout" title="image" type="text" placeholder="A prévoir"/>
+                <div ng-messages="formulaire.prevoir.$error" style="color:red" ng-messages-include="msg.html"></div>
+                
+                <input required  type="submit" class="bouton" title="submit" value="Soumettre" ng-disabled="formulaire.$invalid">
             </div>
         </form>
 </div>

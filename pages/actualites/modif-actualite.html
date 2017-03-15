@@ -4,28 +4,35 @@
 
         <hr>
 
-        <form ng-submit="AjoutActu(actu, file)" id="ajout-actualite" enctype="multipart/form-data">
+        <form name="formulaire" ng-submit="AjoutActu(actu, file)" id="ajout-actualite" enctype="multipart/form-data" novalidate>
             <div>
-                <input name="titre" ng-model="actu.titre" class="ajout" title="titre" type="text" placeholder="{{message.liste.oui.titre}}"/>
-                <textarea name="contenu" ng-model="actu.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="{{message.liste.oui.contenu}}"></textarea>
+                <input required name="titre" ng-model="actu.titre" class="ajout" title="titre" type="text" ng-minlength="3" ng-maxlength="64" placeholder="{{message.liste.oui.titre}}"/>
+                <div ng-messages="formulaire.titre.$error" style="color:red" ng-messages-include="msg.html"></div>
+
+                <textarea ng-minlength="10" ng-maxlength="200" name="contenu" ng-model="actu.desc" class="ajout" title="description" id="" cols="30" rows="10" placeholder="{{message.liste.oui.contenu}}"></textarea>
+                <div ng-messages="formulaire.contenu.$error" style="color:red" ng-messages-include="msg.html"></div>
             </div>
            <div>
-               <input name="responsable" ng-model="actu.responsables" class="ajout" title="auteur" type="text" placeholder="{{message.liste.oui.responsables}}"/>
-               <input ng-model="file" name="file" ngf-select
+               <input required ng-minlength="3" ng-maxlength="64" name="responsable" ng-model="actu.responsables" class="ajout" title="auteur" type="text" placeholder="{{message.liste.oui.responsables}}"/>
+               <div ng-messages="formulaire.responsable.$error" style="color:red" ng-messages-include="msg.html"></div>
+
+               <input required ng-model="file" name="file" ngf-select
                       accept="image/*"
                       class="ajout" title="image" type="file" file-input="files"
                       placeholder="{{message.liste.oui.image}}"/>
+               <div ng-messages="formulaire.file.$error" style="color:red" ng-messages-include="msg.html"></div>
 
                <h3>Appliquer la mention "urgent"?</h3>
 
                <div class="boutons-radio">
-                  <input name="urgent" type="radio" ng-model="actu.urgent" value="1" id="rad1">
+                  <input required name="urgent" type="radio" ng-model="actu.urgent" value="1" id="rad1">
                   <label id="radio1" class="label" for="rad1">Oui</label>
-                  <input name="urgent" type="radio" ng-model="actu.urgent" value="0" id="rad2">
+                  <input required name="urgent" type="radio" ng-model="actu.urgent" value="0" id="rad2">
                   <label id="radio2" class="label" for="rad2">Non</label>
                </div>
+               <div ng-messages="formulaire.urgent.$error" style="color:red" ng-messages-include="msg.html"></div>
 
-               <input type="submit" class="bouton" title="submit" value="Modifier">
+               <input ng-disabled="formulaire.$invalid" required type="submit" class="bouton" title="submit" value="Modifier">
            </div>
         </form>
 </div>
