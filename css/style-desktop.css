@@ -274,7 +274,7 @@ main hr {
 .liste-actu {
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 }
 .actu {
   position: relative;
@@ -315,7 +315,7 @@ main hr {
 .principale img {
   width: 100%;
   height: 100%;
-  border: 2px solid #E62651;
+  border: 4px solid #E62651;
 }
 .principale:hover {
   -webkit-box-shadow: 0 0 10px 1px #E62651;
@@ -328,7 +328,7 @@ main hr {
 .secondaire img {
   width: 100%;
   height: 100%;
-  border: 2px solid #1B2E59;
+  border: 4px solid #1B2E59;
 }
 .secondaire:hover {
   -webkit-box-shadow: 0 0 10px 1px #1B2E59;
@@ -408,7 +408,7 @@ main hr {
   text-align: center;
 }
 .infos {
-  height: 45px;
+  max-height: 45px;
   margin: 10px 0;
   font-size: 18px;
   padding: 10px;
@@ -473,7 +473,7 @@ main hr {
 .vie-scolaire .liste a,
 .administration .liste a {
   color: #1B2E59;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   transition: 0.2s ease border;
   border-top: 0 double #E6DACB;
 }
@@ -507,6 +507,47 @@ main hr {
 /* ADMINISTRATION ************************************************************/
 .administration p {
   border: 2px solid #B6DEDE;
+}
+.administration > div > div > p {
+  border: 2px solid black;
+}
+.administration .choix {
+  display: flex;
+  justify-content: center;
+}
+.administration .fa {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+  margin: 5px 2px 0 2px;
+  background-color: #EFE8DF;
+  width: 43px;
+  height: 43px;
+  transition: 0.5s ease;
+}
+.administration .fa-times {
+  color: #a83532;
+  border: 2px solid #a83532;
+}
+.administration .fa-times:hover {
+  background-color: #a83532;
+  color: #E6DACB;
+  border: 2px solid #E6DACB;
+}
+.administration .fa-check {
+  color: #38a85c;
+  border: 2px solid #38a85c;
+}
+.administration .fa-check:hover {
+  background-color: #38a85c;
+  color: #E6DACB;
+  border: 2px solid #E6DACB;
+}
+.administration .approuver {
+  flex-direction: column;
+}
+.inside {
+  flex-direction: column;
 }
 /* PROFIL ************************************************************/
 .profil {
@@ -546,12 +587,4 @@ main hr {
 .membres > div {
   display: flex;
   flex-wrap: wrap;
-}
-.membres > div > div {
-  padding: 20px 10px;
-  margin: 10px;
-  text-align: center;
-}
-.membres > div > div:hover {
-  background-color: #deceba;
 }

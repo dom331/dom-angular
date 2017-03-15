@@ -11,9 +11,21 @@
             tout doutes sur son identité. Il ne vous reste qu'à presser le bouton APPROUVER !
         </p>
 
-        <div class="liste membres convocations fond-article">
-            <p ng-repeat="membre in membres.liste" ng-if="membre.approuve == 0" class="sous-convoque">{{membre.date_inscription | date}} | {{membre.prenom}} {{membre.nom}}</p>
-
+        <div class="liste membres convocations fond-article approuver">
+            <div ng-repeat="membre in membres.liste" ng-if="membre.approuve == 0">
+                <p class="sous-convoque">{{membre.date_inscription | date}} | {{membre.prenom}} {{membre.nom}}</p>
+                <div class="choix">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div ng-repeat="membre in membres.liste" ng-if="membre.approuve == 0">
+                <p class="sous-convoque">{{membre.date_inscription | date}} | {{membre.prenom}} {{membre.nom}}</p>
+                <div class="choix">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
 
         <h2>Évenements à approuver</h2>
@@ -22,10 +34,26 @@
             Les événements pouvant être proposés par n'importe quel utilisateur, vous êtes responsable de
             l'approbation de ceux-ci. N'hésitez pas à consulter les responsables de l'évènement.
         </p>
-        <div class="liste evenements fond-article">
-            <div ng-repeat="events in events.liste" ng-if="events.approuve == 0" class="inside">
-                <img  src="medias/uploads/evenements/{{events.image}}" alt="{{events.image}}">
-                <p class="sous-convoque">{{events.titre}}</p>
+        <div class="liste evenements membres fond-article">
+            <div ng-repeat="events in events.liste" ng-if="events.approuve == 0" class="inside" >
+                <a href="#/evenement?id={{events.id}}">
+                    <img  src="medias/uploads/evenements/{{events.image}}" alt="{{events.image}}">
+                    <p class="sous-convoque">{{events.date_debut}} | {{events.titre}}</p>
+                </a>
+                <div class="choix">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div ng-repeat="events in events.liste" ng-if="events.approuve == 0" class="inside" >
+                <a href="#/evenement?id={{events.id}}">
+                    <img  src="medias/uploads/evenements/{{events.image}}" alt="{{events.image}}">
+                    <p class="sous-convoque">{{events.date_debut}} | {{events.titre}}</p>
+                </a>
+                <div class="choix">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
     </div>
