@@ -125,6 +125,12 @@ input {
   color: #B6DEDE;
   transition: 0.3s ease;
 }
+#menu .convoque {
+  position: absolute;
+  width: 40px;
+  right: 35px;
+  top: 0px;
+}
 #menu .photo {
   width: 100px;
   height: 100px;
@@ -550,9 +556,7 @@ main hr {
 }
 .profil img {
   margin: auto;
-}
-.profil .dates-profil {
-  width: 50%;
+  width: 100%;
 }
 .profil h4 {
   color: #1B2E59;
@@ -576,6 +580,8 @@ main hr {
 }
 .profil > .colonne-gauche > div:nth-child(1) {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /* MEMBRES ************************************************************/
 .membres > div {

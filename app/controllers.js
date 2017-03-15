@@ -232,7 +232,8 @@ app.controller('ProfilController', function($scope, $http) {
             method: 'POST',
             url: 'http://localhost/dom-angular/api/pages/profil/profil.php',
             data: {
-                id: infoss
+                id: infoss,
+                convoque : "non"
             }
         };
 
@@ -246,6 +247,56 @@ app.controller('ProfilController', function($scope, $http) {
             // si jamais ca merde sur l'envoi
             console.log("Erreur: " + data + status);
         });
+
+        $scope.Convoque = function () {
+            var convoque = {
+                method: 'POST',
+                url: 'http://localhost/dom-angular/api/pages/profil/profil.php',
+                data: {
+                    id: infoss,
+                    convoque : "convoque"
+                }
+            };
+            $http(convoque).success(function (data, status, headers, config) {
+                console.log(status);
+                console.log("ENVOYE A PHP: OUI");
+                console.log("PHP SAYS: " + data);
+                $scope.convoque = data;
+                window.location.href = "#/membres";
+                // window.location.href = '../pages/actualites';
+            }).error(function (data, status, headers, config) {
+                // si jamais ca merde sur l'envoi
+                console.log("Erreur: " + data + status);
+            });
+        };
+
+        $scope.modify = function () {
+
+            window.location.href = '#/profil/modif?id='+infoss;
+        };
+
+        $scope.AnnulConvoque = function () {
+            var convoque = {
+                method: 'POST',
+                url: 'http://localhost/dom-angular/api/pages/profil/profil.php',
+                data: {
+                    id: infoss,
+                    convoque : "annule"
+                }
+            };
+            $http(convoque).success(function (data, status, headers, config) {
+                console.log(status);
+                console.log("ENVOYE A PHP: OUI");
+                console.log("PHP SAYS: " + data);
+                $scope.convoque = data;
+                window.location.href = "#/membres";
+                // window.location.href = '../pages/actualites';
+            }).error(function (data, status, headers, config) {
+                // si jamais ca merde sur l'envoi
+                console.log("Erreur: " + data + status);
+            });
+        }
+
     }
     
 });

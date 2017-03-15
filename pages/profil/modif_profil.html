@@ -1,0 +1,53 @@
+<div ng-controller="ModifProfilController">
+    <h1>{{message.liste.oui.prenom}} {{message.liste.oui.nom}}</h1>
+
+    <hr>
+    <form name="formulaire" ng-submit="AjoutActu(user, file)" novalidate enctype="multipart/form-data">
+    <div class="profil">
+        <div class="colonne-gauche">
+            <div class="fond-article">
+                <img src="medias/uploads/avatars/{{message.liste.oui.avatar}}" alt="Homme espace">
+                <div class="dates-profil">
+                    <h4>Date d'inscription :</h4>
+                    <p class="infos">{{message.liste.oui.date_inscription | date}}</p>
+                    <h4>Date de naissance :</h4>
+                    <p class="infos">{{message.liste.oui.naiss | date}}</p>
+
+                    <input required name="date" ng-model="user.date" class="ajout" title="date" type="text" ng-pattern="/^(0[1-9]|[1-2][0-9]|3[0-1])[/](0[1-9]|1[0-2])[/](20)[0-9][0-9]$/" placeholder="JJ/MM/AAAA"/>
+
+                </div>
+
+
+
+            </div>
+            <div ng-messages="formulaire.date.$error"  ng-messages-include="msg.html" ></div>
+            <input required ng-model="file" name="file" ngf-select
+                   accept="image/*"
+                   class="ajout" title="image" type="file" file-input="files"
+                   placeholder="Image : choisissez un fichier"/>
+            <div class="fond-article">
+                <h3>Description :</h3>
+                <div ng-messages="formulaire.desc.$error"  ng-messages-include="msg.html" ></div>
+                <textarea required ng-minlenght="10" ng-maxlength="200" class="ajout" name="desc" ng-model="user.desc" type="text" title="desc" placeholder="{{message.liste.oui.description}}"></textarea>
+
+            </div>
+        </div>
+
+        <div class="colonne-droite">
+            <div class="fond-article">
+                <h4>Adresse mail :</h4>
+                <div ng-messages="formulaire.email.$error" ng-messages-include="msg.html"></div>
+                <input ng-model="user.email" title="email" name="email" type="email" placeholder="{{message.liste.oui.email}}" ng-maxlength="100" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)|(\-[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/" required/>
+
+                <div class="rs">
+                    <a href="#"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+                <button type="submit" class="bouton">Modifier</button>
+        </div>
+    </div>
+    </form>
+</div>

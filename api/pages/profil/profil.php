@@ -6,6 +6,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT');
 $data = json_decode(file_get_contents("php://input"));
 //var_dump($data);
 $id = $data->id;
+$convoque = $data->convoque;
 require_once("../../dao/DaoUtilisateur.php");
 
 
@@ -28,40 +29,21 @@ require_once("../../dao/DaoUtilisateur.php");
 //        $infos['oui']['avatar']=$daoUtilisateur->bean->getLeAvatar()->getNom();
 
 
-require_once('../../dao/DaoUtilisateur.php');
-require_once('../../dao/DaoEvenements.php');
-$daoU = new DaoUtilisateur();
-
-$liste2 = $daoU->getNonApprouve();
-
-$users = count($liste2);
-
-$daoE = new DaoEvenements();
-
-$liste3 = $daoE->listeAprob();
-
-$events = count($liste3);
-
-$notifs['number'] = array();
-$notifs['number']['oui'] = $events + $users;
 $param = array(
-    "liste" => $infos,
-    "notifs" => $notifs);
+    "liste" => $infos);
 
 
 
 //var_dump($param) or die();
 
-if (isset($_POST['convoque'])){
+if ($convoque == "convoque"){
         $daoUtilisateur->bean->setConvoque(1);
         $daoUtilisateur->updateConvoque();
-        header('Location: index.php?page=viescolaire');
 }
 
-if (isset($_POST['annuler_conv'])){
+if ($convoque == "annule"){
         $daoUtilisateur->bean->setConvoque(0);
         $daoUtilisateur->updateConvoque();
-        header('Location: #');
 }
 
 echo json_encode($param);

@@ -23,9 +23,10 @@
 
 <div id="menu">
     <div class="icones">
-        <a href="#/administration"><i class="fa fa-bell" aria-hidden="true"><span id="notification">{{donnees.notifs.number.oui}}</span></i></a>
+        <a href="#/administration"><i ng-if="donnees.sess.toto.admin == true" class="fa fa-bell" aria-hidden="true"><span id="notification">{{donnees.notifs.number.oui}}</span></i></a>
         <a class="deconnexion"><i class="fa fa-power-off" aria-hidden="true"></i></a>
     </div>
+    <img ng-if="donnees.sess.toto.convoque == true" class="convoque" src="medias/interface/convoque.png" alt="convoque">
 
     <a href="#/profil?id={{donnees.sess.toto.id}}"><img src="medias/uploads/avatars/{{donnees.sess.toto.avatar}}" alt="Photo" class="photo"></a>
 
@@ -91,6 +92,7 @@
     <script src="app/admin/administration.js"></script>
     <script src="app/actualites/modif.js"></script>
     <script src="app/evenements/modif.js"></script>
+    <script src="app/profil/modif.js"></script>
     <script>
         $(document).ready(function(){
             $('#hamburger').on('click', function(){
