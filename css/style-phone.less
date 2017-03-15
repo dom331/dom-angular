@@ -1,3 +1,19 @@
+/* Polices ************************************************************/
+@font-face {
+  font-family: Raleway;
+  src: url(../fonts/Raleway/Raleway-Regular.ttf);
+  src: url(../fonts/Raleway/Raleway-Bold.ttf);
+  src: url(../fonts/Raleway/Raleway-Light.ttf);
+  src: url(../fonts/Raleway/Raleway-Semibold.ttf);
+  src: url(../fonts/Raleway/Raleway-Thin.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
+
+
 /* Couleurs ************************************************************/
 @rose : #E62651;
 @violet : #AC1738;
@@ -8,189 +24,399 @@
 @jaune : #E6DACB;
 @gris : #9E9E9E;
 
+/* MENU ************************************************************/
 
-/* Pages non-connecté ************************************************************/
+#menu{
+  z-index: 2;
+  position: absolute;
+  left: -320px;
+  background-color: @rose;
+  width: 320px;
+  min-width: 320px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  transition: 1s ease;
+}
 
-.deconnecte{
+.ouvert{
+  left: 0 !important;
+  transition: 1s ease;
+}
+
+.fa-bell{
+  position: relative;
+}
+
+#notification{
+  font-size: 14px;
+  font-family: "Open Sans Semibold", sans-serif;
+  color: @violet;
+  padding: 2.5px;
+  top: -15px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.pages-menu{
+  text-transform: uppercase;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  display: block;
+  padding: 15px 20px;
+  transition: 1s ease;
+  letter-spacing: 2px;
+}
+
+.pages-menu:hover{
+  background-color: @violet;
+}
+
+.contact{
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* HEADER ************************************************************/
+
+header{
+  padding: 5px 15px 15px 15px;
+  height: 90px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  background-color: @blanc;
+  -webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0 3px 5px 0 rgba(50, 50, 50, 0.75);
+  box-shadow:         0 3px 5px 0 rgba(50, 50, 50, 0.75);
+  & > a{
+    margin: 0 auto;
+  }
+}
+
+#hamburger{
+  z-index: 3;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  display: block;
+}
+
+.logo-dom{
+  width: 125px;
+  margin-left: 0;
+}
+
+#liens-externes{
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 20px 0;
+  width: 80%;
+  height: 60px;
+  justify-content: space-around;
+}
+
+.externe{
+  width: 50px;
+  height: 50px;
+}
+
+
+/* PAGE CONNECTE ************************************************************/
+
+#contenu{
+  margin-left: 0;
+  text-align: center;
+}
+
+main{
+  padding: 10px;
+
+  & h1{
+    font-size: 35px;
+    margin-bottom: 0;
+    margin-left: 0;
+    color: @marine;
+  }
+
   & hr{
-    width: 70%;
-    min-width: 200px;
+    border: 1px solid @marine;
+    width: 265px;
+    margin: auto;
+    text-align: center;
   }
 }
 
-/* INDEX ************************************************************/
+/* ACTUALITES ************************************************************/
 
-.formulaire-index{
-
-  & form{
-    width: 70%;
-    min-width: 200px;
-  }
+.button-plus{
+  position: static;
 }
 
-.logo-home{
-  width: 70%;
-  min-width: 200px;
-  margin: 25px auto 20px auto;
+.principale{
+  width: 240px;
+  height: 240px;
 }
 
-// TRIANGLES //
-.triangle{
-  display: none;
+.liste-actu > a{
+  margin: auto;
 }
+.actu{
+  position: relative;
+  text-transform: uppercase;
+  margin: 20px;
+  transition: 0.5s ease;
 
-// FONCTIONNALITES //
-
-.index {
-  & h1 {
-    font-size: 10vw;
-    padding-top: 30px;
+  & span{
+    font-family: "Raleway Medium", sans-serif;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 40px;
+    background-color: @rose;
+    z-index: 1;
+    padding-top: 5px;
   }
 
-  & .filtre{
-    height: 100vh;
-  }
-
-  & .rond{
-    width: 100px;
-    height: 100px;
-    top: 30%;
-  }
-
-  & p{
-    margin: 220px 20px 20px 20px;
-    line-height: 25px;
-  }
-}
-
-
-// 1 - ACTUALITES //
-#actus{
-  & .filtre{
-    background-color: fade(@bleu, 80%);
-  }
-
-  & .rond{
-    border: solid 5px @marine;
-  }
-
-  & p{
-    margin-left: 20px;
-    color: black;
-    border: solid 5px @rose;
-  }
-}
-
-// 2 - ÉVÉNEMENT //
-#events{
-  & .filtre{
-    background-color: fade(@rose, 80%);
-  }
-
-  & .rond{
-    border: solid 5px @bleu;
-  }
-
-  & p{
-    margin-right: 20px;
-  }
-}
-
-// 3 - EDT //
-#edt{
-  & .filtre{
-    background-color: fade(@marine, 80%);
-  }
-
-  & .rond{
-    border: solid 5px @blanc;
-  }
-
-  & p{
-    margin-left: 20px;
-  }
-}
-
-// 4 - ABSENCES //
-#absences{
-  & .filtre{
-    background-color: fade(@beige, 80%);
-  }
-
-  & .rond{
-    border: solid 5px @rose;
-  }
-
-  & p{
-    margin-right: 20px;
-  }
-}
-
-// 5 - CONTACT //
-#contact{
-  & .filtre{
-    background-color: fade(@bleu, 80%);
-  }
-
-  & .rond{
-    border: solid 5px @marine;
-  }
-
-  & p{
-    margin-left: 20px;
-  }
-}
-
-// 6 - OBJETS PERDUS //
-#objets{
-  & .filtre{
-    background-color: fade(@rose, 80%);
-  }
-
-  & .rond{
-    border: solid 5px @bleu;
-  }
-
-  & p{
-    margin-right: 20px;
-  }
-}
-
-
-/* CHOIX INSCRIPTIONS ************************************************************/
-#inscriptions{
-
-  & i{
-    display: none;
-  }
-
-  & .choix{
-    margin: 0 auto 10px auto;
-  }
-
-  & .choix > div{
-    display: flex;
-    flex-direction: column;
-  }
-
-  & .bouton{
+  & h2{
+    color: @bleu;
     width: 100%;
-    white-space: normal;
+    height: 40px;
+    position: absolute;
+    text-align: left;
+    right: 0;
+    bottom: 0;
+    background-color: @marine;
+    padding-left: 50px;
+    font-size: 16px;
+    padding-top: 12px;
   }
 }
 
+/* AJOUT-ACTUALITES ************************************************************/
 
-/* FORMULAIRE INSCRIPTION ************************************************************/
+.explications{
+  border: 2px solid @bleu;
+  background-color: @blanc;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+}
 
-#formulaire-inscription{
+#ajout-actualite{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  & form{
-    min-width: 200px;
-    width: 70%;
-    flex-direction: column;
+  & *{
+    margin: 10px;
+  }
+
+  & > div{
+    width: 90%;
+    margin: 0 10px;
+  }
+
+  & h3{
+    color: @rose;
+    font-size: 18px;
   }
 
   & input{
+    height: 45px;
+  }
+
+  & .ajout{
+    font-size: 18px;
+    font-family: "Open Sans Semibold", sans-serif;
+    border-radius: 5px;
+    border: 2px solid @gris;
     width: 100%;
+    padding: 5px 0 5px 10px;
+  }
+
+  .boutons-radio{
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
+    font-family: "Raleway Medium", sans-serif;
+  }
+
+  & input[type="radio"]{
+    display: none;
+  }
+
+  & .label{
+    text-transform: uppercase;
+    color: @rose;
+    font-size: 18px;
+    padding-top: 12px;
+    text-align: center;
+    border: 2px solid @rose;
+    border-radius: 5px;
+    width: 140px;
+    height: 45px;
+  }
+
+  .bouton{
+    height: 45px;
+    padding: 0;
+  }
+}
+
+/* ACTUALITE-TYPE ************************************************************/
+
+.fond-article{
+  background-color: @jaune;
+  padding: 20px;
+  margin: 20px 10px;
+}
+
+.colonne-gauche{
+  width: 100%;
+}
+
+.colonne-droite{
+  width: 100%;
+}
+
+.infos-article{
+  text-align: center;
+}
+
+.infos{
+  height: 45px;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 10px;
+  background-color: @marine;
+  color: white;
+  text-align: center;
+  font-family: "Open Sans Semibold", sans-serif;
+}
+
+.image-article{
+  width: 100%;
+  margin: 0;
+  border: 2px solid @marine;
+}
+
+.texte-article{
+  padding: 10px;
+  line-height: 25px;
+  background-color: @blanc;
+  border: 2px solid @marine;
+}
+
+.photo-article{
+  border-radius: 50%;
+  width: 75%;
+  border: 2px solid @marine;
+}
+
+.btn-article{
+  color: black;
+  background-color: @bleu;
+  border: 2px solid darken(@bleu, 20%);
+
+  &:hover{
+    padding-bottom: 8px;
+    color: @bleu;
+    background-color: black;
+  }
+}
+
+.article{
+  flex-direction: column;
+}
+
+/* VIE SCOLAIRE ************************************************************/
+.liste-objets{
+  position: relative;
+  .button-plus{
+    position: static;
+  }
+}
+.liste{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0 20px 0;
+}
+
+.liste img{
+  margin: 30px 30px 0 30px;
+  border: 4px solid @rose;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  transition: 0.5s ease;
+}
+
+.sous-convoque{
+  text-transform: uppercase;
+  text-align: center;
+  background-color: @beige;
+  padding: 10px;
+  margin: 5px 10px;
+}
+
+/* ADMINISTRATION ************************************************************/
+.administration{
+  & p{
+    border: 2px solid @bleu;
+  }
+}
+
+/* PROFIL ************************************************************/
+
+.profil{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & .colonne-gauche{
+    width: 100%;
+  }
+
+  & .colonne-droite{
+    width: 100%;
+  }
+
+  & > .colonne-gauche > div:nth-child(1){
+    display: flex;
+  }
+}
+
+
+/* MEMBRES ************************************************************/
+
+.membres {
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  & > div > div{
+    padding: 20px 10px;
+    margin: 10px;
+    text-align: center;
+  }
+  & > div > div:hover{
+    background-color: darken(@jaune, 5%);
   }
 }
