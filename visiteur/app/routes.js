@@ -14,11 +14,6 @@ app.config(function($routeProvider) {
             templateUrl: "pages/inscription/inscription-type.html",
             controller: "InscrEtudController"
         })
-        //.when
-        //("/inscription/ancien_etudiant", {
-        //    templateUrl: "pages/inscription-type.html",
-        //    controller: ""
-        //})
         .when
         ("/inscription/pedagogie", {
             templateUrl: "pages/inscription/inscription-type.html",

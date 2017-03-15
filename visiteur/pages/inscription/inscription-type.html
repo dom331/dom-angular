@@ -1,10 +1,10 @@
 
-<div ng-controller="InscrEtudController" class="deconnecte">
+<div class="deconnecte">
     <div id="formulaire-inscription">
         <a href="#/"><img class="logo-home" src="medias/interface/logos/logo_dom_home.png" alt="Logo DOM MMI"></a>
         <hr>
         <h1>Inscription {{choix}}...</h1>
-        <form name="formulaire" ng-submit="inscriptionEtudiant(user)" novalidate>
+        <form name="formulaire" ng-submit="inscription(user)" novalidate>
 
 
             <input class="input" name="prenom" ng-model="user.prenom" title="prenom" type="text" placeholder="Prénom" ng-maxlength="64" required/>

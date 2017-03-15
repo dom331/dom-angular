@@ -20,7 +20,7 @@ html {
   font-family: Raleway, sans-serif;
 }
 body {
-  background-color: #1B2E59;
+  /*background-color: #1B2E59;*/
 }
 a {
   text-decoration: none;
@@ -106,21 +106,21 @@ input {
 }
 /* Pages non-connecté ************************************************************/
 .deconnecte {
-  background-color: #1B2E59;
-  text-align: center;
+/*background-color: #1B2E59;*/
+text-align: center;
 }
 .deconnecte hr {
-  width: 40%;
-  min-width: 320px;
-  margin: 0 auto 0 auto;
+width: 40%;
+min-width: 320px;
+margin: 0 auto 0 auto;
 }
 .logo-home {
-  width: 275px;
-  margin: 25px auto 20px auto;
+width: 275px;
+margin: 25px auto 20px auto;
 }
 .logo-mmi {
-  width: 60px;
-  margin-top: 15px;
+width: 60px;
+margin-top: 15px;
 }
 /* INDEX ************************************************************/
 .formulaire-index {
