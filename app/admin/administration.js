@@ -38,7 +38,7 @@ app.controller('AdminController', function($scope, $http) {
         });
     };
 
-    $scope.DeleteMembre = function (id) {
+    $scope.AcceptMembre = function (id) {
 
         var AcceptMembre = {
             method: 'POST',
