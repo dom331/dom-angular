@@ -125,6 +125,12 @@ input {
   color: #B6DEDE;
   transition: 0.3s ease;
 }
+#menu .convoque {
+  position: absolute;
+  width: 40px;
+  right: 35px;
+  top: 0px;
+}
 #menu .photo {
   width: 100px;
   height: 100px;

@@ -51,6 +51,11 @@ app.config(function($routeProvider) {
             controller: "ProfilController"
         })
         .when
+        ("/profil/modif", {
+            templateUrl: "pages/profil/modif_profil.html",
+            controller: "ModifProfilController"
+        })
+        .when
         ("/vie-scolaire", {
             templateUrl: "pages/vie-scolaire/vie-scolaire.html",
             controller: "VieScoController"
