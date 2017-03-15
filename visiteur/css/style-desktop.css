@@ -56,7 +56,7 @@ input {
 .input {
   border-radius: 5px;
   height: 45px;
-  width: 49%;
+  width: 100%;
   margin: 10px 0;
   font-size: 18px;
   color: #9E9E9E;
@@ -98,6 +98,11 @@ input {
   color: black;
   background-color: #9E9E9E;
   border: solid 2px #1f1f1f;
+}
+.message {
+  margin: -5px 0 10px 5px !important;
+  font-weight: bold;
+  color: white;
 }
 /* Pages non-connecté ************************************************************/
 .deconnecte {
@@ -370,7 +375,4 @@ input {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-#formulaire-inscription input:nth-child(5) {
-  width: 100%;
 }

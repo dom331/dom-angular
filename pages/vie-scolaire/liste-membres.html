@@ -5,7 +5,7 @@
 <!--<input class="ajout" title="recherche" type="text" placeholder="Votre recherche..."/>-->
 
 <div class="membres">
-    <div class="fond-article">
+    <div class="liste membres convocations fond-article">
         <div ng-repeat="membre in message.liste" ng-if="membre.approuve == true">
             <a href="#/profil?id={{membre.id}}">
                 <img src="medias/uploads/avatars/{{membre.image}}" alt="{{membre.prenom}}">
