@@ -84,6 +84,21 @@ input {
   height: 45px;
   max-height: 45px;
 }
+.btn-desactive {
+  transition: 0.5s ease;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 30%;
+  height: auto;
+  min-height: 45px;
+  margin: 10px auto;
+  padding: 15px 5px;
+  color: black;
+  background-color: #9E9E9E;
+  border: solid 2px #1f1f1f;
+}
 /* Pages non-connecté ************************************************************/
 .deconnecte {
   background-color: #1B2E59;
@@ -321,7 +336,7 @@ input {
 }
 #inscriptions .choix {
   margin: 10px auto 30px auto;
-  width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -339,7 +354,6 @@ input {
   color: white;
   background-color: #E62651;
   border: solid 2px #AC1738;
-  white-space: pre-wrap;
 }
 #inscriptions .bouton:hover {
   background-color: white;

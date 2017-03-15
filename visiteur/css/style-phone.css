@@ -1,4 +1,3 @@
-
 /* Couleurs ************************************************************/
 /* Pages non-connecté ************************************************************/
 .deconnecte hr {
@@ -104,6 +103,9 @@
 #inscriptions .bouton {
   width: 100%;
   white-space: normal;
+}
+#inscriptions .btn-desactive {
+  width: 100%;
 }
 /* FORMULAIRE INSCRIPTION ************************************************************/
 #formulaire-inscription form {

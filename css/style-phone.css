@@ -1,115 +1,344 @@
+/* Polices ************************************************************/
+@font-face {
+  font-family: Raleway;
+  src: url(../fonts/Raleway/Raleway-Regular.ttf);
+  src: url(../fonts/Raleway/Raleway-Bold.ttf);
+  src: url(../fonts/Raleway/Raleway-Light.ttf);
+  src: url(../fonts/Raleway/Raleway-Semibold.ttf);
+  src: url(../fonts/Raleway/Raleway-Thin.ttf);
+}
+@font-face {
+  font-family: OpenSans;
+  src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
 /* Couleurs ************************************************************/
-/* Pages non-connecté ************************************************************/
-.deconnecte hr {
-  width: 70%;
-  min-width: 200px;
-}
-/* INDEX ************************************************************/
-.formulaire-index form {
-  width: 70%;
-  min-width: 200px;
-}
-.logo-home {
-  width: 70%;
-  min-width: 200px;
-  margin: 25px auto 20px auto;
-}
-.triangle {
-  display: none;
-}
-.index h1 {
-  font-size: 10vw;
-  padding-top: 30px;
-}
-.index .filtre {
+/* MENU ************************************************************/
+#menu {
+  z-index: 2;
+  position: absolute;
+  left: -320px;
+  background-color: #E62651;
+  width: 320px;
+  min-width: 320px;
+  padding: 30px;
+  text-align: center;
+  color: white;
   height: 100vh;
+  transition: 1s ease;
 }
-.index .rond {
-  width: 100px;
-  height: 100px;
-  top: 30%;
+.ouvert {
+  left: 0 !important;
+  transition: 1s ease;
 }
-.index p {
-  margin: 220px 20px 20px 20px;
-  line-height: 25px;
+.fa-bell {
+  position: relative;
 }
-#actus .filtre {
-  background-color: rgba(182, 222, 222, 0.8);
+#notification {
+  font-size: 14px;
+  font-family: "Open Sans Semibold", sans-serif;
+  color: #AC1738;
+  padding: 2.5px;
+  top: -15px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
 }
-#actus .rond {
-  border: solid 5px #1B2E59;
+.pages-menu {
+  text-transform: uppercase;
+  font-family: "Raleway SemiBold", sans-serif;
+  font-size: 18px;
+  display: block;
+  padding: 15px 20px;
+  transition: 1s ease;
+  letter-spacing: 2px;
 }
-#actus p {
-  margin-left: 20px;
-  color: black;
-  border: solid 5px #E62651;
+.pages-menu:hover {
+  background-color: #AC1738;
 }
-#events .filtre {
-  background-color: rgba(230, 38, 81, 0.8);
+.contact {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
 }
-#events .rond {
-  border: solid 5px #B6DEDE;
+/* HEADER ************************************************************/
+header {
+  padding: 5px 15px 15px 15px;
+  height: 90px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #F2EEE9;
+  -webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
+  box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
 }
-#events p {
-  margin-right: 20px;
+header > a {
+  margin: 0 auto;
 }
-#edt .filtre {
-  background-color: rgba(27, 46, 89, 0.8);
+#hamburger {
+  z-index: 3;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  display: block;
 }
-#edt .rond {
-  border: solid 5px #F2EEE9;
+.logo-dom {
+  width: 125px;
+  margin-left: 0;
 }
-#edt p {
-  margin-left: 20px;
+#liens-externes {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 20px 0;
+  width: 80%;
+  height: 60px;
+  justify-content: space-around;
 }
-#absences .filtre {
-  background-color: rgba(239, 232, 223, 0.8);
+.externe {
+  width: 50px;
+  height: 50px;
 }
-#absences .rond {
-  border: solid 5px #E62651;
+/* PAGE CONNECTE ************************************************************/
+#contenu {
+  margin-left: 0;
+  text-align: center;
 }
-#absences p {
-  margin-right: 20px;
+main {
+  padding: 10px;
 }
-#contact .filtre {
-  background-color: rgba(182, 222, 222, 0.8);
+main h1 {
+  font-size: 35px;
+  margin-bottom: 0;
+  margin-left: 0;
+  color: #1B2E59;
 }
-#contact .rond {
-  border: solid 5px #1B2E59;
+main hr {
+  border: 1px solid #1B2E59;
+  width: 265px;
+  margin: auto;
+  text-align: center;
 }
-#contact p {
-  margin-left: 20px;
+/* ACTUALITES ************************************************************/
+.button-plus {
+  position: static;
 }
-#objets .filtre {
-  background-color: rgba(230, 38, 81, 0.8);
+.principale {
+  width: 240px;
+  height: 240px;
 }
-#objets .rond {
-  border: solid 5px #B6DEDE;
+.liste-actu > a {
+  margin: auto;
 }
-#objets p {
-  margin-right: 20px;
+.actu {
+  position: relative;
+  text-transform: uppercase;
+  margin: 20px;
+  transition: 0.5s ease;
 }
-/* CHOIX INSCRIPTIONS ************************************************************/
-#inscriptions i {
+.actu span {
+  font-family: "Raleway Medium", sans-serif;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 40px;
+  background-color: #E62651;
+  z-index: 1;
+  padding-top: 5px;
+}
+.actu h2 {
+  color: #B6DEDE;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  text-align: left;
+  right: 0;
+  bottom: 0;
+  background-color: #1B2E59;
+  padding-left: 50px;
+  font-size: 16px;
+  padding-top: 12px;
+}
+/* AJOUT-ACTUALITES ************************************************************/
+.explications {
+  border: 2px solid #B6DEDE;
+  background-color: #F2EEE9;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+}
+#ajout-actualite {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#ajout-actualite * {
+  margin: 10px;
+}
+#ajout-actualite > div {
+  width: 90%;
+  margin: 0 10px;
+}
+#ajout-actualite h3 {
+  color: #E62651;
+  font-size: 18px;
+}
+#ajout-actualite input {
+  height: 45px;
+}
+#ajout-actualite .ajout {
+  font-size: 18px;
+  font-family: "Open Sans Semibold", sans-serif;
+  border-radius: 5px;
+  border: 2px solid #9E9E9E;
+  width: 100%;
+  padding: 5px 0 5px 10px;
+}
+#ajout-actualite .boutons-radio {
+  width: 100%;
+  margin: 0 10px;
+  display: flex;
+  font-family: "Raleway Medium", sans-serif;
+}
+#ajout-actualite input[type="radio"] {
   display: none;
 }
-#inscriptions .choix {
-  margin: 0 auto 10px auto;
+#ajout-actualite .label {
+  text-transform: uppercase;
+  color: #E62651;
+  font-size: 18px;
+  padding-top: 12px;
+  text-align: center;
+  border: 2px solid #E62651;
+  border-radius: 5px;
+  width: 140px;
+  height: 45px;
 }
-#inscriptions .choix > div {
+#ajout-actualite .bouton {
+  height: 45px;
+  padding: 0;
+}
+/* ACTUALITE-TYPE ************************************************************/
+.fond-article {
+  background-color: #E6DACB;
+  padding: 20px;
+  margin: 20px 10px;
+}
+.colonne-gauche {
+  width: 100%;
+}
+.colonne-droite {
+  width: 100%;
+}
+.infos-article {
+  text-align: center;
+}
+.infos {
+  height: 45px;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #1B2E59;
+  color: white;
+  text-align: center;
+  font-family: "Open Sans Semibold", sans-serif;
+}
+.image-article {
+  width: 100%;
+  margin: 0;
+  border: 2px solid #1B2E59;
+}
+.texte-article {
+  padding: 10px;
+  line-height: 25px;
+  background-color: #F2EEE9;
+  border: 2px solid #1B2E59;
+}
+.photo-article {
+  border-radius: 50%;
+  width: 75%;
+  border: 2px solid #1B2E59;
+}
+.btn-article {
+  color: black;
+  background-color: #B6DEDE;
+  border: 2px solid #70bebe;
+}
+.btn-article:hover {
+  padding-bottom: 8px;
+  color: #B6DEDE;
+  background-color: black;
+}
+.article {
+  flex-direction: column;
+}
+/* VIE SCOLAIRE ************************************************************/
+.liste-objets {
+  position: relative;
+}
+.liste-objets .button-plus {
+  position: static;
+}
+.liste {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0 20px 0;
+}
+.liste img {
+  margin: 30px 30px 0 30px;
+  border: 4px solid #E62651;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  transition: 0.5s ease;
+}
+.sous-convoque {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #EFE8DF;
+  padding: 10px;
+  margin: 5px 10px;
+}
+/* ADMINISTRATION ************************************************************/
+.administration p {
+  border: 2px solid #B6DEDE;
+}
+/* PROFIL ************************************************************/
+.profil {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
-#inscriptions .bouton {
+.profil .colonne-gauche {
   width: 100%;
-  white-space: normal;
 }
-/* FORMULAIRE INSCRIPTION ************************************************************/
-#formulaire-inscription form {
-  min-width: 200px;
-  width: 70%;
-  flex-direction: column;
-}
-#formulaire-inscription input {
+.profil .colonne-droite {
   width: 100%;
+}
+.profil > .colonne-gauche > div:nth-child(1) {
+  display: flex;
+}
+/* MEMBRES ************************************************************/
+.membres > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.membres > div > div {
+  padding: 20px 10px;
+  margin: 10px;
+  text-align: center;
+}
+.membres > div > div:hover {
+  background-color: #deceba;
 }
