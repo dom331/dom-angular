@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-controller="IndexController" lang="fr">
+<html ng-app="app" ng-controller="IndexController" lang="fr" id="particles-js">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>DOM</title>
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style-desktop.css" media="all">
     <link rel="stylesheet" href="css/style-tablet.css" media="all and (min-width: 420px) and (max-width: 980px)">
     <link rel="stylesheet" href="css/style-phone.css" media="all and (max-width: 420px)">
+    <link rel="stylesheet" href="css/particles.css">
 
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
@@ -19,6 +20,9 @@
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>
     <script src="app/controllers.js"></script>
+
+    <script src='js/particles.js'></script>
+    <script src='js/particles_perso.js'></script>
 </head>
 
 <body ng-view>

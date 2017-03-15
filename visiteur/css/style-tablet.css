@@ -1,11 +1,11 @@
 /* Couleurs ************************************************************/
 /* Pages non-connecté ************************************************************/
 .deconnecte {
-  background-color: #1B2E59;
-  text-align: center;
+/*background-color: #1B2E59;*/
+text-align: center;
 }
 .deconnecte hr {
-  margin: 0 auto 0 auto;
+margin: 0 auto 0 auto;
 }
 /* INDEX ************************************************************/
 .triangle {
