@@ -13,18 +13,18 @@
 <form name="formulaire" ng-submit="AjoutObj(objet, file)" id="ajout-actualite" enctype="multipart/form-data" novalidate>
     <div>
         <input required ng-minlength="3" ng-maxlength="64" name="titre" ng-model="objet.titre" class="ajout" title="titre" type="text" placeholder="Titre de l'objet"/>
-        <div ng-messages="formulaire.titre.$error" style="color:red" ng-messages-include="msg.html"></div>
+        <div ng-messages="formulaire.titre.$error" ng-messages-include="msg.html"></div>
         <textarea required ng-minlength="10" ng-maxlength="200" name="contenu" ng-model="objet.desc" class="ajout" title="description" cols="30" rows="10" placeholder="Description de l'objet"></textarea>
-        <div ng-messages="formulaire.contenu.$error" style="color:red" ng-messages-include="msg.html"></div>
+        <div ng-messages="formulaire.contenu.$error" ng-messages-include="msg.html"></div>
     </div>
     <div>
         <input ng-minlength="3" ng-maxlength="64" required name="responsable" ng-model="objet.responsables" class="ajout" title="auteur" type="text" placeholder="Responsable de l'objet"/>
-        <div ng-messages="formulaire.responsable.$error" style="color:red" ng-messages-include="msg.html"></div>
+        <div ng-messages="formulaire.responsable.$error" ng-messages-include="msg.html"></div>
         <input required ng-model="file" name="file" ngf-select
                accept="image/*"
                class="ajout" title="image" type="file" file-input="files"
                placeholder="Image : choisissez un fichier"/>
-        <div ng-messages="formulaire.file.$error" style="color:red" ng-messages-include="msg.html"></div>
+        <div ng-messages="formulaire.file.$error" ng-messages-include="msg.html"></div>
         <input type="submit" class="bouton" title="submit" value="Soumettre" ng-disabled="formulaire.$invalid">
     </div>
 </form>

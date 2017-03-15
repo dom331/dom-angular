@@ -98,6 +98,11 @@ input {
   width: 60px;
   margin-top: 15px;
 }
+.message {
+  margin: -15px 0 10px 0 !important;
+  font-weight: bold;
+  color: #AC1738;
+}
 /* MENU ************************************************************/
 #menu {
   background-color: #E62651;

@@ -9,27 +9,27 @@
 
             <input class="input" name="prenom" ng-model="user.prenom" title="prenom" type="text" placeholder="Prénom" ng-maxlength="64" required/>
 
-            <div ng-messages="formulaire.prenom.$error" style="color:red" ng-messages-include="../msg.html"></div>
+            <div ng-messages="formulaire.prenom.$error" ng-messages-include="../msg.html"></div>
 
 
             <input class="input" ng-model="user.nom" name="nom" title="nom" type="text" placeholder="Nom" ng-maxlength="64" required/>
 
-            <div ng-messages="formulaire.nom.$error" style="color:red" ng-messages-include="../msg.html"></div>
+            <div ng-messages="formulaire.nom.$error" ng-messages-include="../msg.html"></div>
 
 
-            <input class="input" ng-model="user.identifiant" name="identifiant" title="id" type="text" placeholder="Identifiant LDAP" ng-minlength="4" ng-maxlength="10" required/>
+            <input class="input" ng-model="user.identifiant" name="identifiant" title="id" type="text" placeholder="Identifiant" ng-minlength="4" ng-maxlength="10" required/>
 
-            <div ng-messages="formulaire.identifiant.$error" style="color:red" ng-messages-include="../msg.html"></div>
+            <div ng-messages="formulaire.identifiant.$error" ng-messages-include="../msg.html"></div>
 
 
-            <input class="input" ng-model="user.psw" title="psw" name="psw" type="password" placeholder="Mot de passe LDAP" ng-maxlength="64" required/>
+            <input class="input" ng-model="user.psw" title="psw" name="psw" type="password" placeholder="Mot de passe" ng-maxlength="64" required/>
 
-            <div ng-messages="formulaire.psw.$error" style="color:red" ng-messages-include="../msg.html"></div>
+            <div ng-messages="formulaire.psw.$error" ng-messages-include="../msg.html"></div>
 
 
             <input class="input" ng-model="user.email" title="email" name="email" type="email" placeholder="Adresse email" ng-maxlength="100" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)|(\-[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/" required/>
 
-            <div ng-messages="formulaire.email.$error" style="color:red" ng-messages-include="../msg.html"></div>
+            <div ng-messages="formulaire.email.$error" ng-messages-include="../msg.html"></div>
 
 
             <input type="submit" class="bouton btn-deco" value="Soumettre" ng-disabled="formulaire.$invalid">
