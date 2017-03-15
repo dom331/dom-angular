@@ -52,7 +52,7 @@ app.controller('ModifProfilController', function ($scope, $http, Upload, $timeou
         file.upload.then(function (response) {
                 $timeout(function () { //Succes
                     console.log(response.data);
-                    window.location.href = "#/evenements";
+                    window.location.href = "#/profil?id="+infoss;
                     alert("Il faut se deconnecter pour voir les changements !");
                 });
             },

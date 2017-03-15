@@ -6,7 +6,7 @@
         <p class="explications">
             Les champs marqués par le symbole * doivent être obligatoirement renseignés.<br/>
             Tous le monde peut proposer son événement, cependant, pour obtenir l'approbation officielle du département, vous devrez discuter avec l'administration, développer le projet...
-            Lorsque l'administration reconnaitra votre évènement comme correct et réalisable, l'administration publiera votre événement.
+            Lorsque l'administration reconnaitra votre évènement comme correct et réalisable, l'administration publiera votre événement..
         </p>
 
         <form name="formulaire" ng-submit="AjoutEvent(event, file)" enctype="multipart/form-data" id="ajout-actualite" novalidate>
@@ -22,7 +22,7 @@
                 <input ng-minlength="3" ng-maxlength="64" required name="responsable"  ng-model="event.responsables" class="ajout" title="auteur" type="text" placeholder="Auteur de l'actualité"/>
                 <div ng-messages="formulaire.responsable.$error" style="color:red" ng-messages-include="msg.html"></div>
                 
-                <input required name="date" ng-model="event.date" class="ajout" title="date" type="text" ng-pattern="/^((\d{4})-(\d{2})-(\d{2})|(\d{2})\/(\d{2})\/(\d{4}))$/" placeholder="JJ/MM/AAAA"/>
+                <input required name="date" ng-model="event.date" class="ajout" title="date" type="text" ng-pattern="/^(0[1-9]|[1-2][0-9]|3[0-1])[/](0[1-9]|1[0-2])[/](20)[0-9][0-9]$/" placeholder="JJ/MM/AAAA"/>
                 <div ng-messages="formulaire.date.$error" style="color:red" ng-messages-include="msg.html" ></div>
                 
                 <input required  ng-model="file" name="file" ngf-select

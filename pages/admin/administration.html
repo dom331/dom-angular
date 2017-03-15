@@ -13,20 +13,14 @@
 
         <div class="liste membres convocations fond-article approuver">
             <div ng-repeat="membre in membres.liste" ng-if="membre.approuve == 0">
+                <a href="#/profil?id={{membre.id}}">
                 <p class="sous-convoque">{{membre.date_inscription | date}} | {{membre.prenom}} {{membre.nom}}</p>
+                </a>
                 <div class="choix">
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i  ng-click="AcceptMembre(membre.id)" class="fa fa-check" aria-hidden="true"></i>
+                    <i  ng-click="DeleteMembre(membre.id)" class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
-            <div ng-repeat="membre in membres.liste" ng-if="membre.approuve == 0">
-                <p class="sous-convoque">{{membre.date_inscription | date}} | {{membre.prenom}} {{membre.nom}}</p>
-                <div class="choix">
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
 
         <h2>Évenements à approuver</h2>
 
@@ -41,18 +35,8 @@
                     <p class="sous-convoque">{{events.date_debut}} | {{events.titre}}</p>
                 </a>
                 <div class="choix">
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div ng-repeat="events in events.liste" ng-if="events.approuve == 0" class="inside" >
-                <a href="#/evenement?id={{events.id}}">
-                    <img  src="medias/uploads/evenements/{{events.image}}" alt="{{events.image}}">
-                    <p class="sous-convoque">{{events.date_debut}} | {{events.titre}}</p>
-                </a>
-                <div class="choix">
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i ng-click="AcceptEvent(events.id)" class="fa fa-check" aria-hidden="true"></i>
+                    <i ng-click="DeleteEvent(events.id)" class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
